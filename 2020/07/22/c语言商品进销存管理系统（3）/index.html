@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>c语言商品进销存管理系统（3） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="冷落处存一热心，便得许多真趣味">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c语言商品进销存管理系统（3）">
+<meta property="og:url" content="http://example.com/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%883%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="冷落处存一热心，便得许多真趣味">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-22T08:20:12.000Z">
+<meta property="article:modified_time" content="2021-12-27T14:09:49.958Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-c语言商品进销存管理系统（3）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%883%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2020-07-22T08:20:12.000Z" itemprop="datePublished">2020-07-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      c语言商品进销存管理系统（3）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="修改商品信息"><a href="#修改商品信息" class="headerlink" title="修改商品信息"></a>修改商品信息</h1><p>修改商品信息包括通过键盘录入并修改商品种类、商品编号、名称、数量、单价等基本信息的功能。根据实际情况，可修改已有商品信息。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,i,y;</span><br><span class="line">	<span class="keyword">char</span> m;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;-----------------------------------------------------------&quot;</span>);</span><br><span class="line">	<span class="keyword">if</span>(input==<span class="number">0</span>)<span class="comment">//判断input的值来确定是否有商品</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;无可销售的商品信息!\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入需要修改的商品编号: &quot;</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);		</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(x==a[i].num)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%.2f\t\t\n&quot;</span>,a[i].num,a[i].name,a[i].quantity,a[i].price);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n--------------------------------------------------------------&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\nQ.退出  A.修改名称  B.修改数量  C.修改单价\n请选择:&quot;</span>);</span><br><span class="line">					<span class="built_in">getchar</span>();</span><br><span class="line">					<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,&amp;m);</span><br><span class="line">					<span class="built_in"><span class="keyword">switch</span></span>(m)</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;A&#x27;</span>:</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;请输入%s商品的名称：&quot;</span>,a[i].name);</span><br><span class="line">								 <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a[i].name);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;\n--------------------------------------------------------------------&quot;</span>);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%.2f\t\t\n&quot;</span>,a[i].num,a[i].name,a[i].quantity,a[i].price);</span><br><span class="line">								 <span class="keyword">break</span>;</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>:</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;B&#x27;</span>:</span><br><span class="line">						         <span class="built_in">printf</span>(<span class="string">&quot;\t商品数量：&quot;</span>);</span><br><span class="line">								 <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].quantity);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;\n--------------------------------------------------------------------&quot;</span>);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%.2f\t\t\n&quot;</span>,a[i].num,a[i].name,a[i].quantity,a[i].price);</span><br><span class="line">								 <span class="keyword">break</span>;			</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;c&#x27;</span>:</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;C&#x27;</span>:</span><br><span class="line">						         <span class="built_in">printf</span>(<span class="string">&quot;\t商品单价：&quot;</span>);</span><br><span class="line">								 <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;a[i].price);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;\n--------------------------------------------------------------------&quot;</span>);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line">								 <span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%.2f\t\t\n&quot;</span>,a[i].num,a[i].name,a[i].quantity,a[i].price);</span><br><span class="line">								 <span class="keyword">break</span>;	</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;q&#x27;</span>:</span><br><span class="line">						<span class="keyword">case</span> <span class="string">&#x27;Q&#x27;</span>:</span><br><span class="line">									<span class="keyword">return</span>;</span><br><span class="line">						<span class="keyword">default</span>:<span class="built_in">printf</span>(<span class="string">&quot;\n\t\t输入错误\n&quot;</span>);	</span><br><span class="line">								<span class="keyword">return</span>;</span><br><span class="line">					&#125; 				</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> 	<span class="built_in">printf</span>(<span class="string">&quot;\n\t\t查无此商品\n&quot;</span>);	</span><br><span class="line">			</span><br><span class="line">		&#125;		</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="增加删除商品信息"><a href="#增加删除商品信息" class="headerlink" title="增加删除商品信息"></a>增加删除商品信息</h1><p>增加删除商品信息包括通过键盘录入商品种类、商品编号、名称、数量、单价等基本信息的功能。根据实际情况，可增加商品录入信息，删除功能可删除已有的商品</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> temp,i;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t请输入所添加商品的编号：&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;temp);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(temp==a[i].num)</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n\t%d商品已存在！\n&quot;</span>,temp);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	n++;</span><br><span class="line"></span><br><span class="line">	a[i].num=temp;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t请输入%d商品的名称：&quot;</span>,temp);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a[i].name);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t请输入%d商品的数量：&quot;</span>,temp);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].quantity);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t请输入%d商品的单价：&quot;</span>,temp);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;a[i].price);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n...............................................................................&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%f\t\t\n&quot;</span>, a[i].num, a[i].name, a[i].quantity, a[i].price);</span><br><span class="line"></span><br><span class="line">	input=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> temp,i,j;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> choice;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(input==<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n\t\t无商品信息！\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t请输入要删除商品的编号：&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;temp);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(temp==a[i].num)</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%f\t\t\n&quot;</span>, a[i].num, a[i].name, a[i].quantity, a[i].price);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n\t确定要删除该商品吗?(Y or N)&quot;</span>);</span><br><span class="line"></span><br><span class="line">			<span class="built_in">getchar</span>();</span><br><span class="line"></span><br><span class="line">			choice = <span class="built_in">getchar</span>();			</span><br><span class="line"></span><br><span class="line">			<span class="built_in"><span class="keyword">switch</span></span> (choice)</span><br><span class="line"></span><br><span class="line">			&#123;	</span><br><span class="line"></span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;y&#x27;</span>:</span><br><span class="line"></span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;Y&#x27;</span>:</span><br><span class="line"></span><br><span class="line">				<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;n;j++)<span class="comment">//依次往前移动后续商品，覆盖当前商品，实现删除</span></span><br><span class="line"></span><br><span class="line">					a[j<span class="number">-1</span>]=a[j];<span class="comment">//商品信息全部移位</span></span><br><span class="line"></span><br><span class="line">				n--;</span><br><span class="line"></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n\t%d商品已删除！\n&quot;</span>,temp);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span>(n==<span class="number">0</span>)<span class="comment">//当删除的是系统中最后一件商品时，需要设置为系统无商品</span></span><br><span class="line"></span><br><span class="line">					input=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;n&#x27;</span>:</span><br><span class="line"></span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;N&#x27;</span>:</span><br><span class="line"></span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line"></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n\t输入错误！\n&quot;</span>);	</span><br><span class="line"></span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">			&#125;	</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t无此编号商品！\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">edit</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> m;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\t请选择：Q.退出\tA.添加商品信息\tB.删除商品信息    &quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">getchar</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;m);</span><br><span class="line"></span><br><span class="line">	<span class="built_in"><span class="keyword">switch</span></span>(m)</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> <span class="string">&#x27;q&#x27;</span>:</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> <span class="string">&#x27;Q&#x27;</span>:</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> <span class="string">&#x27;A&#x27;</span>:</span><br><span class="line"></span><br><span class="line">		<span class="built_in">add</span>(a);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>:</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> <span class="string">&#x27;B&#x27;</span>:</span><br><span class="line"></span><br><span class="line">		<span class="built_in">Delete</span>(a);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line"></span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;\n\t输入错误！\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二级菜单代码简洁</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%883%EF%BC%89/" data-id="ckxos671100106cw59i5fgd73" data-title="c语言商品进销存管理系统（3）" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/25/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%884%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          c语言商品进销存管理系统（4）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%882%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">c语言商品进销存管理系统（2）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/">实践</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%90%E6%96%99/">材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%82%B9/">考点</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E8%A3%85/" rel="tag">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/JAVA/" style="font-size: 14px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/OS/" style="font-size: 10px;">OS</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/c/" style="font-size: 16px;">c</a> <a href="/tags/c/" style="font-size: 18px;">c++</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">实践</a> <a href="/tags/%E5%B0%81%E8%A3%85/" style="font-size: 10px;">封装</a> <a href="/tags/%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 10px;">排序算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/27/1/">1</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/">linux总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/">DFS迷宫</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

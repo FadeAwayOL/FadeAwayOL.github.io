@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>位示图计算 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="愿世界风尘仆仆，我们不减童真">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位示图计算">
+<meta property="og:url" content="http://example.com/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="愿世界风尘仆仆，我们不减童真">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://iknow-pic.cdn.bcebos.com/b21bb051f8198618ce18cb9649ed2e738bd4e641">
+<meta property="og:image" content="https://iknow-pic.cdn.bcebos.com/f2deb48f8c5494eea8160e1225f5e0fe99257e80">
+<meta property="article:published_time" content="2021-06-01T06:21:15.000Z">
+<meta property="article:modified_time" content="2021-12-27T14:09:39.253Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="OS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iknow-pic.cdn.bcebos.com/b21bb051f8198618ce18cb9649ed2e738bd4e641">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-位示图计算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/" class="article-date">
+  <time class="dt-published" datetime="2021-06-01T06:21:15.000Z" itemprop="datePublished">2021-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      位示图计算
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="位示图计算"><a href="#位示图计算" class="headerlink" title="位示图计算"></a>位示图计算</h1><p>1.题目：某文件管理系统在磁盘上建立了位示图(bitmap) ，记录磁盘的使用情况。若计算机系统的字长为 32 位，磁盘的容量为 300GB ，物理块的大小为4MB ，那么位示图的大小需要（ ）个字。<br>磁盘容量为300GB，物理块大小4MB，则磁盘共300<em>1024/4=75</em>1024个物理块</p>
+<p>​            位示图用每1位表示1个磁盘块的使用情况，1个字是32位，所以1个字可以表示32块物理块使用情况，那么需要75*1024/32＝2400个字</p>
+<p>2.用字长为16位的200个字组成位示图来指示磁盘使用情况（字号、位号、磁盘块编号均从0开始），请计算：</p>
+<p>（1）文件系统发现位示图的第15字、第10位为0而准备将一记录写入，问写入的是哪一块？</p>
+<p>（2）若将第500块磁盘的数据删除，则应该讲位示图的哪个字哪一位改为0？</p>
+<p>解：</p>
+<p>​    （1）b=16(15-1)+（10-9）= 233   块号=字号*字长+位号</p>
+<p>​    （2）i = INT[499/16] = 31     j = [499]MOD 16= 4</p>
+<p>​            字号=[块号/字长] （截断）</p>
+<p>​            位号=块号mod字长</p>
+<p>​       由于字号、位号、磁盘块编号均从0开始，应该将</p>
+<p>​       第 30行，第3列对应的字改为 0</p>
+<p>3.<img src="https://iknow-pic.cdn.bcebos.com/b21bb051f8198618ce18cb9649ed2e738bd4e641"></p>
+<p>4.磁盘地址映射<br>柱面号、磁头号、扇区号<br>字号为m，位号为n，物理块号：m * 字长 + n<br>根据物理地址，求柱面号、磁头号、扇区号</p>
+<p>柱面号 = 物理块号 / (磁头号 * 扇区号)</p>
+<p>磁头号 = 物理块号 % (磁头号 * 扇区号) / 扇区号</p>
+<p>扇区号 = 物理块号 % (磁头号 * 扇区号) % 扇区号</p>
+<p>题目：某文件管理系统在磁盘上建立了位示图(bitmap) ，记录磁盘的使用情况。若计算机系统的字长为 32 位，磁盘的容量为 300GB ，物理块的大小为4MB ，那么位示图的大小需要（ ）个字。</p>
+<p>磁盘容量为300GB，物理块大小4MB，则磁盘共<code>300*1024/4=75*1024</code>个物理块，位示图用每1位表示1个磁盘块的使用情况，1个字是32位，所以1个字可以表示32块物理块使用情况，那么需要75*1024/32＝2400个字</p>
+<p>5.有一计算机系统利用位示图来管理磁盘文件空间。假定该磁盘组共有100个柱面，每个柱面有20个磁道，每个磁道分成8个盘块（扇区），每个盘块1KB，位示图如下图所示。1）试给出位示图中的位置(i, j)与对应盘块所在的物理位置（柱面号、磁头号、扇区号）之间的计算公式。假定柱面号、磁头号、扇区号都从0开始编号。2）试说明分配和回收一个盘块的过程。</p>
+<p><img src="https://iknow-pic.cdn.bcebos.com/f2deb48f8c5494eea8160e1225f5e0fe99257e80"></p>
+<pre><code>(1)根据位示图的位置（i,j），得出盘块的序号b=i*16+j;用C 表示柱面号，H 表示磁头号，S
+</code></pre>
+<p>表示扇区号，则有：<br>C=b/(20<em>8)<br>H=(b%(20</em>8))/8<br>S=(b%(20<em>8))%8<br>(2)分配：顺序扫描位示图，找出1 个其值为“0”的二进制位，利用上述公式将其转换成相应的序号b，并修改位示图，置（i,j）=1;<br>回收：将回收盘块的盘块号换算成位示图中的i 和j，转换公式为：<br>b=C</em>20<em>8+H</em>8+S<br>i=b/16,j=b%16<br>最后将计算出的（i,j）在位示图中置“0”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/" data-id="ckxos671b001z6cw52qfeh9l9" data-title="位示图计算" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OS/" rel="tag">OS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          回溯法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/28/sql%E5%A4%9A%E8%A1%A8%E6%9F%A5%E5%AF%BB%E4%B8%8E%E7%B4%A2%E5%BC%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">sql多表查寻与索引</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/">实践</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%90%E6%96%99/">材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%82%B9/">考点</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E8%A3%85/" rel="tag">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/JAVA/" style="font-size: 14px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/OS/" style="font-size: 10px;">OS</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/c/" style="font-size: 16px;">c</a> <a href="/tags/c/" style="font-size: 18px;">c++</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">实践</a> <a href="/tags/%E5%B0%81%E8%A3%85/" style="font-size: 10px;">封装</a> <a href="/tags/%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 10px;">排序算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/27/1/">1</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/">linux总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/">DFS迷宫</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

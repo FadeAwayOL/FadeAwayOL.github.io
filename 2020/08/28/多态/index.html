@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>多态 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="醉知酒浓，醒知梦空">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多态">
+<meta property="og:url" content="http://example.com/2020/08/28/%E5%A4%9A%E6%80%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="醉知酒浓，醒知梦空">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-28T06:31:25.000Z">
+<meta property="article:modified_time" content="2021-12-27T14:09:33.811Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-多态" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/08/28/%E5%A4%9A%E6%80%81/" class="article-date">
+  <time class="dt-published" datetime="2020-08-28T06:31:25.000Z" itemprop="datePublished">2020-08-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      多态
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a><strong>什么是多态</strong></h3><p>多态就是向不同的对象发送同一个消息，不同的对象在接收时会产生不同的行为。也就是说，每个对象可以用自己的方式去响应共同的消息。使用相同的代码实现不同的动作，体现了面向对象编程的<strong>优越性</strong>。</p>
+<p>在C++中，多态就是利用基类指针指向子类实例，通过基类指针调用子类（虚）函数从而实现“<strong>一个接口，多种形态</strong>”的效果。</p>
+<p>【多态分为两种】</p>
+<p>1、编译时多态：主要通过函数的重载和模板来实现。</p>
+<p>2、运行时多态：主要通过虚函数来实现。</p>
+<h3 id="1-多态的体现"><a href="#1-多态的体现" class="headerlink" title="1.多态的体现"></a>1.多态的体现</h3><p>父类的引用<em><strong>指向</strong></em>自己的子类对象；</p>
+<p>父类的引用也可以<em><strong>接收</strong></em>自己的子类对象。</p>
+<h3 id="2-多态的前提"><a href="#2-多态的前提" class="headerlink" title="2.多态的前提"></a>2.多态的前提</h3><p>必须是类与类之间的关系，要么是继承(extends)，要么是实现(implements)，通常还有一个前提，就是存在覆盖（重写）。</p>
+<h3 id="3-多态的好处"><a href="#3-多态的好处" class="headerlink" title="3.多态的好处"></a>3.多态的好处</h3><p>多态的出现大大的提高了程序的可扩展性。但是只能<strong>使用父类的引用，访问父类的成员。</strong></p>
+<h3 id="4-类型转换（向上转型，向下转型）"><a href="#4-类型转换（向上转型，向下转型）" class="headerlink" title="4.类型转换（向上转型，向下转型）"></a>4.类型转换（向上转型，向下转型）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Anmial a=<span class="keyword">new</span> <span class="built_in">Cat</span>();<span class="comment">//类型提升，向上转型</span></span><br><span class="line"> </span><br><span class="line">Cat c=(Cat)a;<span class="comment">//强制将父类的引用转成子类的类型，向下转型</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Anmial a=new Anmial();</span></span><br><span class="line"><span class="comment">Cat c=(Cat)a;</span></span><br><span class="line"><span class="comment">此段代码有误；</span></span><br><span class="line"><span class="comment">原因：不能将以前有的东西强制转为现有的东西。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-多态的应用"><a href="#5-多态的应用" class="headerlink" title="5.多态的应用"></a>5.多态的应用</h3><p>instanceof——-一般用于子类的类型有限，当传的类型需要进行其他操作时，必须要确定它的类型，即用到它的特有方法，这时用instaceof进行比较。</p>
+<p><strong>多态示例一：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">abstract <span class="class"><span class="keyword">class</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> abstract <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="title">extends</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchMouse</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;猫抓老鼠&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="title">extends</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">kanJia</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;狗看家&quot;</span>);        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">duotaiDemo</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">funcation</span>(<span class="keyword">new</span> <span class="built_in">Dog</span>());</span><br><span class="line">        <span class="built_in">funcation</span>(<span class="keyword">new</span> <span class="built_in">Cat</span>());</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">funcation</span><span class="params">(Animal a)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            a.<span class="built_in">eat</span>();</span><br><span class="line">            <span class="keyword">if</span>(a instanceof Cat)</span><br><span class="line">            &#123;</span><br><span class="line">                Cat c=(Cat)a;</span><br><span class="line">                c.<span class="built_in">catchMouse</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a instanceof Dog)&#123;</span><br><span class="line">                Dog d=(Dog)a;</span><br><span class="line">                d.<span class="built_in">kanJia</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<p>狗吃骨头</p>
+<p>狗看家</p>
+<p>猫吃鱼</p>
+<p>猫抓老鼠</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/08/28/%E5%A4%9A%E6%80%81/" data-id="ckxos671m00306cw5honkggej" data-title="多态" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          指针*与引用&amp;
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/25/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%885%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">c语言商品进销存管理系统（5）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/">实践</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%90%E6%96%99/">材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%82%B9/">考点</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E8%A3%85/" rel="tag">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/JAVA/" style="font-size: 14px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/OS/" style="font-size: 10px;">OS</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/c/" style="font-size: 16px;">c</a> <a href="/tags/c/" style="font-size: 18px;">c++</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">实践</a> <a href="/tags/%E5%B0%81%E8%A3%85/" style="font-size: 10px;">封装</a> <a href="/tags/%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 10px;">排序算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/27/1/">1</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/">linux总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/">DFS迷宫</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

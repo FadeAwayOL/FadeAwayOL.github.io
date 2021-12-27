@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>指针*与引用&amp; | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="醉后不知天子在水，满船清梦压星河">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针*与引用&amp;">
+<meta property="og:url" content="http://example.com/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="醉后不知天子在水，满船清梦压星河">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-29T03:11:53.000Z">
+<meta property="article:modified_time" content="2021-12-27T14:09:29.957Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-指针引用规则" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" class="article-date">
+  <time class="dt-published" datetime="2020-08-29T03:11:53.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      指针*与引用&amp;
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="指针-与引用-amp"><a href="#指针-与引用-amp" class="headerlink" title="指针*与引用&amp;"></a>指针*与引用&amp;</h1><p>1.指针和引用的定义和性质区别：</p>
+<p>（1）指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；而引用跟原来</p>
+<p>的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：</p>
+<p>int a=1;int *p=&a;</p>
+<p>int a=1;int &amp;b=a;</p>
+<p>上面定义了一个整形变量和一个指针变量p，该指针变量指向a的存储单元，即p的值是a存储单元的地址。</p>
+<p>而下面2句定义了一个整形变量a和这个整形a的引用b，事实上a和b是同一个东西，在内存占有同一个存储单</p>
+<p>元。</p>
+<p>(2)引用不可以为空，当被创建的时候，必须初始化，而指针可以是空值(NULL)，可以在任何时候被初始化。</p>
+<p>(3)可以有const指针，但是没有const引用；</p>
+<p>(4)指针可以有多级，但是引用只能是一级（int **p；合法 而 int &amp;&amp;a是不合法的）</p>
+<p>(5)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候<strong>必须初始化；</strong></p>
+<p>(6)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就<strong>不会再改变</strong>了。</p>
+<p>(7)”sizeof引用”得到的是所指向的<strong>变量(对象)的大小</strong>，而”sizeof指针”得到的是<strong>指针本身的大小</strong>；</p>
+<p>(8)指针和引用的自增(++)运算意义不一样；</p>
+<p>(9)如果返回<strong>动态内存分配的对象或者内存，必须使用指针</strong>，引用可能引起内存泄漏；</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>如下示例，要求在 func( p)中，m_value值和 参数 p 指代的实际内容值相同；<br>且之后 m_value值的改变，会影响 p 的实际内容；</p>
+<h2 id="仅一级指针实现"><a href="#仅一级指针实现" class="headerlink" title="仅一级指针实现"></a>仅一级指针实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一级指针参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> * p,  <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	*p = m_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(pn, <span class="number">77</span>);</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line"></span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121314151617181920212223</span></span><br></pre></td></tr></table></figure>
+
+<p>程序输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">77</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>发现 后面改变了 <code>m_value</code> 值 ，并不影响 <code>*pn</code>。 这不合要求</p>
+<h2 id="二级指针实现"><a href="#二级指针实现" class="headerlink" title="二级指针实现"></a>二级指针实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二级指针参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> ** p, <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	*p = &amp;m_value; <span class="comment">//*p 表示一级指针 ，指向 m_value 内容的地址</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(&amp;pn, <span class="number">77</span>); <span class="comment">//pn 是指针变量， &amp;pn 就是二级指针</span></span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line">	</span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">123456789101112131415161718192021222324</span></span><br></pre></td></tr></table></figure>
+
+<p>输出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">88</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>满足要求。</p>
+<h2 id="指针引用实现"><a href="#指针引用实现" class="headerlink" title="指针引用实现"></a>指针引用实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//指针引用参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> *&amp; p, <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	p = &amp;m_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(pn, <span class="number">77</span>); <span class="comment">//传递一级指针就以</span></span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line">	</span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">123456789101112131415161718192021222324</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">88</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>满足要求。</p>
+<h2 id="In-addtion"><a href="#In-addtion" class="headerlink" title="In addtion"></a>In addtion</h2><h3 id="关于int-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a"><a href="#关于int-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a" class="headerlink" title="关于int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a"></a>关于<code>int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a</code></h3><p>上述的四条语句，前面两个很好理解，而后面两个，大部分C＋＋初学者都会比较困惑，今天我也是查阅了一些资料以后才恍然大悟。下面具体来说明一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int i;</span><br><span class="line"></span><br><span class="line">int *a = &amp;i;//这里a是一个指针，它指向变量i</span><br><span class="line"></span><br><span class="line">int &amp;b = i;//这里b是一个引用，它是变量i的引用，引用是什么？它的本质是什么？下面会具体讲述</span><br><span class="line"></span><br><span class="line">int * &amp;c = a;//这里c是一个引用，它是指针a的引用</span><br><span class="line"></span><br><span class="line">int &amp; *d;//这里d是一个指针，它指向引用，但引用不是实体，所以这是错误的</span><br><span class="line">123456789</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>(int*) &amp;a</code>为取a的地址，然后进行强制类型转换，转为int类型的指针。</p>
+</blockquote>
+<h4 id="int-amp-a和int-amp-a"><a href="#int-amp-a和int-amp-a" class="headerlink" title="int * &amp;a和int &amp; *a"></a><code>int * &amp;a</code>和<code>int &amp; *a</code></h4><p>我在写这两句语句时，在<code>int</code> 和<code>*(&amp;)</code>间空了一格，而后面的<code>&amp;(*)</code>紧跟<code>a</code>。原因是：分析此类语句时，最简单的办法就是从<strong>右往左读，离变量名最近的符号对其类型有最直接的影</strong>响，即先看<code>a</code>前紧跟的是什么，它决定了<code>a</code>的类型。例如，对于<code>int &amp; *a</code>，此处是<code>*</code>，表示其首先是个指针，指针的类型是一个int型引用。而<code>int</code>后的一个空格是为了防止<code>int *a, b;//a是指针，而b不是</code>。</p>
+<p>假设有一个 int 类型的变量 <code>a</code>，<code>pa</code>是指向它的指针，那么<code>*&amp;a</code>和<code>&amp;*pa</code>分别是什么意思呢？</p>
+<p><code>*&amp;a</code>可以理解为<code>*(&amp;a)</code>，<code>&amp;a</code>表示取变量 <code>a</code> 的地址（等价于 <code>pa</code>），<code>*(&amp;a)</code>表示取这个地址上的数据（等价于 <code>*pa</code>），绕来绕去，又回到了原点，<code>*&amp;a</code>仍然等价于 a。</p>
+<p><code>&amp;*pa</code>可以理解为<code>&amp;(*pa)</code>，<code>*pa</code>表示取得 <code>pa</code> 指向的数据（等价于 <code>a</code>），<code>&amp;(*pa)</code>表示数据的地址（等价于 <code>&amp;a</code>），所以<code>&amp;*pa</code>等价于 <code>pa</code>。</p>
+<h4 id="int-a"><a href="#int-a" class="headerlink" title="int **a;"></a><code>int **a;</code></h4><p>它的功能和<code>int *&amp;a</code>一样，两者生成的二进制代码一样。这再一次说明了引用就是指针。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" data-id="ckxos671u003n6cw505cx2e08" data-title="指针*与引用&amp;" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          try catch用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/28/%E5%A4%9A%E6%80%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">多态</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/">实践</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%90%E6%96%99/">材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%82%B9/">考点</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E8%A3%85/" rel="tag">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/JAVA/" style="font-size: 14px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/OS/" style="font-size: 10px;">OS</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/c/" style="font-size: 16px;">c</a> <a href="/tags/c/" style="font-size: 18px;">c++</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">实践</a> <a href="/tags/%E5%B0%81%E8%A3%85/" style="font-size: 10px;">封装</a> <a href="/tags/%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 10px;">排序算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/27/1/">1</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/">linux总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/">DFS迷宫</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
