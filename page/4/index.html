@@ -1,878 +1,240 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/4/index.html">
-<meta property="og:site_name" content="Hexo">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FadeAway Space - Accumulation</title><meta name="author" content="FadeAway"><meta name="copyright" content="FadeAway"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="浪漫和悲观并不冲突 我时常很消极却又觉得生活很美好">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FadeAway Space">
+<meta property="og:url" content="https://github.com/FadeAwayOL/page/4/index.html">
+<meta property="og:site_name" content="FadeAway Space">
+<meta property="og:description" content="浪漫和悲观并不冲突 我时常很消极却又觉得生活很美好">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:image" content="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg">
+<meta property="article:author" content="FadeAway">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg"><link rel="shortcut icon" href="/FadeAwayOL/img/favicon.png"><link rel="canonical" href="https://github.com/FadeAwayOL/page/4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/FadeAwayOL/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/FadeAwayOL/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: FadeAway","link":"Link: ","source":"Source: FadeAway Space","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'FadeAway Space',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-12-29 11:51:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.0.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-头文件？JAVA-Bye-import" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/10/28/%E5%A4%B4%E6%96%87%E4%BB%B6%EF%BC%9FJAVA-Bye-import/" class="article-date">
-  <time class="dt-published" datetime="2020-10-28T11:28:29.000Z" itemprop="datePublished">2020-10-28</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
-  </div>
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/FadeAwayOL/archives/"><div class="headline">Articles</div><div class="length-num">55</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/FadeAwayOL/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/FadeAwayOL/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/FadeAwayOL/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/FadeAwayOL/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/FadeAwayOL/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://s2.loli.net/2021/12/28/5UwqmpHYjO2dixG.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/FadeAwayOL/">FadeAway Space</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/FadeAwayOL/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/FadeAwayOL/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/FadeAwayOL/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/FadeAwayOL/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">FadeAway Space</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/FadeAwayOL" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1532764584@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/FadeAwayOL/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/" title="数据结构答辩">     <img class="post_bg" src="https://i.loli.net/2020/10/28/Nlq8wLgGYten1ck.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="数据结构答辩"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/" title="数据结构答辩">数据结构答辩</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-10-28T10:33:37.000Z" title="Created 2020-10-28 18:33:37">2020-10-28</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:29.410Z" title="Updated 2021-12-27 22:09:29">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/C/">C</a></span></div><div class="content">如今的现在早已不是当初的以后</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FadeAwayOL/2020/10/16/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" title="基数排序">     <img class="post_bg" src="https://i.loli.net/2020/10/16/foPYRuZeaU4ViQX.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="基数排序"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/10/16/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" title="基数排序">基数排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-10-16T11:07:10.000Z" title="Created 2020-10-16 19:07:10">2020-10-16</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:34.351Z" title="Updated 2021-12-27 22:09:34">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></span></div><div class="content">区分善恶的界限纵横交错在每个人的心上</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/FadeAwayOL/2020/09/21/%E5%88%9D%E8%AF%86ToString/" title="初识ToString">     <img class="post_bg" src="https://i.loli.net/2020/09/21/DZ2bUEBWzMsviaT.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="初识ToString"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/09/21/%E5%88%9D%E8%AF%86ToString/" title="初识ToString">初识ToString</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-09-21T07:29:44.000Z" title="Created 2020-09-21 15:29:44">2020-09-21</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:37.020Z" title="Updated 2021-12-27 22:09:37">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E8%AF%AD%E6%B3%95/">语法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/java/">java</a></span></div><div class="content">前面的风景很好，我的意思是别回头</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FadeAwayOL/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/" title="双栈封装成队列">     <img class="post_bg" src="https://i.loli.net/2020/09/17/rzbHlGwYSIq3LBo.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="双栈封装成队列"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/" title="双栈封装成队列">双栈封装成队列</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-09-17T07:57:35.000Z" title="Created 2020-09-17 15:57:35">2020-09-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:35.968Z" title="Updated 2021-12-27 22:09:35">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/%E5%B0%81%E8%A3%85/">封装</a></span></div><div class="content">你偏爱着孤独，却又假装活在人群里</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/FadeAwayOL/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="hexo博客搭建">     <img class="post_bg" src="https://i.loli.net/2020/09/03/vsAFZbng3RufJro.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="hexo博客搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="hexo博客搭建">hexo博客搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-08-31T12:01:43.000Z" title="Created 2020-08-31 20:01:43">2020-08-31</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:47.897Z" title="Updated 2021-12-27 22:09:47">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E6%9D%90%E6%96%99/">材料</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/blog/">blog</a></span></div><div class="content">最怕温柔与爱比不过新鲜感</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FadeAwayOL/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" title="stach局部变量辨析">     <img class="post_bg" src="https://i.loli.net/2020/08/29/5QqOdLvEYVlriDz.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="stach局部变量辨析"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" title="stach局部变量辨析">stach局部变量辨析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-08-29T03:13:21.000Z" title="Created 2020-08-29 11:13:21">2020-08-29</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:41.885Z" title="Updated 2021-12-27 22:09:41">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E8%AF%AD%E6%B3%95/">语法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/c/">c++</a></span></div><div class="content">有多少永远值得坚持，有多少永远配得上永远</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/FadeAwayOL/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/" title="try catch用法">     <img class="post_bg" src="https://i.loli.net/2020/08/29/EIDToBwaZMXqRrk.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="try catch用法"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/" title="try catch用法">try catch用法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-08-29T03:11:55.000Z" title="Created 2020-08-29 11:11:55">2020-08-29</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:40.864Z" title="Updated 2021-12-27 22:09:40">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E8%AF%AD%E6%B3%95/">语法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/java/">java</a></span></div><div class="content">一身诗意千寻瀑，万古人间四月天</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FadeAwayOL/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" title="指针*与引用&amp;">     <img class="post_bg" src="https://i.loli.net/2020/08/29/BVIzvgja5UFY3Q6.png" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="指针*与引用&amp;"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" title="指针*与引用&amp;">指针*与引用&amp;</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-08-29T03:11:53.000Z" title="Created 2020-08-29 11:11:53">2020-08-29</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:29.957Z" title="Updated 2021-12-27 22:09:29">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E8%AF%AD%E6%B3%95/">语法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/c/">c++</a></span></div><div class="content">醉后不知天子在水，满船清梦压星河</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/FadeAwayOL/2020/08/28/%E5%A4%9A%E6%80%81/" title="多态">     <img class="post_bg" src="https://i.loli.net/2020/08/29/tv5CbG1aDneJKRS.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="多态"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/08/28/%E5%A4%9A%E6%80%81/" title="多态">多态</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-08-28T06:31:25.000Z" title="Created 2020-08-28 14:31:25">2020-08-28</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:33.811Z" title="Updated 2021-12-27 22:09:33">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E8%AF%AD%E6%B3%95/">语法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/c/">c++</a></span></div><div class="content">醉知酒浓，醒知梦空</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/FadeAwayOL/2020/07/25/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%885%EF%BC%89/" title="c语言商品进销存管理系统（5）">     <img class="post_bg" src="https://i.loli.net/2020/07/25/mEGJeybgYxn5Tlp.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="c语言商品进销存管理系统（5）"></a></div><div class="recent-post-info"><a class="article-title" href="/FadeAwayOL/2020/07/25/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%885%EF%BC%89/" title="c语言商品进销存管理系统（5）">c语言商品进销存管理系统（5）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-07-25T05:55:53.000Z" title="Created 2020-07-25 13:55:53">2020-07-25</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:48.916Z" title="Updated 2021-12-27 22:09:48">2021-12-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/FadeAwayOL/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/FadeAwayOL/tags/c/">c</a></span></div><div class="content">我们永远活在当下这一刻，时间只不过是一个见证</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/FadeAwayOL/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/FadeAwayOL/">1</a><span class="space">&hellip;</span><a class="page-number" href="/FadeAwayOL/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/FadeAwayOL/page/5/#content-inner">5</a><a class="page-number" href="/FadeAwayOL/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/FadeAwayOL/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FadeAway</div><div class="author-info__description">浪漫和悲观并不冲突 我时常很消极却又觉得生活很美好</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/FadeAwayOL/archives/"><div class="headline">Articles</div><div class="length-num">55</div></a></div><div class="card-info-data-item is-center"><a href="/FadeAwayOL/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/FadeAwayOL/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/FadeAwayOL"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FadeAwayOL" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1532764584@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">不自弃者天不弃</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/FadeAwayOL/2021/12/27/hello-world/" title="Hello World"><img src="https://s2.loli.net/2021/12/28/l35bX7fn4uSYZNA.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/FadeAwayOL/2021/12/27/hello-world/" title="Hello World">Hello World</a><time datetime="2021-12-27T03:28:14.391Z" title="Created 2021-12-27 11:28:14">2021-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FadeAwayOL/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/" title="linux总结"><img src="https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="linux总结"/></a><div class="content"><a class="title" href="/FadeAwayOL/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/" title="linux总结">linux总结</a><time datetime="2021-08-15T03:27:42.000Z" title="Created 2021-08-15 11:27:42">2021-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FadeAwayOL/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/" title="DFS迷宫"><img src="https://i.loli.net/2021/06/08/lchXdRPkjCIJsgG.png" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="DFS迷宫"/></a><div class="content"><a class="title" href="/FadeAwayOL/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/" title="DFS迷宫">DFS迷宫</a><time datetime="2021-07-28T00:32:46.000Z" title="Created 2021-07-28 08:32:46">2021-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FadeAwayOL/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/" title="回溯法"><img src="https://i.loli.net/2021/06/08/B17r8O42W6QmsLP.png" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="回溯法"/></a><div class="content"><a class="title" href="/FadeAwayOL/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/" title="回溯法">回溯法</a><time datetime="2021-06-04T02:14:23.000Z" title="Created 2021-06-04 10:14:23">2021-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/FadeAwayOL/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/" title="位示图计算"><img src="https://i.loli.net/2021/06/01/MZeamjgtCqSVsQ6.jpg" onerror="this.onerror=null;this.src='/FadeAwayOL/img/404.jpg'" alt="位示图计算"/></a><div class="content"><a class="title" href="/FadeAwayOL/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/" title="位示图计算">位示图计算</a><time datetime="2021-06-01T06:21:15.000Z" title="Created 2021-06-01 14:21:15">2021-06-01</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            <a class="card-more-btn" href="/FadeAwayOL/categories/" title="More">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/sql/"><span class="card-category-list-name">sql</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E5%AE%9E%E8%B7%B5/"><span class="card-category-list-name">实践</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E6%9D%90%E6%96%99/"><span class="card-category-list-name">材料</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/"><span class="card-category-list-name">答辩材料</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E8%80%83%E7%82%B9/"><span class="card-category-list-name">考点</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/FadeAwayOL/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">计算机操作系统</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/FadeAwayOL/tags/java/" style="font-size: 1.45em; color: rgb(50, 181, 13)">java</a><a href="/FadeAwayOL/tags/c/" style="font-size: 1.33em; color: rgb(29, 102, 24)">c</a><a href="/FadeAwayOL/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 1.15em; color: rgb(75, 111, 170)">实践</a><a href="/FadeAwayOL/tags/HTML/" style="font-size: 1.21em; color: rgb(194, 77, 167)">HTML</a><a href="/FadeAwayOL/tags/JAVA/" style="font-size: 1.27em; color: rgb(57, 144, 29)">JAVA</a><a href="/FadeAwayOL/tags/PHP/" style="font-size: 1.15em; color: rgb(129, 7, 108)">PHP</a><a href="/FadeAwayOL/tags/%E5%BF%83%E6%83%85/" style="font-size: 1.15em; color: rgb(164, 56, 182)">心情</a><a href="/FadeAwayOL/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(50, 78, 185)">java框架</a><a href="/FadeAwayOL/tags/blog/" style="font-size: 1.15em; color: rgb(14, 19, 13)">blog</a><a href="/FadeAwayOL/tags/SQL/" style="font-size: 1.15em; color: rgb(12, 115, 155)">SQL</a><a href="/FadeAwayOL/tags/c/" style="font-size: 1.39em; color: rgb(130, 24, 28)">c++</a><a href="/FadeAwayOL/tags/LeetCode/" style="font-size: 1.15em; color: rgb(132, 152, 136)">LeetCode</a><a href="/FadeAwayOL/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 1.15em; color: rgb(162, 161, 0)">二叉树</a><a href="/FadeAwayOL/tags/OS/" style="font-size: 1.15em; color: rgb(166, 4, 93)">OS</a><a href="/FadeAwayOL/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(36, 92, 77)">数据结构</a><a href="/FadeAwayOL/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(191, 193, 126)">算法</a><a href="/FadeAwayOL/tags/%E5%B0%81%E8%A3%85/" style="font-size: 1.15em; color: rgb(90, 32, 172)">封装</a><a href="/FadeAwayOL/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(133, 141, 49)">排序算法</a><a href="/FadeAwayOL/tags/C/" style="font-size: 1.15em; color: rgb(62, 45, 49)">C</a><a href="/FadeAwayOL/tags/c-c/" style="font-size: 1.15em; color: rgb(54, 195, 28)">c/c++</a><a href="/FadeAwayOL/tags/Linux/" style="font-size: 1.15em; color: rgb(12, 57, 23)">Linux</a><a href="/FadeAwayOL/tags/DP/" style="font-size: 1.15em; color: rgb(12, 132, 160)">DP</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/FadeAwayOL/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/08/"><span class="card-archive-list-date">August 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/07/"><span class="card-archive-list-date">July 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/06/"><span class="card-archive-list-date">June 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/05/"><span class="card-archive-list-date">May 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/04/"><span class="card-archive-list-date">April 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/03/"><span class="card-archive-list-date">March 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/FadeAwayOL/archives/2021/02/"><span class="card-archive-list-date">February 2021</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">55</div></div><div class="webinfo-item"><div class="item-name">Run time :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-06-29T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-12-29T03:51:44.013Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2021/12/28/5UwqmpHYjO2dixG.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By FadeAway</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/FadeAwayOL/js/utils.js"></script><script src="/FadeAwayOL/js/main.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/10/28/%E5%A4%B4%E6%96%87%E4%BB%B6%EF%BC%9FJAVA-Bye-import/">头文件？JAVA-import</a>
-    </h1>
-  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h1><p><strong>C/C++</strong> 之所以需要头文件（.h），有两个用处</p>
-<p>​                    一.在开发编译的时候，在各个编译单元（Compile Unit）之间共享同样的定义；</p>
-<p>​                    二.在发布程序库的时候，让使用者知道调用接口。</p>
-<p>而 Java 程序的目标代码（就是最终发行的可执行程序），其实是中间代码（即 bytecode），它具有很强的自说明性。比如，你拿到一个 .class 文件，就能够知道它里面的类名、包含的属性、方法等，也就是说，所有的调用接口都是已知的（当然，也许你还需要一个文档——开发手册）。一个 .class 本身兼具了“目标代码”和“接口定义”的双重功能，所以不再需要一个单独的头文件。</p>
-<p><strong>java</strong>中采用import的方式导入.class文件，.class文件中包含类的方法、属性等的定义，因此不在需要.h头文件</p>
-<p>而c或c++编译后的二进制代码不包含函数和类的信息，为了在编译时进行函数格式合法性检查，采用.h的文件给出。</p>
-<p>java提供给用户的是.class文件，虽然包含类的完整信息，但是对于开发者“不可读”，因此还需要以文档的方式提供类的声明。</p>
-<h1 id="import"><a href="#import" class="headerlink" title="import"></a>import</h1><p>如果你希望使用Java包中的类，就必须先使用import语句导入。</p>
-<p>import语句与C语言中的 #include 有些类似，语法为：<br>  import package1[.package2…].classname;<br>package 为包名，classname 为类名。例如：</p>
-<p>\1. import java.util.Date; // 导入 java.util 包下的 Date 类</p>
-<p>\2. import java.util.Scanner; // 导入 java.util 包下的 Scanner 类</p>
-<p>\3. import javax.swing.<em>; // 导入 javax.swing 包下的所有类，</em> 表示所有类</p>
-<p>注意：</p>
-<p>· import 只能导入包所包含的类，而不能导入包。</p>
-<p>· 为方便起见，我们一般不导入单独的类，而是导入包下所有的类，例如 import java.util.*;。</p>
-<p>Java 编译器默认为所有的 Java 程序导入了 JDK 的 java.lang 包中所有的类（import java.lang.*;），其中定义了一些常用类，如 System、String、Object、Math 等，因此我们可以直接使用这些类而不必显式导入。但是使用其他类必须先导入。</p>
-<p>前面讲到的”Hello World“程序使用了System.out.println(); 语句，System 类位于 java.lang 包，虽然我们没有显式导入这个包中的类，但是Java 编译器默认已经为我们导入了，否则程序会执行失败。</p>
-<h2 id="Java类的搜索路径"><a href="#Java类的搜索路径" class="headerlink" title="*Java类的搜索路径*"></a><em><strong>*Java类的搜索路径*</strong></em></h2><p>Java程序运行时要导入相应的类，也就是加载 .class 文件的过程。</p>
-<p>假设有如下的 import 语句：</p>
-<ol>
-<li>import p1.Test;</li>
-</ol>
-<p>该语句表明要导入 p1 包中的 Test 类。</p>
-<p>安装JDK时，我们已经设置了环境变量 CLASSPATH 来指明类库的路径，它的值为 .;%JAVA_HOME%\lib，而 JAVA_HOME 又为 D:\Program Files\jdk1.7.0_71，所以 CLASSPATH 等价于 .;D:\Program Files\jdk1.7.0_71\lib。</p>
-<p>Java 运行环境将依次到下面的路径寻找并载入字节码文件 Test.class：</p>
-<p>· .p1\Test.class（”.”表示当前路径）</p>
-<p>· D:\Program Files\jdk1.7.0_71\lib\p1\Test.class</p>
-<p>如果在第一个路径下找到了所需的类文件，则停止搜索，否则继续搜索后面的路径，如果在所有的路径下都未能找到所需的类文件，则编译或运行出错。</p>
-<p>你可以在CLASSPATH变量中增加搜索路径，例如 .;%JAVA_HOME%\lib;C:\javalib，那么你就可以将类文件放在 C:\javalib 目录下，Java运行环境一样会找到。</p>
+  typeof typed === 'object' && typed.destroy()
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/28/%E5%A4%B4%E6%96%87%E4%BB%B6%EF%BC%9FJAVA-Bye-import/" data-id="ckxos671m00336cw55sdreocq" data-title="头文件？JAVA-import" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
 
-    </footer>
-  </div>
-  
-</article>
+})
 
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-  
-    <article id="post-数据结构答辩" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/" class="article-date">
-  <time class="dt-published" datetime="2020-10-28T10:33:37.000Z" itemprop="datePublished">2020-10-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a>
-  </div>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/">数据结构答辩</a>
-    </h1>
-  
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="基数排序临时数组bucket"><a href="#基数排序临时数组bucket" class="headerlink" title="基数排序临时数组bucket"></a>基数排序临时数组bucket</h1><h2 id="课题要求"><a href="#课题要求" class="headerlink" title="课题要求"></a>课题要求</h2><p>​    随机生成100000个10000以内的随机数并使用基数排序记录排序时间</p>
-<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> a[N],<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> temp[N]; <span class="comment">//临时数组</span></span><br><span class="line">      <span class="keyword">int</span> i, bucket[<span class="number">10</span>];</span><br><span class="line">      <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">10</span>; ++i)</span><br><span class="line">            bucket[i] = <span class="number">0</span>;<span class="comment">//初始化桶（见本站基数排序Radix_sort）</span></span><br><span class="line">      <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">          bucket[ (a[i]/k)%<span class="number">10</span> ]++;<span class="comment">//a[i]/k)%10用于取每个数的各个位数</span></span><br><span class="line">      <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">          bucket[i] += bucket[i - <span class="number">1</span>];<span class="comment">//计算所有桶，用于找到其处于临时数组的位置</span></span><br><span class="line">      <span class="keyword">for</span> (i = N - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)<span class="comment">//逆序输出，与排序方式有关（先进先出）</span></span><br><span class="line">      &#123;</span><br><span class="line">          temp[bucket[ (a[i]/k)%<span class="number">10</span> ] - <span class="number">1</span>] = a[i];<span class="comment">//数组从零开始所以减一</span></span><br><span class="line">          bucket[ (a[i]/k)%<span class="number">10</span> ]--;<span class="comment">//出一减一</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;N; i++)</span><br><span class="line">         a[i] = temp[i];<span class="comment">//将临时数组放回原始数组（进行5次）</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">radix_sort</span><span class="params">(<span class="keyword">int</span> a[N])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,k;</span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=<span class="number">10000</span>;k*= <span class="number">10</span>)<span class="comment">//跟据10000以内可得循环5次</span></span><br><span class="line">		sort(a,k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[N],i;</span><br><span class="line">	<span class="keyword">clock_t</span> x,y;</span><br><span class="line">	srand(time(<span class="number">0</span>));<span class="comment">//以当前时间随机生成整数</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">		a[i]=rand()%<span class="number">10000</span>;<span class="comment">//取余控制随机数在0~10000以内</span></span><br><span class="line">	x=clock();</span><br><span class="line">	radix_sort(a);<span class="comment">//基数排序（稳定排序直到循环结束才能完成排序）</span></span><br><span class="line">	y=clock();</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n运行时间：%f ms\n&quot;</span>,(<span class="keyword">float</span>)(y-x));<span class="comment">//clock_t类强制转换为float计算时间差</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
-<h2 id="动图理解"><a href="#动图理解" class="headerlink" title="动图理解"></a>动图理解</h2><p><img src="https://i.loli.net/2020/10/16/z5u4SLOYVcRfHlm.gif" alt="基数排序gif"></p>
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AD%94%E8%BE%A9/" data-id="ckxos671v003q6cw57k199h36" data-title="数据结构答辩" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
-    </footer>
-  </div>
-  
-</article>
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
 
+  typeof preloader === 'object' && preloader.endLoading()
+})
 
-  
-    <article id="post-基数排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/10/16/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2020-10-16T11:07:10.000Z" itemprop="datePublished">2020-10-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/10/16/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h1><p>基数排序不同于其他的七种排序算法，它是基于一种分配法，而非比较。基数排序属于“分配式排序”（distribution sort），基数排序法又称“桶子法”（bucket sort）或bin sort，顾名思义，它是透过键值的部份资讯，将要排序的元素分配至某些“桶”中，藉以达到排序的作用。它的灵感来自于队列(Queue)，它最独特的地方在于利用了数字的有穷性(阿拉伯数字只有0到9的10个)。</p>
-<h2 id="原理示例"><a href="#原理示例" class="headerlink" title="原理示例"></a>原理示例</h2><p><img src="https://i.loli.net/2020/10/16/z5u4SLOYVcRfHlm.gif" alt="基数排序gif"></p>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><table>
-<thead>
-<tr>
-<th><strong>排序方法</strong></th>
-<th><strong>时间复杂度</strong></th>
-<th><strong>空间复杂度</strong></th>
-<th><strong>稳定性</strong></th>
-<th><strong>复杂性</strong></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>平均情况</strong></td>
-<td><strong>最坏情况</strong></td>
-<td><strong>最好情况</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>基数排序</strong></td>
-<td>O(d*(n+r))</td>
-<td>O(d*(n+r))</td>
-<td>O(d*(n+r))</td>
-<td>O(n+r)</td>
-<td>稳定</td>
-<td>较复杂</td>
-</tr>
-</tbody></table>
-<p>其中，d 为位数，r 为基数，n 为原数组个数。 在基数排序中，因为没有比较操作，所以在复杂上，最好的情况与最坏的情况在时间上是一致的，均为 O(d * (n + r))。</p>
-<h2 id="实现要点："><a href="#实现要点：" class="headerlink" title="实现要点："></a>实现要点：</h2><p>首先我们需要一个能够放下所有一位数的桶（bucket），还好阿拉伯数字只有10个，所以我们只需要10个bucket就可以搞定，但是在将所有元素放入bucket时肯定会出现多个元素放入一个bucket的情况，这时候就需要使用链表来解决了（也有使用二维数组的方式，但是空间需要n^2，当排序元素很多时肯定有点吃不消），同时为了方便往bucket中遍历元素以及添加元素，我们让bucket包含两个指针，一个指向bucket中第一个元素（head），另一个指向最后一个元素（tail），而bucket中每个元素都是一个Node，Node中包含一个排序序列中的值（val）以及一个指向下一个元素的指针（next）。<br>有了桶，下一步就是需要将所有数值从个位开始依次放入桶，然后再按顺序取出放回原数组了，这里有个地方需要注意下，就是如何循环到数组中所有元素的最高位就终止循环，这里有两个解决方法：<br>（1）首先遍历一遍数组，找到最大值，确定最高位<br>（2）一直循环直到所有元素的指定位数都是0为止最高位优先(Most Significant Digit first)法，简称<strong>MSD法</strong>：先按k1排序分组，同一组中记录，关键码k1相等，再对各组按k2排序分成子组，之后，对后面的关键码继续这样的排序分组，直到按最次位关键码kd对各子组排序后。再将各组连接起来，便得到一个有序序列。</p>
-<p>最低位优先(Least Significant Digit first)法，简称<strong>LSD法</strong>：先从kd开始排序，再对kd-1进行排序，依次重复，直到对k1排序后便得到一个有序序列。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">testBS()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">2</span>, <span class="number">343</span>, <span class="number">342</span>, <span class="number">1</span>, <span class="number">123</span>, <span class="number">43</span>, <span class="number">4343</span>, <span class="number">433</span>, <span class="number">687</span>, <span class="number">654</span>, <span class="number">3</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> *a_p = a;</span><br><span class="line">    <span class="comment">//计算数组长度</span></span><br><span class="line">    <span class="keyword">int</span> size = <span class="keyword">sizeof</span>(a) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    <span class="comment">//基数排序</span></span><br><span class="line">    bucketSort3(a_p, size);</span><br><span class="line">    <span class="comment">//打印排序后结果</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, t);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//基数排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bucketSort3</span><span class="params">(<span class="keyword">int</span> *p, intn)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//获取数组中的最大数</span></span><br><span class="line">    <span class="keyword">int</span> maxNum = findMaxNum(p, n);</span><br><span class="line">    <span class="comment">//获取最大数的位数，次数也是再分配的次数。</span></span><br><span class="line">    <span class="keyword">int</span> loopTimes = getLoopTimes(maxNum);</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="comment">//对每一位进行桶分配</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= loopTimes; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sort2(p, n, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取数字的位数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLoopTimes</span><span class="params">(intnum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> temp = num / <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">while</span>(temp != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">        temp = temp / <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//查询数组中的最大数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMaxNum</span><span class="params">(<span class="keyword">int</span> *p, intn)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(*(p + i) &gt; max)</span><br><span class="line">        &#123;</span><br><span class="line">            max = *(p + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将数字分配到各自的桶中，然后按照桶的顺序输出排序结果</span></span><br><span class="line">voidsort2(<span class="keyword">int</span> *p, intn, intloop)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//建立一组桶此处的20是预设的根据实际数情况修改</span></span><br><span class="line">    <span class="keyword">int</span> buckets[<span class="number">10</span>][<span class="number">20</span>] = &#123;&#125;;</span><br><span class="line">    <span class="comment">//求桶的index的除数</span></span><br><span class="line">    <span class="comment">//如798个位桶index=(798/1)%10=8</span></span><br><span class="line">    <span class="comment">//十位桶index=(798/10)%10=9</span></span><br><span class="line">    <span class="comment">//百位桶index=(798/100)%10=7</span></span><br><span class="line">    <span class="comment">//tempNum为上式中的1、10、100</span></span><br><span class="line">    <span class="keyword">int</span> tempNum = (<span class="keyword">int</span>)<span class="built_in">pow</span>(<span class="number">10</span>, loop - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> row_index = (*(p + i) / tempNum) % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">20</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(buckets[row_index][j] == <span class="literal">NULL</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                buckets[row_index][j] = *(p + i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将桶中的数，倒回到原有数组中</span></span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">20</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(buckets[i][j] != <span class="literal">NULL</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                *(p + k) = buckets[i][j];</span><br><span class="line">                buckets[i][j] = <span class="literal">NULL</span>;</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/16/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="ckxos671k002w6cw571s8gxhb" data-title="基数排序" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-初识ToString" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/09/21/%E5%88%9D%E8%AF%86ToString/" class="article-date">
-  <time class="dt-published" datetime="2020-09-21T07:29:44.000Z" itemprop="datePublished">2020-09-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/09/21/%E5%88%9D%E8%AF%86ToString/">初识ToString</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="To-string"><a href="#To-string" class="headerlink" title="To string"></a>To string</h1><p>首先要知道，在JDk中提供一个Object类，它是所有类的父类，即每个类都直接或间接的继承自该类。<br>注：个人理解，即，任何类中，都可以直接使用Object类中定义的方法，例如我们常用toString()方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pers.day02;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span></span>&#123;&#125;   <span class="comment">//不写，也会默认补上这个构造函数</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalDemo1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[]  args)</span> </span>&#123;</span><br><span class="line">		Animal an = <span class="keyword">new</span> Animal();</span><br><span class="line">		System.out.println(an.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行结果如下：<img src="https://img-blog.csdnimg.cn/2019032117363665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQzNzE2NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>oString()方法解析开来，其实就是getClass().getName()+”@”+Integer.toHexString(hashCode());第一眼看上去感觉很复杂，我们对照刚刚打印的信息来看：<br>getClass().getName()+”@”+Integer.toHexString(hashCode())<br>pers.day02.Animal@73035e27<br>1）getClass().getName()代表返回对象所属类的包名.类名，即pers.day02.Anima。<br>2）@对应@;<br>3）Integer.toHexString(hashCode())代表将对象的<strong>哈希值用16进制</strong>表示，其中hashCode()代表返回该对象的哈希值。</p>
-<p>3.然而，在实际开发中，通常希望toString()方法返回的不只是基本信息，所以Object的toString()方法通常会被重写，如下，我们只需在Animal类中重写toString()即可。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/21/%E5%88%9D%E8%AF%86ToString/" data-id="ckxos671f002e6cw50u635oi2" data-title="初识ToString" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-双栈封装成队列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/" class="article-date">
-  <time class="dt-published" datetime="2020-09-17T07:57:35.000Z" itemprop="datePublished">2020-09-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/">双栈封装成队列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="双栈封装成队列"><a href="#双栈封装成队列" class="headerlink" title="双栈封装成队列"></a>双栈封装成队列</h1><p><em><strong><u>面试常考该思路</u></strong></em></p>
-<p>因此总结一下，以免忘记！</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h3 id="1-多文件调用"><a href="#1-多文件调用" class="headerlink" title="1.多文件调用"></a>1.多文件调用</h3><h3 id="2-金蝉脱壳（同名同功能不同实现办法）"><a href="#2-金蝉脱壳（同名同功能不同实现办法）" class="headerlink" title="2.金蝉脱壳（同名同功能不同实现办法）"></a>2.金蝉脱壳（同名同功能不同实现办法）</h3><h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">//&lt;&gt;从当前软件安装目录去检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//“”从当前源文件所在的目录去检索，如果无法找到再去当前软件安装目录检索 </span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">stackNode</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stackNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; Linkstack;</span><br><span class="line"><span class="function">Linkstack* <span class="title">Create</span><span class="params">(Linkstack *s)</span> </span>&#123; <span class="comment">//建空栈</span></span><br><span class="line">	s=(Linkstack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Linkstack));</span><br><span class="line">	s-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(Linkstack *s,<span class="keyword">int</span> e)</span> </span>&#123; <span class="comment">//进栈</span></span><br><span class="line">	Linkstack *p=<span class="literal">NULL</span>;</span><br><span class="line">	p=(Linkstack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Linkstack));</span><br><span class="line">	p-&gt;data=e;</span><br><span class="line">	p-&gt;next=s-&gt;next;</span><br><span class="line">	s-&gt;next=p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(Linkstack *s,<span class="keyword">int</span> *e)</span> </span>&#123; <span class="comment">//出栈,把栈顶元素出栈并赋值给e</span></span><br><span class="line">	Linkstack *p=s-&gt;next;</span><br><span class="line">	<span class="keyword">if</span>(s-&gt;next==<span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;栈为空&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	*e=p-&gt;data; </span><br><span class="line">	s-&gt;next=p-&gt;next;</span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Stackempty</span><span class="params">(Linkstack *s)</span> </span>&#123; <span class="comment">//判断栈空</span></span><br><span class="line">	<span class="keyword">if</span>(s-&gt;next==<span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//栈空 </span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//栈不空 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链栈基本操作</span></span><br><span class="line"><span class="comment">//该文件为第二段代码第3排的“链栈.c”</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">//&lt;&gt;从当前软件安装目录去检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//“”从当前源文件所在的目录去检索，如果无法找到再去当前软件安装目录检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&quot;链栈.c&quot;</span><span class="comment">//调用头文件，文件需要在同一文件夹方便检索</span></span></span><br><span class="line">Linkstack *S1;<span class="comment">//创建s1栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(Linkstack *s,<span class="keyword">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	push(s,e);<span class="comment">//直接压入s即可</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(Linkstack *s,<span class="keyword">int</span> *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="keyword">if</span>(!Stackempty(S1))<span class="comment">//如果s1不为空，把S1中栈顶元素直接弹出</span></span><br><span class="line">	&#123;</span><br><span class="line">		pop(S1,&amp;m);</span><br><span class="line">		*e=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span><span class="comment">//如果s1为空，把S中“所有”元素依次弹出并压入s1中，此处所有用while循环实现</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(!Stackempty(s))</span><br><span class="line">		&#123;</span><br><span class="line">			pop(s,&amp;m);</span><br><span class="line">			push(S1,m);</span><br><span class="line">		&#125;</span><br><span class="line">			pop(S1,&amp;m);<span class="comment">//再弹出s1的栈顶元素</span></span><br><span class="line">			*e=m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Linkstack*S;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	S=Create(S);</span><br><span class="line">	S1=Create(S1);<span class="comment">//2空栈的创建</span></span><br><span class="line">	enQueue(S,<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;1进队列\n&quot;</span>);</span><br><span class="line">	enQueue(S,<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;2进队列\n&quot;</span>);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n\n&quot;</span>,x);</span><br><span class="line">	enQueue(S,<span class="number">3</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;3进队列\n&quot;</span>);</span><br><span class="line">	enQueue(S,<span class="number">4</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;4进队列\n&quot;</span>);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);<span class="comment">//注意出栈入栈都是单独进行while循环只是为了达到反转一次效果</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="自身问题发现"><a href="#自身问题发现" class="headerlink" title="自身问题发现"></a>自身问题发现</h2><p>指针与引用理解依旧欠缺</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/" data-id="ckxos671h002l6cw521kcepo7" data-title="双栈封装成队列" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%81%E8%A3%85/" rel="tag">封装</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hexo博客搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time class="dt-published" datetime="2020-08-31T12:01:43.000Z" itemprop="datePublished">2020-08-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9D%90%E6%96%99/">材料</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">hexo博客搭建</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-创建github个人仓库"><a href="#1-创建github个人仓库" class="headerlink" title="1.创建github个人仓库"></a>1.创建github个人仓库</h2><p>github账户你值得拥有！</p>
-<p>[Build software better, together]</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
-<p><img src="https://pic3.zhimg.com/v2-1e6b64cf13587210e41b79fd2086c266_180x120.jpg" alt="图标"></p>
-<p>创建一个自己的github账户，用户名设置清楚与仓库建立有关。</p>
-<p>在个人主页点击Repositories，然后new一个</p>
-<p><img src="https://i.loli.net/2020/09/04/pXrBznIRyhi1ZVj.png" alt="29$V79H2Y_AZXO8LW6XRGNK.png"></p>
-<p>注意，仓库名格式：<strong>用户名.github.io</strong></p>
-<h2 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2.环境配置"></a>2.环境配置</h2><h3 id="1-了解Hexo"><a href="#1-了解Hexo" class="headerlink" title="1.了解Hexo"></a>1.了解Hexo</h3><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">Hexo</a>是高效的静态站点生成框架，她基于Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo在速度上也有很大优势。</p>
-<h3 id="2-搭建Node-js环境"><a href="#2-搭建Node-js环境" class="headerlink" title="2.搭建Node.js环境"></a>2.搭建Node.js环境</h3><p>我们了解到Hexo基于Node.js的，那么我们搭建博客网站首先需要安装Node.js环境。 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境，可以在非浏览器环境下，解释运行 JS 代码。<br>下载地址：<a target="_blank" rel="noopener" href="http://nodejs.cn/download">http://nodejs.cn/download</a><br>测试安装：命令行使用node -v 、mpm -v，查看显示版本号即成功。</p>
-<h3 id="3-安装Hexo博客框架工具"><a href="#3-安装Hexo博客框架工具" class="headerlink" title="3.安装Hexo博客框架工具"></a>3.安装Hexo博客框架工具</h3><p>Hexo是一个建站工具，可以帮助我们快速生成基本的博客文件，安装它需要在控制台下使用如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g1</span><br></pre></td></tr></table></figure>
-
-<p>若报错，请尝试在命令前加上sudo</p>
-<h3 id="4-安装Git版本工具"><a href="#4-安装Git版本工具" class="headerlink" title="4.安装Git版本工具"></a>4.安装Git版本工具</h3><p>Git是目前世界上最流行的分布式版本控制系统，是的，没有之一。使用Git可以帮助我们把本地的网页和文章等内容提交到Gihub上，实现同步。<br>下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br>Windows系统需下载，Mac系统因为自带Git无需操作。<br>测试安装：git - -version，查看显示版本号即成功。</p>
-<h2 id="3-开启GitHub-Pages服务"><a href="#3-开启GitHub-Pages服务" class="headerlink" title="3.开启GitHub Pages服务"></a>3.开启GitHub Pages服务</h2><p>搭建我们的个人博客需要一个唯一的域名，当然我们可以申请购买一个域名来使用，但是在不是太必要的情况下，我们也可以通过Github Pages获得一个免费使用的域名。</p>
-<p>在第一步自己建立的仓库随后选择Setting进入设置，找到Github Pages如下</p>
-<p><a href="https://sm.ms/image/3BHW7rCQmZVwaNy" target="_blank"><img src="https://i.loli.net/2020/09/05/3BHW7rCQmZVwaNy.png" /></a></p>
-<p><a href="https://sm.ms/image/FRS2NGOjirQPqaB" target="_blank"><img src="https://i.loli.net/2020/09/05/FRS2NGOjirQPqaB.png" /></a></p>
-<p>将你的Git与GitHub帐号绑定，鼠标右击blog文件夹打开Git Bash</p>
-<p><img src="https://pic2.zhimg.com/80/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_720w.jpg" alt="img"></p>
-<p>或者在菜单里搜索Git Bash，设置user.name和user.email配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的GitHub用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的GitHub注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>生成ssh密钥文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的GitHub注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制</p>
-<p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
-<p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
-<p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a> ：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
-<p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
-<h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
-<li>创建一个blog文件夹用于存放hexo。然后右键该文件夹使用</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git bash here</span><br></pre></td></tr></table></figure>
-
-<p>命令就可以直接定位到当前目录。</p>
-<p>然后使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
-
-<p>初始化hexo基础配置文件。初始化时间比较长，不用急，等完成后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>初始化后，接着输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>配置node。然后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>加载hexo基础html、css、js等文件。<br>在这完成后等于已经在本地创建了一个网页，想查看的话，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>然后相当于开启了一个本地的服务器，在浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
-<p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2886260140,3908419583&fm=26&gp=0.jpg" alt="img"></p>
-<p>你就可以看到你的本地博客了。</p>
-<p><strong>推送网站</strong></p>
-<p>接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为<strong>站点</strong>配置文件，如下图</p>
-<p><img src="https://pic2.zhimg.com/80/v2-cb1fd5e5a2e73f513234e434724c7c55_720w.jpg" alt="img"></p>
-<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为<strong>主题</strong>配置文件，如下图</p>
-<p><img src="https://picb.zhimg.com/80/v2-4252029e5634bf91c7d58916ae2b8ac3_720w.jpg" alt="img"></p>
-<p>下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为：</p>
-<p>deploy:<br>type: git<br>repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git<br>branch: master参考如下：</p>
-<p><a href="https://sm.ms/image/rMlEdKaV4NSHk6X" target="_blank"><img src="https://i.loli.net/2020/09/05/rMlEdKaV4NSHk6X.png" /></a></p>
-<p>保存站点配置文件。</p>
-<p>其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。最后安装Git部署插件，输入命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-
-<p>这时，我们分别输入三条命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即  <a target="_blank" rel="noopener" href="http://xxxx.github.io/">http://xxxx.github.io</a></p>
-<p> 比如我的xxxx就是我的GitHub用户名</p>
-<p>你就会发现你的博客已经上线了，可以在网络上被访问了。</p>
-<p>搭建完成，剩下美化教程就靠自己的资源利用能力了（百度不香吗???）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" data-id="ckxos6715001e6cw5582v0hj1" data-title="hexo博客搭建" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-stach局部变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" class="article-date">
-  <time class="dt-published" datetime="2020-08-29T03:13:21.000Z" itemprop="datePublished">2020-08-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">stach局部变量辨析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="普通局部变量与static局部变量的区别"><a href="#普通局部变量与static局部变量的区别" class="headerlink" title="普通局部变量与static局部变量的区别"></a>普通局部变量与static局部变量的区别</h2><h3 id="内存分配和释放"><a href="#内存分配和释放" class="headerlink" title="内存分配和释放"></a>内存分配和释放</h3><h4 id="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"><a href="#1、普通局部变量只有执行到变量定义的语句的时候才分配空间。" class="headerlink" title="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"></a>1、普通局部变量只有执行到变量定义的语句的时候才分配空间。</h4><h4 id="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"><a href="#2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。" class="headerlink" title="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"></a>2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。</h4><h4 id="3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。"><a href="#3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。" class="headerlink" title="3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。"></a>3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。</h4><h4 id="4、static局部变量只有在整个程序结束的时候才将其自动释放。"><a href="#4、static局部变量只有在整个程序结束的时候才将其自动释放。" class="headerlink" title="4、static局部变量只有在整个程序结束的时候才将其自动释放。"></a>4、static局部变量只有在整个程序结束的时候才将其自动释放。</h4><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><h4 id="1、普通局部变量不初始化，为随机值。"><a href="#1、普通局部变量不初始化，为随机值。" class="headerlink" title="1、普通局部变量不初始化，为随机值。"></a>1、普通局部变量不初始化，为随机值。</h4><h4 id="2、static局部变量不初始化，为0。"><a href="#2、static局部变量不初始化，为0。" class="headerlink" title="2、static局部变量不初始化，为0。"></a>2、static局部变量不初始化，为0。</h4><h4 id="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"><a href="#3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。" class="headerlink" title="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"></a>3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。</h4><h4 id="4、static局部变量只能用它常量初始化。"><a href="#4、static局部变量只能用它常量初始化。" class="headerlink" title="4、static局部变量只能用它常量初始化。"></a>4、static局部变量只能用它常量初始化。</h4><p><strong>成员变量和局部变量的区别<br>   (1)在类中的位置不同<br>     成员变量：类中方法外<br>     局部变量：方法定义中或者方法声明上<br>   (2)在内存中的位置不同<br>     成员变量：在堆中<br>     局部变量：在栈中<br>   (3)生命周期不同<br>     成员变量：随着对象的创建而存在，随着对象的消失而消失<br>     局部变量：随着方法的调用而存在，随着方法的调用完毕而消失<br>   (4)初始化值不同<br>     成员变量：有默认值<br>     局部变量：没有默认值，必须定义，赋值，然后才能使用</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" data-id="ckxos6717001l6cw5dd46f7n2" data-title="stach局部变量辨析" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-try catch用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2020-08-29T03:11:55.000Z" itemprop="datePublished">2020-08-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/">try catch用法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="try-catch-用法"><a href="#try-catch-用法" class="headerlink" title="try catch 用法"></a>try catch 用法</h1><p>当程序运行过程中发生错误时，就会“ 抛出异常’，抛出异常比终止程序要灵活得多，这是因为可以提供一个“ 捕获” 异常的处理器 （handler) 对异常情况进行处理。</p>
-<p>如果没有提供处理器，程序就会终止，并在控制台上打印出一条信息， 其中给出了异常的类型。可能在前面已经看到过一些异常报告， 例如， 偶然使用了 null 引用或者数组越界等。</p>
-<p>异常有两种类型： <strong>未检查异常和已检查异常</strong>。 对于已检查异常， 编译器将会检查是否提供了处理器。 然而，有很多常见的异常， 例如，访问 null 引用， 都属于未检查异常。编译器不会査看是否为这些错误提供了处理器。毕竟，应该精心地编写代码来避免这些错误的发生， 而不要将精力花在编写异常处理器上。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>try 语句使你能够测试代码块中的错误。</p>
-<p>catch 语句允许你处理错误。</p>
-<p>throw 语句允许你创建自定义错误。（抛出错误）</p>
-<p>finally 使你能够执行代码，在 try 和 catch 之后，无论结果如何。</p>
-<p>执行规则：首先执行try中的代码 如果抛出异常会由catch去捕获并执行 如果没有发生异常 catch去捕获会被忽略掉 但是不管有没有异常最后都会执行</p>
-<h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">		代码块；</span><br><span class="line">		代码  <span class="keyword">throw</span><span class="string">&quot;字符&quot;</span>   <span class="comment">//抛出错误</span></span><br><span class="line">	&#125;<span class="keyword">catch</span>(参数)&#123;				<span class="comment">//抓住throw抛出的错误</span></span><br><span class="line">			<span class="comment">//处理错误并执行</span></span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="comment">//无论try catch结果如何还是继续执行</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/" data-id="ckxos671a001w6cw5335w32lq" data-title="try catch用法" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-指针引用规则" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" class="article-date">
-  <time class="dt-published" datetime="2020-08-29T03:11:53.000Z" itemprop="datePublished">2020-08-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/">指针*与引用&amp;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="指针-与引用-amp"><a href="#指针-与引用-amp" class="headerlink" title="指针*与引用&amp;"></a>指针*与引用&amp;</h1><p>1.指针和引用的定义和性质区别：</p>
-<p>（1）指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；而引用跟原来</p>
-<p>的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：</p>
-<p>int a=1;int *p=&a;</p>
-<p>int a=1;int &amp;b=a;</p>
-<p>上面定义了一个整形变量和一个指针变量p，该指针变量指向a的存储单元，即p的值是a存储单元的地址。</p>
-<p>而下面2句定义了一个整形变量a和这个整形a的引用b，事实上a和b是同一个东西，在内存占有同一个存储单</p>
-<p>元。</p>
-<p>(2)引用不可以为空，当被创建的时候，必须初始化，而指针可以是空值(NULL)，可以在任何时候被初始化。</p>
-<p>(3)可以有const指针，但是没有const引用；</p>
-<p>(4)指针可以有多级，但是引用只能是一级（int **p；合法 而 int &amp;&amp;a是不合法的）</p>
-<p>(5)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候<strong>必须初始化；</strong></p>
-<p>(6)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就<strong>不会再改变</strong>了。</p>
-<p>(7)”sizeof引用”得到的是所指向的<strong>变量(对象)的大小</strong>，而”sizeof指针”得到的是<strong>指针本身的大小</strong>；</p>
-<p>(8)指针和引用的自增(++)运算意义不一样；</p>
-<p>(9)如果返回<strong>动态内存分配的对象或者内存，必须使用指针</strong>，引用可能引起内存泄漏；</p>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>如下示例，要求在 func( p)中，m_value值和 参数 p 指代的实际内容值相同；<br>且之后 m_value值的改变，会影响 p 的实际内容；</p>
-<h2 id="仅一级指针实现"><a href="#仅一级指针实现" class="headerlink" title="仅一级指针实现"></a>仅一级指针实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一级指针参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> * p,  <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	*p = m_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(pn, <span class="number">77</span>);</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line"></span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121314151617181920212223</span></span><br></pre></td></tr></table></figure>
-
-<p>程序输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">77</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-
-<p>发现 后面改变了 <code>m_value</code> 值 ，并不影响 <code>*pn</code>。 这不合要求</p>
-<h2 id="二级指针实现"><a href="#二级指针实现" class="headerlink" title="二级指针实现"></a>二级指针实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二级指针参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> ** p, <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	*p = &amp;m_value; <span class="comment">//*p 表示一级指针 ，指向 m_value 内容的地址</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(&amp;pn, <span class="number">77</span>); <span class="comment">//pn 是指针变量， &amp;pn 就是二级指针</span></span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line">	</span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">123456789101112131415161718192021222324</span></span><br></pre></td></tr></table></figure>
-
-<p>输出:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">88</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-
-<p>满足要求。</p>
-<h2 id="指针引用实现"><a href="#指针引用实现" class="headerlink" title="指针引用实现"></a>指针引用实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//指针引用参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> *&amp; p, <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	p = &amp;m_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(pn, <span class="number">77</span>); <span class="comment">//传递一级指针就以</span></span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line">	</span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">123456789101112131415161718192021222324</span></span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">88</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-
-<p>满足要求。</p>
-<h2 id="In-addtion"><a href="#In-addtion" class="headerlink" title="In addtion"></a>In addtion</h2><h3 id="关于int-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a"><a href="#关于int-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a" class="headerlink" title="关于int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a"></a>关于<code>int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a</code></h3><p>上述的四条语句，前面两个很好理解，而后面两个，大部分C＋＋初学者都会比较困惑，今天我也是查阅了一些资料以后才恍然大悟。下面具体来说明一下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int i;</span><br><span class="line"></span><br><span class="line">int *a = &amp;i;//这里a是一个指针，它指向变量i</span><br><span class="line"></span><br><span class="line">int &amp;b = i;//这里b是一个引用，它是变量i的引用，引用是什么？它的本质是什么？下面会具体讲述</span><br><span class="line"></span><br><span class="line">int * &amp;c = a;//这里c是一个引用，它是指针a的引用</span><br><span class="line"></span><br><span class="line">int &amp; *d;//这里d是一个指针，它指向引用，但引用不是实体，所以这是错误的</span><br><span class="line">123456789</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>(int*) &amp;a</code>为取a的地址，然后进行强制类型转换，转为int类型的指针。</p>
-</blockquote>
-<h4 id="int-amp-a和int-amp-a"><a href="#int-amp-a和int-amp-a" class="headerlink" title="int * &amp;a和int &amp; *a"></a><code>int * &amp;a</code>和<code>int &amp; *a</code></h4><p>我在写这两句语句时，在<code>int</code> 和<code>*(&amp;)</code>间空了一格，而后面的<code>&amp;(*)</code>紧跟<code>a</code>。原因是：分析此类语句时，最简单的办法就是从<strong>右往左读，离变量名最近的符号对其类型有最直接的影</strong>响，即先看<code>a</code>前紧跟的是什么，它决定了<code>a</code>的类型。例如，对于<code>int &amp; *a</code>，此处是<code>*</code>，表示其首先是个指针，指针的类型是一个int型引用。而<code>int</code>后的一个空格是为了防止<code>int *a, b;//a是指针，而b不是</code>。</p>
-<p>假设有一个 int 类型的变量 <code>a</code>，<code>pa</code>是指向它的指针，那么<code>*&amp;a</code>和<code>&amp;*pa</code>分别是什么意思呢？</p>
-<p><code>*&amp;a</code>可以理解为<code>*(&amp;a)</code>，<code>&amp;a</code>表示取变量 <code>a</code> 的地址（等价于 <code>pa</code>），<code>*(&amp;a)</code>表示取这个地址上的数据（等价于 <code>*pa</code>），绕来绕去，又回到了原点，<code>*&amp;a</code>仍然等价于 a。</p>
-<p><code>&amp;*pa</code>可以理解为<code>&amp;(*pa)</code>，<code>*pa</code>表示取得 <code>pa</code> 指向的数据（等价于 <code>a</code>），<code>&amp;(*pa)</code>表示数据的地址（等价于 <code>&amp;a</code>），所以<code>&amp;*pa</code>等价于 <code>pa</code>。</p>
-<h4 id="int-a"><a href="#int-a" class="headerlink" title="int **a;"></a><code>int **a;</code></h4><p>它的功能和<code>int *&amp;a</code>一样，两者生成的二进制代码一样。这再一次说明了引用就是指针。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/" data-id="ckxos671u003n6cw505cx2e08" data-title="指针*与引用&amp;" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-多态" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/28/%E5%A4%9A%E6%80%81/" class="article-date">
-  <time class="dt-published" datetime="2020-08-28T06:31:25.000Z" itemprop="datePublished">2020-08-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/28/%E5%A4%9A%E6%80%81/">多态</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a><strong>什么是多态</strong></h3><p>多态就是向不同的对象发送同一个消息，不同的对象在接收时会产生不同的行为。也就是说，每个对象可以用自己的方式去响应共同的消息。使用相同的代码实现不同的动作，体现了面向对象编程的<strong>优越性</strong>。</p>
-<p>在C++中，多态就是利用基类指针指向子类实例，通过基类指针调用子类（虚）函数从而实现“<strong>一个接口，多种形态</strong>”的效果。</p>
-<p>【多态分为两种】</p>
-<p>1、编译时多态：主要通过函数的重载和模板来实现。</p>
-<p>2、运行时多态：主要通过虚函数来实现。</p>
-<h3 id="1-多态的体现"><a href="#1-多态的体现" class="headerlink" title="1.多态的体现"></a>1.多态的体现</h3><p>父类的引用<em><strong>指向</strong></em>自己的子类对象；</p>
-<p>父类的引用也可以<em><strong>接收</strong></em>自己的子类对象。</p>
-<h3 id="2-多态的前提"><a href="#2-多态的前提" class="headerlink" title="2.多态的前提"></a>2.多态的前提</h3><p>必须是类与类之间的关系，要么是继承(extends)，要么是实现(implements)，通常还有一个前提，就是存在覆盖（重写）。</p>
-<h3 id="3-多态的好处"><a href="#3-多态的好处" class="headerlink" title="3.多态的好处"></a>3.多态的好处</h3><p>多态的出现大大的提高了程序的可扩展性。但是只能<strong>使用父类的引用，访问父类的成员。</strong></p>
-<h3 id="4-类型转换（向上转型，向下转型）"><a href="#4-类型转换（向上转型，向下转型）" class="headerlink" title="4.类型转换（向上转型，向下转型）"></a>4.类型转换（向上转型，向下转型）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Anmial a=<span class="keyword">new</span> <span class="built_in">Cat</span>();<span class="comment">//类型提升，向上转型</span></span><br><span class="line"> </span><br><span class="line">Cat c=(Cat)a;<span class="comment">//强制将父类的引用转成子类的类型，向下转型</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Anmial a=new Anmial();</span></span><br><span class="line"><span class="comment">Cat c=(Cat)a;</span></span><br><span class="line"><span class="comment">此段代码有误；</span></span><br><span class="line"><span class="comment">原因：不能将以前有的东西强制转为现有的东西。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-多态的应用"><a href="#5-多态的应用" class="headerlink" title="5.多态的应用"></a>5.多态的应用</h3><p>instanceof——-一般用于子类的类型有限，当传的类型需要进行其他操作时，必须要确定它的类型，即用到它的特有方法，这时用instaceof进行比较。</p>
-<p><strong>多态示例一：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">abstract <span class="class"><span class="keyword">class</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> abstract <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="title">extends</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;猫吃鱼&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchMouse</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;猫抓老鼠&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="title">extends</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">kanJia</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;狗看家&quot;</span>);        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">duotaiDemo</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">funcation</span>(<span class="keyword">new</span> <span class="built_in">Dog</span>());</span><br><span class="line">        <span class="built_in">funcation</span>(<span class="keyword">new</span> <span class="built_in">Cat</span>());</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">funcation</span><span class="params">(Animal a)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            a.<span class="built_in">eat</span>();</span><br><span class="line">            <span class="keyword">if</span>(a instanceof Cat)</span><br><span class="line">            &#123;</span><br><span class="line">                Cat c=(Cat)a;</span><br><span class="line">                c.<span class="built_in">catchMouse</span>();</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a instanceof Dog)&#123;</span><br><span class="line">                Dog d=(Dog)a;</span><br><span class="line">                d.<span class="built_in">kanJia</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>输出结果为：</p>
-<p>狗吃骨头</p>
-<p>狗看家</p>
-<p>猫吃鱼</p>
-<p>猫抓老鼠</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/28/%E5%A4%9A%E6%80%81/" data-id="ckxos671m00306cw5honkggej" data-title="多态" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/">实践</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%90%E6%96%99/">材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E8%BE%A9%E6%9D%90%E6%96%99/">答辩材料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%82%B9/">考点</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E8%A3%85/" rel="tag">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/DP/" style="font-size: 10px;">DP</a> <a href="/tags/HTML/" style="font-size: 12px;">HTML</a> <a href="/tags/JAVA/" style="font-size: 14px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/OS/" style="font-size: 10px;">OS</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/c/" style="font-size: 16px;">c</a> <a href="/tags/c/" style="font-size: 18px;">c++</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 10px;">实践</a> <a href="/tags/%E5%B0%81%E8%A3%85/" style="font-size: 10px;">封装</a> <a href="/tags/%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 10px;">排序算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/12/27/1/">1</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/27/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/15/%E8%9B%AE%E5%8A%9B%E6%B3%95/">linux总结</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/">DFS迷宫</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
