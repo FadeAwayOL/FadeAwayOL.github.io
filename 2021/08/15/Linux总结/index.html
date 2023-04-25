@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>linux总结 | FadeAway Space</title><meta name="keywords" content="Linux"><meta name="author" content="FadeAway"><meta name="copyright" content="FadeAway"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="深到浓处方断情，最是伤人心">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux总结">
+<meta property="og:url" content="https://github.com/FadeAwayOL/2021/08/15/Linux%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="FadeAway Space">
+<meta property="og:description" content="深到浓处方断情，最是伤人心">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#">
+<meta property="article:published_time" content="2021-08-15T03:27:42.000Z">
+<meta property="article:modified_time" content="2023-04-25T04:13:27.413Z">
+<meta property="article:author" content="FadeAway">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://github.com/FadeAwayOL/2021/08/15/Linux%E6%80%BB%E7%BB%93/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: FadeAway","link":"Link: ","source":"Source: FadeAway Space","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'linux总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-25 12:13:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">55</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> Gallery</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://121.40.73.202"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">FadeAway Space</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> Gallery</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://121.40.73.202"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-15T03:27:42.000Z" title="Created 2021-08-15 11:27:42">2021-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-25T04:13:27.413Z" title="Updated 2023-04-25 12:13:27">2023-04-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="linux总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h3><p>切换目录 <code>cd</code></p>
+<p>查看目录 <code>ls</code></p>
+<ul>
+<li><code>-l</code>  列出文件详细信息 或者直接<code>ll</code></li>
+<li><code>-a</code>  列出当前目录下所有文件及目录，包括隐藏的a(all)</li>
+</ul>
+<p>创建目录 <code>mkdir</code></p>
+<ul>
+<li>-p    创建目录，若无父目录，则创建p(parent)</li>
+</ul>
+<p>输出信息 <code>echo</code></p>
+<p>打印文件到命令行(查看文件) <code>cat</code></p>
+<p>改变文件所属用户 <code>chown</code></p>
+<p>改变文件所属组 <code>chgrp</code></p>
+<p>下载文件 <code>wget</code></p>
+<p>在文本文件中查找某个字符串 <code>grep</code></p>
+<p>统计文本中行数、字数、字符数 <code>wc</code></p>
+<p>部分显示 <code>more/less</code></p>
+<p>查找文件 <code>find / -name &#39;auto.cnf&#39;</code></p>
+<p>创建空文件 <code>touch</code></p>
+<p>复制文件 <code>cp</code></p>
+<p>移动或重命名 <code>mv</code></p>
+<p>删除文件 <code>rm</code></p>
+<ul>
+<li>-r   递归删除，可删除子目录及文件</li>
+<li>-f   强制删除</li>
+</ul>
+<p>删除空目录 <code>rmdir</code></p>
+<p>树形结构显示目录，需要安装tree包  <code>tree</code></p>
+<p>显示当前目录 <code>pwd</code></p>
+<p>创建链接文件 <code>ln</code></p>
+<p>分页显示文本文件内容 <code>more、less</code></p>
+<p>显示文件头、尾内容  <code>head、tail</code></p>
+<h3 id="vim操作"><a href="#vim操作" class="headerlink" title="vim操作"></a>vim操作</h3><p>进入编辑器 <code>vi/vim</code>，vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式。</p>
+<ul>
+<li>进入编辑模式插入 <code>i</code></li>
+<li>退出编辑模式 <code>esc</code></li>
+<li>保存:后面输入<code>w</code></li>
+<li>退出:后面输入<code>q</code></li>
+<li>不保存退出:后面输入<code>q!</code></li>
+<li>显示行号 <code>set number</code></li>
+<li>查找关键字 <code>/xxxx</code> 按n跳到下一个，shift+n上一个</li>
+<li>复制光标所在行，并粘贴 <code>yyp</code></li>
+<li>h(左移一个字符←)、j(下一行↓)、k(上一行↑)、l(右移一个字符→)</li>
+</ul>
+<h3 id="打包压缩相关命令"><a href="#打包压缩相关命令" class="headerlink" title="打包压缩相关命令"></a>打包压缩相关命令</h3><p>打包压缩 <code>tar\gzip\bzip2</code></p>
+<ul>
+<li><code>-c</code>归档文件</li>
+<li><code>-x</code> 压缩文件</li>
+<li><code>-z</code> gzip压缩文件</li>
+<li><code>-j</code> bzip2压缩文件</li>
+<li><code>-v</code> 显示压缩或解压缩过程 v(view)</li>
+<li><code>-f</code> 使用档名</li>
+</ul>
+<p>例：</p>
+<p>只打包，不压缩:<code>tar -cvf /home/abc.tar /home/abc</code></p>
+<p>打包，并用gzip压缩:<code>tar -zcvf /home/abc.tar.gz /home/abc</code></p>
+<p>打包，并用bzip2压缩:<code>tar -jcvf /home/abc.tar.bz2 /home/abc</code></p>
+<p>如果想解压缩，就直接替换上面的命令<code> tar -cvf / tar -zcvf / tar -jcvf</code> 中的“c” 换成“x” 就可以了。</p>
+<h3 id="Linux管道"><a href="#Linux管道" class="headerlink" title="Linux管道"></a>Linux管道</h3><p>将一个命令的标准输出作为另一个命令的标准输入。也就是把几个命令组合起来使用，后一个命令除以前一个命令的结果。</p>
+<p>例：grep -r “close” /home/* | more   在home目录下所有文件中查找，包括close的文件，并分页输出。</p>
+<h2 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a>文件权限管理</h2><h3 id="三种基本权限"><a href="#三种基本权限" class="headerlink" title="三种基本权限"></a>三种基本权限</h3><p>R：读，数值表示为 4</p>
+<p>W：写，数值表示为 2</p>
+<p>X：可执行，数值表示为1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-16-2-centos ~]# ll</span><br><span class="line">total 597952</span><br><span class="line">-rw------- 1 root root  12387614 Aug 29  2021 apache-zookeeper-3.7.0-bin.tar.gz</span><br><span class="line">-rw-r--r-- 1 root root 113304268 May  3 12:22 jdk-8u281-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+
+<p>如上所示，<code>jdk-8u281-linux-x64.rpm</code>文件的权限为<code>-rw-r--r--</code>，一共十个字符，分成四段。</p>
+<ul>
+<li>第一个字符“-”表示普通文件；这个位置还可能会出现<code>l</code>链接；<code>d</code>表示目录</li>
+<li>第二三四个字符<code>rw-</code>表示当前所属用户的权限，所以用数值表示为 4+2=6</li>
+<li>第五六七个字符<code>r--</code>表示当前所属组的权限，所以用数值表示为 4</li>
+<li>第八九十个字符<code>r--</code>表示其他用户权限，所以用数值表示为 4</li>
+</ul>
+<p>所以操作此文件的权限用数值表示为 644</p>
+<h3 id="更改权限"><a href="#更改权限" class="headerlink" title="更改权限"></a>更改权限</h3><p>更改权限：<code>sudo chmod</code> [u所属用户  g所属组  o其他用户  a所有用户]  [+增加权限  -减少权限]  [r  w  x]  目录名</p>
+<p>例如：有一个文件 filename，权限为<code>-rw-r----x</code> ,将权限值改为<code>-rwxrw-r-x</code>，用数值表示为765</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod u+x g+w o+r filename` 也可以用数值表示 `sudo chmod 765 filename</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h2><h3 id="命令行运行"><a href="#命令行运行" class="headerlink" title="命令行运行"></a>命令行运行</h3><p>运行<code>./filename</code></p>
+<p>退出<code>ctrl+c</code></p>
+<h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><p>运行 <code>nohup command &gt;out.file 2&gt;&amp;1 &amp;</code></p>
+<p>退出 <code>ps -ef |grep 关键字 |awk &#39;&#123;print $2&#125;&#39;|xarg kill -9</code></p>
+<h3 id="服务方式运行"><a href="#服务方式运行" class="headerlink" title="服务方式运行"></a>服务方式运行</h3><p>设置开机启动 <code>systemctl enable</code></p>
+<p>启动<code>systemctl start</code></p>
+<p>关闭<code>systemctl stop</code></p>
+<h2 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h2><h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><p>显示指定文件的详细信息，比ls更详细 <code>stat</code></p>
+<p>显示在线登陆用户 <code>who</code></p>
+<p>显示当前操作用户<code>whoami</code></p>
+<p>显示主机名<code>hostname</code></p>
+<p>显示系统信息<code>uname</code></p>
+<p>动态显示当前耗费资源最多进程信息<code>top</code></p>
+<p>显示瞬间进程状态  <code>ps \ ps -aux</code></p>
+<p>查看目录大小 <code>du -h /home</code> (带有单位显示目录信息)</p>
+<p>查看磁盘大小 <code>df -h</code> (带有单位显示磁盘信息)</p>
+<p>查看网络情况 <code>ifconfig</code></p>
+<p>测试网络连通 <code>ping</code></p>
+<p>显示网络状态信息 <code>netstat</code></p>
+<p>命令不会用了，看文档 如：<code>man grep</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-16-2-centos ~]# man grep</span><br><span class="line">GREP(1)                    General Commands Manual                       GREP(1)</span><br><span class="line">NAME</span><br><span class="line">       grep, egrep, fgrep - print lines matching a pattern</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">       grep [OPTIONS] PATTERN [FILE...]</span><br><span class="line">       grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>清屏 <code>clear</code></p>
+<p>对命令重命名 <code>alias</code> ，如：<code>alias showmeit=&quot;ps -aux&quot;</code> ，解除使用<code>unaliax showmeit</code></p>
+<p>杀死进程 <code>kill</code>，可以先用<code>ps</code> 或 <code>top</code>命令查看进程的id，然后再用kill命令杀死进程。<code>kill -9</code> 强制删除</p>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p>查看防火墙状态 <code>firewall-cmd --state</code></p>
+<p>停止防火墙 <code>systemctl stop firewalld.service</code></p>
+<p>禁止firewall开机启动 <code>systemctl disable firewalld.service</code></p>
+<h3 id="关机和重启"><a href="#关机和重启" class="headerlink" title="关机和重启"></a>关机和重启</h3><p>关机 <code>shutdown -h now</code></p>
+<ul>
+<li>-r 关机重启</li>
+<li>-h 关机不重启</li>
+<li>now 立刻关机</li>
+</ul>
+<p>重启 <code>reboot</code></p>
+<p>关机  <code>halt</code></p>
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><p>查看网卡信息 <code>ifconfig</code></p>
+<p>网络配置 <code>/etc/sysconfig/network-script/ifcfg-eth0</code></p>
+<p>配置网卡 <code>/etc/udev/rules.d/70-persistent-net.rules</code></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p>创建用户 <code>useradd</code></p>
+<p>设置密码 <code>passwd</code></p>
+<ul>
+<li>存储组账号 <code>/etc/group</code></li>
+<li>系统用户配置文件<code> /etc/passwd</code></li>
+</ul>
+<p>存储用户账号的密码 <code>/etc/shadow</code></p>
+<p>存储用户组账号的密码<code>/etc/gshadow</code></p>
+<p>用户名<code>useradd</code></p>
+<p>用户名<code>userdel</code></p>
+<p>用户名<code>adduser</code></p>
+<p>组名<code>groupadd</code></p>
+<p>组名<code>groupdel</code></p>
+<p>给root设置密码<code>passwd root</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">su - root</span><br></pre></td></tr></table></figure>
+
+<p>系统环境变量<code>/etc/profile</code></p>
+<p>用户环境变量<code>bash_profile</code></p>
+<p>用户环境变量<code>.bashrc</code></p>
+<p><code>su user</code> 切换用户，加载配置文件.bashrc</p>
+<p><code>su - user</code> 切换用户，加载配置文件/etc/profile ，加载bash_profile</p>
+<p><strong>更改文件的用户及用户组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown [-R] owner[:group] &#123;File|Directory&#125;</span><br><span class="line">-rw-r--r-- 1 root root 113304268 May  3 12:22 jdk-8u281-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+
+<p>例如：还以 <code>jdk-8u281-linux-x64.rpm</code> 为例。属于用户root，组root</p>
+<p>要想切换此文件所属的用户及组。可以使用命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown daley:java jdk-8u281-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><h3 id="下载rpm安装包方式"><a href="#下载rpm安装包方式" class="headerlink" title="下载rpm安装包方式"></a>下载rpm安装包方式</h3><p>安装 <code>rpm -i jdk-XXX_linux-x64_bin.rpm</code></p>
+<p>查找 <code>rpm -qa | grep jdk</code></p>
+<p>列表 <code>rpm -qa | more</code></p>
+<blockquote>
+<p>ubuntu dpkg 方式</p>
+<p>查找dpkg -I | grep jdk</p>
+<p>列表dpkg -I | more</p>
+<p>安装dpkg -i jdk-XXX_linux-x64_bin.deb</p>
+</blockquote>
+<h3 id="yum方式"><a href="#yum方式" class="headerlink" title="yum方式"></a>yum方式</h3><p>搜索 <code>yum search jdk</code></p>
+<p>安装 <code>yum install java-11-openjdk.x86_64</code></p>
+<p>删除 <code>yum erase java-11 -openjdk.x86 64</code></p>
+<p>配置文件 <code>/etc/yum.repos.d/CentOS-Base.repo</code></p>
+<blockquote>
+<p>ubuntu apt-get 方式</p>
+<p>搜索 apt・cache search jdk</p>
+<p>安装apt-get install openjdk-9-jdk</p>
+<p>删除apt-get purge openjdk-9-jdk</p>
+<p>配置文件/etc/apt/sources. Iist</p>
+</blockquote>
+<h3 id="下载压缩文件方式"><a href="#下载压缩文件方式" class="headerlink" title="下载压缩文件方式"></a>下载压缩文件方式</h3><p>编辑 .bashrc</p>
+<p>环境变量配置</p>
+<ul>
+<li>打开环境变量文件 <code>vi /etc/profile</code></li>
+<li>配置环境变量 <code>export JAVA_HOME=/root/j d k-XXX_lin ux-x64</code></li>
+<li><code>export PATH=$JAVA HOME/bin:$PATH</code></li>
+<li>刷新配置 <code>source /etc/profile</code></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">FadeAway</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://github.com/FadeAwayOL/2021/08/15/Linux%E6%80%BB%E7%BB%93/">https://github.com/FadeAwayOL/2021/08/15/Linux%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" target="_blank"><img class="post-qr-code-img" src="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/25/%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88%E7%BC%96%E5%88%B6%E7%B3%BB%E7%BB%9F/"><img class="prev-cover" src="https://s2.loli.net/2021/12/28/5UwqmpHYjO2dixG.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/"><img class="next-cover" src="https://i.loli.net/2021/06/08/lchXdRPkjCIJsgG.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">DFS迷宫</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FadeAway</div><div class="author-info__description">浪漫和悲观并不冲突 我时常很消极却又觉得生活很美好</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">55</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/FadeAwayOL"><i class="fab fa-github"></i><span>Follow Me Please</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FadeAwayOL" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1532764584@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content"><img src="https://blog.imlete.cn/img/Index/Yay.gif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不自弃者天不弃</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">目录操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">vim操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E5%8E%8B%E7%BC%A9%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">打包压缩相关命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%AE%A1%E9%81%93"><span class="toc-number">4.</span> <span class="toc-text">Linux管道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number"></span> <span class="toc-text">文件权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%9D%83%E9%99%90"><span class="toc-number">1.</span> <span class="toc-text">三种基本权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-number">2.</span> <span class="toc-text">更改权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-number"></span> <span class="toc-text">运行程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text">命令行运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="toc-number">2.</span> <span class="toc-text">后台运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%96%B9%E5%BC%8F%E8%BF%90%E8%A1%8C"><span class="toc-number">3.</span> <span class="toc-text">服务方式运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="toc-number"></span> <span class="toc-text">系统相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">系统管理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">2.</span> <span class="toc-text">防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF"><span class="toc-number">3.</span> <span class="toc-text">关机和重启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">网络配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number"></span> <span class="toc-text">用户管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number"></span> <span class="toc-text">安装软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDrpm%E5%AE%89%E8%A3%85%E5%8C%85%E6%96%B9%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">下载rpm安装包方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yum%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">yum方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">下载压缩文件方式</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/25/%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88%E7%BC%96%E5%88%B6%E7%B3%BB%E7%BB%9F/" title="No title"><img src="https://s2.loli.net/2021/12/28/5UwqmpHYjO2dixG.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/04/25/%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88%E7%BC%96%E5%88%B6%E7%B3%BB%E7%BB%9F/" title="No title">No title</a><time datetime="2023-04-25T03:43:52.426Z" title="Created 2023-04-25 11:43:52">2023-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/15/Linux%E6%80%BB%E7%BB%93/" title="linux总结"><img src="https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux总结"/></a><div class="content"><a class="title" href="/2021/08/15/Linux%E6%80%BB%E7%BB%93/" title="linux总结">linux总结</a><time datetime="2021-08-15T03:27:42.000Z" title="Created 2021-08-15 11:27:42">2021-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/" title="DFS迷宫"><img src="https://i.loli.net/2021/06/08/lchXdRPkjCIJsgG.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DFS迷宫"/></a><div class="content"><a class="title" href="/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/" title="DFS迷宫">DFS迷宫</a><time datetime="2021-07-28T00:32:46.000Z" title="Created 2021-07-28 08:32:46">2021-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/" title="回溯法"><img src="https://i.loli.net/2021/06/08/B17r8O42W6QmsLP.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="回溯法"/></a><div class="content"><a class="title" href="/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/" title="回溯法">回溯法</a><time datetime="2021-06-04T02:14:23.000Z" title="Created 2021-06-04 10:14:23">2021-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/" title="位示图计算"><img src="https://i.loli.net/2021/06/01/MZeamjgtCqSVsQ6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="位示图计算"/></a><div class="content"><a class="title" href="/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/" title="位示图计算">位示图计算</a><time datetime="2021-06-01T06:21:15.000Z" title="Created 2021-06-01 14:21:15">2021-06-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2021/06/08/gh5sQwy3qWRLVFb.jpg#')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By FadeAway</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">别想着一帆风顺，总有时光默默无闻</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7AwEz6VhpVAfjnEpmbOH8bFM-gzGzoHsz',
+      appKey: 'IR3o4kvmw9GDbNp2A0b0W2pi',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: 'emoji CDN',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
