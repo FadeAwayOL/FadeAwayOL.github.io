@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>FastAdmin上手记录</title>
+    <url>/2023/06/01/FastAdmin%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="FastAdmin上手记录"><a href="#FastAdmin上手记录" class="headerlink" title="FastAdmin上手记录"></a>FastAdmin上手记录</h1><h4 id="1-dubug模式开启"><a href="#1-dubug模式开启" class="headerlink" title="1.dubug模式开启"></a>1.dubug模式开启</h4><p>配置项：   .env—-         <code>debug=true</code></p>
+<h4 id="2-一键CRUD"><a href="#2-一键CRUD" class="headerlink" title="2.一键CRUD"></a>2.一键CRUD</h4><p>通过在线命令—————-对应数据库字段————–一键生成控制器—————一键生成菜单栏</p>
+<p>根据官方文档对应特殊字段进行操作 <a href="https://doc.fastadmin.net/doc/database.html">数据库 - FastAdmin框架文档</a></p>
+<h4 id="3-控制器"><a href="#3-控制器" class="headerlink" title="3.控制器"></a>3.控制器</h4><h5 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h5><p>登录与鉴权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    protected $noNeedLogin = [&#x27;mywork&#x27;];</span><br><span class="line">    protected $noNeedRight = [&#x27;mywork1&#x27;];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">        public function mywork()&#123;</span><br><span class="line">        return &#x27;无需登录和鉴权 work&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * mywork1</span><br><span class="line">     **/</span><br><span class="line">    public function mywork1()&#123;</span><br><span class="line">        return &#x27;无需鉴权但要登录 work1&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>后台管理系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Revit上手实践</title>
     <url>/2023/06/06/Revit%E4%B8%8A%E6%89%8B%E5%AE%9E%E8%B7%B5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Revit上手实践"><a href="#Revit上手实践" class="headerlink" title="Revit上手实践"></a>Revit上手实践</h1><h4 id="1-3D模型（Sketch-up-BIM-3D-MAX"><a href="#1-3D模型（Sketch-up-BIM-3D-MAX" class="headerlink" title="1.3D模型（Sketch up, BIM,3D MAX)"></a>1.<strong>3D模型（Sketch up, BIM,3D MAX)</strong></h4><p>revit支持su文件，需要安装插件AutodeskImportSkp</p>
@@ -890,7 +907,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#111;&#109;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
