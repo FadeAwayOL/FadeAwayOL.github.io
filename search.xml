@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Revit上手实践</title>
+    <url>/2023/06/06/Revit%E4%B8%8A%E6%89%8B%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Revit上手实践"><a href="#Revit上手实践" class="headerlink" title="Revit上手实践"></a>Revit上手实践</h1><h4 id="1-3D模型（Sketch-up-BIM-3D-MAX"><a href="#1-3D模型（Sketch-up-BIM-3D-MAX" class="headerlink" title="1.3D模型（Sketch up, BIM,3D MAX)"></a>1.<strong>3D模型（Sketch up, BIM,3D MAX)</strong></h4><p>revit支持su文件，需要安装插件AutodeskImportSkp</p>
+<p>插件将自动转换可以保存为rvt文件</p>
+<h4 id="2-Revit标注工具"><a href="#2-Revit标注工具" class="headerlink" title="2.Revit标注工具"></a>2.Revit标注工具</h4><p>常见的图纸标注操作：</p>
+<ol>
+<li><p>标注尺寸：在视图中选择“尺寸”工具，在需要标注的两个点之间划出一条尺寸线，然后输入数值即可。</p>
+</li>
+<li><p>标注标高：在视图中选择“标高”工具，在需要标注的墙体或结构上点击一下即可标注出标高。</p>
+</li>
+<li><p>标注面积：在视图中选择“面积”工具，在需要标注的区域内划出一条边框，然后输入数值即可。</p>
+</li>
+<li><p>标注体积：在视图中选择“体积”工具，在需要标注的区域内划出一条边框，然后输入数值即可。</p>
+</li>
+<li><p>标注族参数：在视图中选择“族参数”工具，在需要标注的族上点击一下即可标注出参数名称和数值。</p>
+</li>
+</ol>
+<p>在Revit中，还可以使用注释、标签、文字等工具对图纸进行更加详细的标注和说明。</p>
+]]></content>
+      <categories>
+        <category>3D建模</category>
+      </categories>
+      <tags>
+        <tag>revit</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL与MongoDB</title>
     <url>/2023/05/29/MySQL%E4%B8%8EMongoDB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MySQL与MongoDB"><a href="#MySQL与MongoDB" class="headerlink" title="MySQL与MongoDB"></a>MySQL与MongoDB</h1><p>1.MySQL是一个关系型数据库管理系统（Relational Database Management System：RDBMS））由于瑞典[MySQL AB](<a href="https://baike.baidu.com/item/MySQL">https://baike.baidu.com/item/MySQL</a> AB/2620844?fromModule=lemma_inlink) 公司开发，属于 <a href="https://baike.baidu.com/item/Oracle?fromModule=lemma_inlink">Oracle</a> 旗下产品。</p>
@@ -863,7 +890,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#111;&#109;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
