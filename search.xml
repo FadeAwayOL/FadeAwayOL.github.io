@@ -1,6 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>分治法</title>
+    <url>/2021/05/14/%E5%88%86%E6%B2%BB%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h1><p>分治法是一种解决问题的思想，它将一个大问题分解为若干个小问题，然后递归地解决每个小问题，最终将各个小问题的结果合并起来得到大问题的解。分治法通常包括以下三个步骤：</p>
+<ol>
+<li><p>分解问题：将原问题划分为若干个规模较小、相互独立、与原问题形式相同的子问题。</p>
+</li>
+<li><p>解决问题：递归地解决各个子问题。如果子问题的规模足够小，可以直接求解。</p>
+</li>
+<li><p>合并问题：将各个子问题的结果合并为原问题的解。</p>
+</li>
+</ol>
+<p>分治法的典型应用包括排序算法（例如归并排序、快速排序）、查找算法（例如二分查找）、计算几何问题（例如最近点对问题）等。在使用分治法时，需要注意以下几点：</p>
+<ol>
+<li><p>确定好子问题的规模和划分方式。</p>
+</li>
+<li><p>确定好递归终止条件，避免出现死递归。</p>
+</li>
+<li><p>合并子问题的结果时要注意合并顺序和合并规则。</p>
+</li>
+<li><p>对于一些复杂的问题，可以考虑采用优化策略，例如记忆化搜索、动态规划等。</p>
+</li>
+</ol>
+<p>总之，分治法是一种有力的问题解决方法，能够有效地提高问题的求解效率，但在具体实现时需要注意细节问题。</p>
+<p>以下是一个简单的Java代码示例，展示了如何使用分治法递归求解一个数组中的最大值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DivideAndConquerExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[start];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (start + end) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> leftMax = max(nums, start, mid);</span><br><span class="line">        <span class="keyword">int</span> rightMax = max(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftMax, rightMax);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums = &#123;<span class="number">2</span>, <span class="number">5</span>, -<span class="number">3</span>, <span class="number">10</span>, <span class="number">6</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> max = max(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Max number is &quot;</span> + max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，max方法使用了递归的方式，将原问题分解成两个子问题，分别求解左半部分和右半部分的最大值，最后将两个子问题的解合并起来，得到原问题的解。在每次递归中，都将数组的范围缩小一半，直到范围只有一个数，这时直接返回该数作为结果。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过河卒</title>
+    <url>/2020/06/22/%E8%BF%87%E6%B2%B3%E5%8D%92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="洛谷-P１００２"><a href="#洛谷-P１００２" class="headerlink" title="洛谷-P１００２"></a>洛谷-P１００２</h1><p>棋盘上 A<em>A</em> 点有一个过河卒，需要走到目标 B<em>B</em> 点。卒行走的规则：可以向下、或者向右。同时在棋盘上 C<em>C</em>点有一个对方的马，该马所在的点和所有跳跃一步可达的点称为对方马的控制点。因此称之为“马拦过河卒”。</p>
+<p>棋盘用坐标表示，A<em>A</em> 点 (0, 0)(0,0)、B<em>B</em> 点 (n, m)(<em>n</em>,<em>m</em>)，同样马的位置坐标是需要给出的。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vg6k477j.png" alt="img"></p>
+<p>现在要求你计算出卒从 A<em>A</em> 点能够到达 B<em>B</em> 点的路径的条数，假设马的位置是固定不动的，并不是卒走一步马走一步。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> x,y,mx,my;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">30</span>][<span class="number">30</span>],map[<span class="number">30</span>][<span class="number">30</span>];<span class="comment">//地图位置</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bj</span><span class="params">(<span class="keyword">int</span> mmx,<span class="keyword">int</span> mmy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    map[mmx][mmy]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-1</span>][mmy<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-2</span>][mmy<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-2</span>][mmy+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-1</span>][mmy+<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">1</span>][mmy<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">2</span>][mmy<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">2</span>][mmy+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">1</span>][mmy+<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">&#125;<span class="comment">//被控制点位</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    a[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    cin&gt;&gt;x&gt;&gt;y&gt;&gt;mx&gt;&gt;my;</span><br><span class="line">    <span class="built_in">bj</span>(mx,my);<span class="comment">//调用</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=x+<span class="number">1</span>;i++)<span class="comment">//x+1移动位置,避免负数,下同</span></span><br><span class="line">    &#123;    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=y+<span class="number">1</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">           a[i][j]=a[i<span class="number">-1</span>][j]+a[i][j<span class="number">-1</span>];<span class="comment">//加法原理</span></span><br><span class="line">			<span class="keyword">if</span>(map[i<span class="number">-1</span>][j<span class="number">-1</span>])a[i][j]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">    cout&lt;&lt;a[x+<span class="number">1</span>][y+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="解题思想"><a href="#解题思想" class="headerlink" title="解题思想"></a>解题思想</h2><h3 id="1-递推"><a href="#1-递推" class="headerlink" title="1.递推"></a>1.递推</h3><p>a[i][j]=a[i-1][j]+a[i][j-1]</p>
+<h3 id="2-加法原理"><a href="#2-加法原理" class="headerlink" title="2.加法原理"></a>2.加法原理</h3><p>加法原理是分类<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=68529775&ss_c=ssc.citiao.link">计数原理</a>，常用于排列组合中，具体是指：做一件事，完成它可以有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/10026/20171026064801-1372440496.jpg/0" alt="img"></a>类方法，在第一类方法中有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/22553/20171026064801-940139457.jpg/0" alt="img"></a>种不同方法，在第二类方法中有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/6598/20171026064801-334726554.jpg/0" alt="img"></a>种不同方法，……，在第<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/10026/20171026064801-1372440496.jpg/0" alt="img"></a>类方法中有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/10627/20171026064801-1296215814.jpg/0" alt="img"></a>种不同方法，那么完成这件事共有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/7294/20171026064801-809325235.jpg/0" alt="img"></a>种不同的方法。</p>
+<h3 id="3-动态分配"><a href="#3-动态分配" class="headerlink" title="3.动态分配"></a>3.动态分配</h3><p>动态分配是指在程序运行过程中根据需要动态地分配内存空间。在静态分配中，程序在编译时就已经确定了变量的内存空间大小，而在动态分配中，程序可以根据实际需要动态地分配所需的内存空间，这样可以更加灵活地使用内存，避免浪费。在C++中，可以使用new关键字动态分配内存，使用delete关键字释放内存。在Java中，可以使用new关键字动态分配内存，但是Java具有自动内存管理机制，所以不需要手动释放内存，由垃圾回收机制来回收没有被使用的内存空间。</p>
+<h3 id="4-避免越界"><a href="#4-避免越界" class="headerlink" title="4.避免越界"></a>4.避免越界</h3><p>越界是指访问数组或指针指向的内存空间时，访问了超过其边界的部分，这种行为是不安全的，可能会导致程序崩溃、数据丢失等问题。为了避免越界，可以采取以下措施：</p>
+<ol>
+<li><p>在编写代码时，要注意数组和指针的边界，不要越界访问。</p>
+</li>
+<li><p>使用一些工具来辅助检测越界问题，例如静态代码分析工具、动态内存分析工具、代码审查等。</p>
+</li>
+<li><p>对于数组和指针的访问，可以使用一些防止越界的技术，例如使用STL容器代替原生数组、使用智能指针代替裸指针、使用异常处理机制等。</p>
+</li>
+<li><p>在使用数组和指针时，要注意变量的范围和生命周期，避免因为变量已经被销毁而导致访问已经失效的内存空间。</p>
+</li>
+<li><p>如果需要访问超过数组或指针边界之外的内存空间，可以考虑使用边界检查技术或者使用安全的库函数，例如memcpy_s、strncpy_s等。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>递归算法设计</title>
+    <url>/2021/05/14/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="递归算法设计"><a href="#递归算法设计" class="headerlink" title="递归算法设计"></a>递归算法设计</h1><h1 id="递归定义"><a href="#递归定义" class="headerlink" title="递归定义"></a>递归定义</h1><p>递归：函数在定义中又调用函数自身的方法</p>
+<p>递归算法是一种函数自己调用自己的算法，它通常用于解决具有递归结构的问题。递归算法的设计通常包括以下步骤：</p>
+<ol>
+<li><p>定义递归函数的输入和输出：确定递归函数的输入参数和输出结果，这有助于我们理解问题的本质和解决方案。</p>
+</li>
+<li><p>确定递归结束条件：在设计递归算法时，必须明确递归结束的条件，否则递归可能会无限进行下去，导致栈溢出等问题。</p>
+</li>
+<li><p>确定递归调用的规则：递归算法必须满足向基本情况逼近的原则，即每次递归调用都必须使问题规模减小，最终到达递归结束条件。</p>
+</li>
+<li><p>确定递归合并的规则：在递归算法中，需要将每次递归调用的结果合并起来得到最终的结果。</p>
+</li>
+<li><p>优化递归算法：递归算法在处理大规模数据时可能会导致栈溢出等问题，因此需要进行一些优化，如尾递归优化、循环迭代等。</p>
+</li>
+</ol>
+<p>需要注意的是，递归算法的设计需要注意递归深度和空间复杂度，尽量避免递归深度过深或空间复杂度过高的情况。</p>
+<p>下面是一些Java的示例代码：</p>
+<ol>
+<li>MyBatis框架的示例代码</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 配置文件mybatis-config.xml中定义了数据源和SQL映射文件，可以通过如下方式获取SqlSessionFactory对象</span><br><span class="line">String resource = &quot;mybatis-config.xml&quot;;</span><br><span class="line">InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</span><br><span class="line"></span><br><span class="line">// 获取SqlSession对象，用于执行SQL语句</span><br><span class="line">SqlSession session = sqlSessionFactory.openSession();</span><br><span class="line">try &#123;</span><br><span class="line">  // 执行查询操作</span><br><span class="line">  List&lt;User&gt; userList = session.selectList(&quot;com.example.mapper.UserMapper.selectUsers&quot;);</span><br><span class="line"></span><br><span class="line">  // 执行插入操作</span><br><span class="line">  User user = new User(&quot;Tom&quot;, 20);</span><br><span class="line">  session.insert(&quot;com.example.mapper.UserMapper.insertUser&quot;, user);</span><br><span class="line">  session.commit();</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">  session.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>static关键字的示例代码</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class MyClass &#123;</span><br><span class="line">  // 静态变量</span><br><span class="line">  static int count = 0;</span><br><span class="line"></span><br><span class="line">  // 静态方法</span><br><span class="line">  public static void increaseCount() &#123;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 实例方法</span><br><span class="line">  public void printCount() &#123;</span><br><span class="line">    System.out.println(&quot;Count: &quot; + count);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用静态变量和方法</span><br><span class="line">MyClass.increaseCount();</span><br><span class="line">MyClass obj1 = new MyClass();</span><br><span class="line">obj1.printCount(); // Output: Count: 1</span><br><span class="line"></span><br><span class="line">// 再次使用静态变量和方法</span><br><span class="line">MyClass.increaseCount();</span><br><span class="line">MyClass obj2 = new MyClass();</span><br><span class="line">obj2.printCount(); // Output: Count: 2</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>递归算法的示例代码</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class RecursiveAlgorithm &#123;</span><br><span class="line">  // 计算n的阶乘</span><br><span class="line">  public static int factorial(int n) &#123;</span><br><span class="line">    if (n == 0) &#123;</span><br><span class="line">      return 1; // 结束条件</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return n * factorial(n - 1); // 调用规则</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 计算斐波那契数列的第n项</span><br><span class="line">  public static int fibonacci(int n) &#123;</span><br><span class="line">    if (n &lt;= 1) &#123;</span><br><span class="line">      return n; // 结束条件</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return fibonacci(n - 1) + fibonacci(n - 2); // 调用规则</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用递归算法计算阶乘和斐波那契数列</span><br><span class="line">int n = 5;</span><br><span class="line">int factorial = RecursiveAlgorithm.factorial(n);</span><br><span class="line">int fibonacci = RecursiveAlgorithm.fibonacci(n);</span><br><span class="line">System.out.println(n + &quot;! = &quot; + factorial); // Output: 5! = 120</span><br><span class="line">System.out.println(&quot;Fibonacci(&quot; + n + &quot;) = &quot; + fibonacci); // Output: Fibonacci(5) = 5</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>static局部变量辨析</title>
+    <url>/2020/08/29/static%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="普通局部变量与static局部变量的区别"><a href="#普通局部变量与static局部变量的区别" class="headerlink" title="普通局部变量与static局部变量的区别"></a>普通局部变量与static局部变量的区别</h2><h3 id="内存分配和释放"><a href="#内存分配和释放" class="headerlink" title="内存分配和释放"></a>内存分配和释放</h3><h4 id="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"><a href="#1、普通局部变量只有执行到变量定义的语句的时候才分配空间。" class="headerlink" title="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"></a>1、普通局部变量只有执行到变量定义的语句的时候才分配空间。</h4><h4 id="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"><a href="#2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。" class="headerlink" title="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"></a>2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。</h4><h4 id="3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。"><a href="#3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。" class="headerlink" title="3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。"></a>3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。</h4><h4 id="4、static局部变量只有在整个程序结束的时候才将其自动释放。"><a href="#4、static局部变量只有在整个程序结束的时候才将其自动释放。" class="headerlink" title="4、static局部变量只有在整个程序结束的时候才将其自动释放。"></a>4、static局部变量只有在整个程序结束的时候才将其自动释放。</h4><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><h4 id="1、普通局部变量不初始化，为随机值。"><a href="#1、普通局部变量不初始化，为随机值。" class="headerlink" title="1、普通局部变量不初始化，为随机值。"></a>1、普通局部变量不初始化，为随机值。</h4><h4 id="2、static局部变量不初始化，为0。"><a href="#2、static局部变量不初始化，为0。" class="headerlink" title="2、static局部变量不初始化，为0。"></a>2、static局部变量不初始化，为0。</h4><h4 id="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"><a href="#3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。" class="headerlink" title="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"></a>3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。</h4><h4 id="4、static局部变量只能用它常量初始化。"><a href="#4、static局部变量只能用它常量初始化。" class="headerlink" title="4、static局部变量只能用它常量初始化。"></a>4、static局部变量只能用它常量初始化。</h4><p><strong>成员变量和局部变量的区别<br>   (1)在类中的位置不同<br>     成员变量：类中方法外<br>     局部变量：方法定义中或者方法声明上<br>   (2)在内存中的位置不同<br>     成员变量：在堆中<br>     局部变量：在栈中<br>   (3)生命周期不同<br>     成员变量：随着对象的创建而存在，随着对象的消失而消失<br>     局部变量：随着方法的调用而存在，随着方法的调用完毕而消失<br>   (4)初始化值不同<br>     成员变量：有默认值<br>     局部变量：没有默认值，必须定义，赋值，然后才能使用</strong></p>
+<h3 id="5-static是Java中的关键字"><a href="#5-static是Java中的关键字" class="headerlink" title="5.static是Java中的关键字"></a>5.<code>static</code>是Java中的关键字</h3><p>表示静态的、共享的意思。在Java中，<code>static</code>可以用来修饰类、方法和变量。</p>
+<p>当<code>static</code>修饰一个变量时，该变量被称为静态变量或类变量，可以被类的所有实例共享。在内存中，静态变量被存储在静态存储区中，只会被初始化一次。由于静态变量的共享性，它们可以用来表示所有对象共有的属性，比如类的常量。</p>
+<p>当<code>static</code>修饰一个方法时，该方法被称为静态方法或类方法，可以直接通过类名调用，不需要实例化类对象。静态方法只能访问静态变量和静态方法，不能访问非静态的实例变量和实例方法。</p>
+<p>当<code>static</code>修饰一个类时，该类被称为静态内部类，可以在外部类的静态方法中直接创建静态内部类的实例，而不需要创建外部类的实例。静态内部类和普通内部类一样，可以访问外部类的静态变量和静态方法，但不能访问非静态的实例变量和实例方法。</p>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MyBatis框架</title>
+    <url>/2021/02/22/MyBatis%E6%A1%86%E6%9E%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MyBatis框架"><a href="#MyBatis框架" class="headerlink" title="MyBatis框架"></a>MyBatis框架</h1><h2 id="1-什么是框架"><a href="#1-什么是框架" class="headerlink" title="1.什么是框架?"></a>1.什么是框架?</h2><pre><code>     **框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法;另一种定义认为，框架是可被应用开发者定制的应用骨架。前者是从应用方面而后者是从目的方面给出的定义。简而言之，框架其实就是某种应用的半成品，就是一组组件，供你选用完成你自己的系统。就是使用别人搭好的舞台，你来做表演。而且，框架一般是成熟的，不断升级的软件。**
+</code></pre>
+<h2 id="2-mybatis"><a href="#2-mybatis" class="headerlink" title="2.mybatis"></a>2.mybatis</h2><p><strong>MyBatis是一个开源的持久层框架</strong>，它可以帮助<strong>开发者避免手写JDBC代码，简化数据访问层（DAO）的开发</strong>。MyBatis通过XML或注解的方式将Java对象映射到数据库表中的记录，使得开发者可以通过面向对象的方式来操作数据库，而不必关心底层的SQL语句和数据访问细节。同时，MyBatis支持动态SQL语句的构建，可以根据不同的条件动态生成SQL语句，提高了SQL语句的可重用性和灵活性。MyBatis还提供了多种高级特性，例如缓存、事务管理、延迟加载等，可以帮助开发者更加高效地使用数据库。</p>
+<p>MyBatis的优点不仅仅局限于简化DAO开发和动态SQL语句的构建，它还可以与Spring框架等其他框架无缝集成，提高开发的效率和可维护性。此外，MyBatis还具备良好的扩展性和灵活性，可以根据项目实际需求进行自定义开发和配置。总的来说，MyBatis是一个非常优秀的持久层框架，被广泛应用于各种Java项目中。</p>
+<p><strong>MyBatis的整合能力非常强大，可以与Spring、Spring Boot、Spring MVC等框架无缝集成</strong>，使得开发者可以更加方便地使用MyBatis进行数据访问。同时，MyBatis还具有良好的可扩展性和灵活性，可以通过自定义插件、类型处理器等方式满足项目实际需求。此外，MyBatis的性能也非常出色，通过缓存机制和延迟加载等技术可以有效地提高数据库访问的效率。综上所述，MyBatis是一个非常优秀的持久层框架，被广泛应用于各种Java项目中。</p>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>java框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DFS迷宫</title>
+    <url>/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="DFS迷宫"><a href="#DFS迷宫" class="headerlink" title="DFS迷宫"></a>DFS迷宫</h1><p>DFS（深度优先搜索）可以用来解决迷宫问题。以下是一个使用DFS算法解决迷宫问题的示例代码：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 定义迷宫</span></span><br><span class="line"><span class="variable">$maze</span> = <span class="keyword">array</span>(</span><br><span class="line">    <span class="keyword">array</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">    <span class="keyword">array</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">    <span class="keyword">array</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">    <span class="keyword">array</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">    <span class="keyword">array</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义起点和终点</span></span><br><span class="line"><span class="variable">$start</span> = <span class="keyword">array</span>(<span class="string">&#x27;x&#x27;</span> =&gt; <span class="number">0</span>, <span class="string">&#x27;y&#x27;</span> =&gt; <span class="number">0</span>);</span><br><span class="line"><span class="variable">$end</span> = <span class="keyword">array</span>(<span class="string">&#x27;x&#x27;</span> =&gt; <span class="number">4</span>, <span class="string">&#x27;y&#x27;</span> =&gt; <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义搜索函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">search</span>(<span class="params"><span class="variable">$maze</span>, <span class="variable">$start</span>, <span class="variable">$end</span></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 标记已经访问过的位置</span></span><br><span class="line">    <span class="variable">$visited</span> = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; count(<span class="variable">$maze</span>); <span class="variable">$i</span>++) &#123;</span><br><span class="line">        <span class="variable">$visited</span>[<span class="variable">$i</span>] = <span class="keyword">array</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$j</span> = <span class="number">0</span>; <span class="variable">$j</span> &lt; count(<span class="variable">$maze</span>[<span class="variable">$i</span>]); <span class="variable">$j</span>++) &#123;</span><br><span class="line">            <span class="variable">$visited</span>[<span class="variable">$i</span>][<span class="variable">$j</span>] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义方向数组</span></span><br><span class="line">    <span class="variable">$directions</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="keyword">array</span>(<span class="number">0</span>, <span class="number">1</span>),   <span class="comment">// 右</span></span><br><span class="line">        <span class="keyword">array</span>(<span class="number">1</span>, <span class="number">0</span>),   <span class="comment">// 下</span></span><br><span class="line">        <span class="keyword">array</span>(<span class="number">0</span>, -<span class="number">1</span>),  <span class="comment">// 左</span></span><br><span class="line">        <span class="keyword">array</span>(-<span class="number">1</span>, <span class="number">0</span>)   <span class="comment">// 上</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义DFS函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params"><span class="variable">$maze</span>, <span class="variable">$visited</span>, <span class="variable">$start</span>, <span class="variable">$end</span>, <span class="variable">$directions</span></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 判断是否到达终点</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$start</span>[<span class="string">&#x27;x&#x27;</span>] == <span class="variable">$end</span>[<span class="string">&#x27;x&#x27;</span>] &amp;&amp; <span class="variable">$start</span>[<span class="string">&#x27;y&#x27;</span>] == <span class="variable">$end</span>[<span class="string">&#x27;y&#x27;</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 标记当前位置已经访问过</span></span><br><span class="line">        <span class="variable">$visited</span>[<span class="variable">$start</span>[<span class="string">&#x27;x&#x27;</span>]][<span class="variable">$start</span>[<span class="string">&#x27;y&#x27;</span>]] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历四个方向</span></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$directions</span> <span class="keyword">as</span> <span class="variable">$d</span>) &#123;</span><br><span class="line">            <span class="variable">$next</span> = <span class="keyword">array</span>(<span class="string">&#x27;x&#x27;</span> =&gt; <span class="variable">$start</span>[<span class="string">&#x27;x&#x27;</span>] + <span class="variable">$d</span>[<span class="number">0</span>], <span class="string">&#x27;y&#x27;</span> =&gt; <span class="variable">$start</span>[<span class="string">&#x27;y&#x27;</span>] + <span class="variable">$d</span>[<span class="number">1</span>]);</span><br><span class="line">            <span class="comment">// 判断下一个位置是否可以访问</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$next</span>[<span class="string">&#x27;x&#x27;</span>] &gt;= <span class="number">0</span> &amp;&amp; <span class="variable">$next</span>[<span class="string">&#x27;x&#x27;</span>] &lt; count(<span class="variable">$maze</span>) &amp;&amp;</span><br><span class="line">                <span class="variable">$next</span>[<span class="string">&#x27;y&#x27;</span>] &gt;= <span class="number">0</span> &amp;&amp; <span class="variable">$next</span>[<span class="string">&#x27;y&#x27;</span>] &lt; count(<span class="variable">$maze</span>[<span class="variable">$next</span>[<span class="string">&#x27;x&#x27;</span>]]) &amp;&amp;</span><br><span class="line">                <span class="variable">$maze</span>[<span class="variable">$next</span>[<span class="string">&#x27;x&#x27;</span>]][<span class="variable">$next</span>[<span class="string">&#x27;y&#x27;</span>]] == <span class="number">0</span> &amp;&amp;</span><br><span class="line">                !<span class="variable">$visited</span>[<span class="variable">$next</span>[<span class="string">&#x27;x&#x27;</span>]][<span class="variable">$next</span>[<span class="string">&#x27;y&#x27;</span>]]) &#123;</span><br><span class="line">                <span class="comment">// 递归搜索下一个位置</span></span><br><span class="line">                <span class="keyword">if</span> (dfs(<span class="variable">$maze</span>, <span class="variable">$visited</span>, <span class="variable">$next</span>, <span class="variable">$end</span>, <span class="variable">$directions</span>)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用DFS函数</span></span><br><span class="line">    <span class="keyword">return</span> dfs(<span class="variable">$maze</span>, <span class="variable">$visited</span>, <span class="variable">$start</span>, <span class="variable">$end</span>, <span class="variable">$directions</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用搜索函数</span></span><br><span class="line"><span class="keyword">if</span> (search(<span class="variable">$maze</span>, <span class="variable">$start</span>, <span class="variable">$end</span>)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;可以到达终点&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;无法到达终点&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码定义了一个迷宫，起点为左上角，终点为右下角。然后使用DFS算法搜索从起点到终点的路径。如果可以找到路径，输出“可以到达终点”，否则输出“无法到达终点”。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>实践</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PHP语法</title>
     <url>/2021/03/13/PHP%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PHP语法"><a href="#PHP语法" class="headerlink" title="PHP语法"></a>PHP语法</h1><p>PHP是一种脚本语言，用于开发Web应用程序。下面是PHP的基本语法：</p>
@@ -933,17 +1092,6 @@ echo $NoAlike;
       </tags>
   </entry>
   <entry>
-    <title>DFS迷宫</title>
-    <url>/2021/07/28/DFS%E8%BF%B7%E5%AE%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="DFS迷宫"><a href="#DFS迷宫" class="headerlink" title="DFS迷宫"></a>DFS迷宫</h1>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>实践</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客搭建</title>
     <url>/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-创建github个人仓库"><a href="#1-创建github个人仓库" class="headerlink" title="1.创建github个人仓库"></a>1.创建github个人仓库</h2><p>github账户你值得拥有！</p>
@@ -977,7 +1125,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
@@ -1357,19 +1505,6 @@ CSS3实现属性选择器实现样式页面
       </tags>
   </entry>
   <entry>
-    <title>MyBatis框架</title>
-    <url>/2021/02/22/MyBatis%E6%A1%86%E6%9E%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MyBatis框架"><a href="#MyBatis框架" class="headerlink" title="MyBatis框架"></a>MyBatis框架</h1><h2 id="1-什么是框架"><a href="#1-什么是框架" class="headerlink" title="1.什么是框架?"></a>1.什么是框架?</h2><pre><code>     **框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法;另一种定义认为，框架是可被应用开发者定制的应用骨架。前者是从应用方面而后者是从目的方面给出的定义。简而言之，框架其实就是某种应用的半成品，就是一组组件，供你选用完成你自己的系统。就是使用别人搭好的舞台，你来做表演。而且，框架一般是成熟的，不断升级的软件。**
-</code></pre>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>java框架</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Socket实现上传下载</title>
     <url>/2021/04/07/Socket%E5%AE%9E%E7%8E%B0%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Socket实现上传下载"><a href="#Socket实现上传下载" class="headerlink" title="Socket实现上传下载"></a>Socket实现上传下载</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedInputStream;</span><br><span class="line">        <span class="keyword">import</span> java.io.BufferedOutputStream;</span><br><span class="line">        <span class="keyword">import</span> java.io.DataOutputStream;</span><br><span class="line">        <span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line">        <span class="keyword">import</span> java.io.IOException;</span><br><span class="line">        <span class="keyword">import</span> java.io.InputStream;</span><br><span class="line">        <span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line">        <span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="comment">//服务端server</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span>  <span class="title">upload</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;================服务端server==============&quot;</span>);</span><br><span class="line">        ServerSocket ss = <span class="keyword">new</span> ServerSocket(<span class="number">8888</span>);</span><br><span class="line">        Socket socket = ss.accept();</span><br><span class="line">        <span class="comment">//读取客户端发送的数据</span></span><br><span class="line">        BufferedInputStream buf = <span class="keyword">new</span> BufferedInputStream(socket.getInputStream());</span><br><span class="line">        <span class="comment">//将客户端发送的数据读取到本地</span></span><br><span class="line">        BufferedOutputStream bos = <span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">&quot;E:\\q1.txt&quot;</span>));</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//边读边写</span></span><br><span class="line">        <span class="keyword">while</span> ((len = buf.read(b)) != -<span class="number">1</span>) &#123;</span><br><span class="line">            bos.write(b,<span class="number">0</span>,len);</span><br><span class="line">            bos.flush();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;写出完毕&quot;</span>);</span><br><span class="line">        <span class="comment">//发送消息到客户端</span></span><br><span class="line">        DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(socket.getOutputStream());</span><br><span class="line">        dos.writeUTF(<span class="string">&quot;上传成功&quot;</span>);</span><br><span class="line">        dos.flush();</span><br><span class="line">        dos.close();</span><br><span class="line">        bos.close();</span><br><span class="line">        buf.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1383,18 +1518,6 @@ CSS3实现属性选择器实现样式页面
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>stach局部变量辨析</title>
-    <url>/2020/08/29/stach%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="普通局部变量与static局部变量的区别"><a href="#普通局部变量与static局部变量的区别" class="headerlink" title="普通局部变量与static局部变量的区别"></a>普通局部变量与static局部变量的区别</h2><h3 id="内存分配和释放"><a href="#内存分配和释放" class="headerlink" title="内存分配和释放"></a>内存分配和释放</h3><h4 id="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"><a href="#1、普通局部变量只有执行到变量定义的语句的时候才分配空间。" class="headerlink" title="1、普通局部变量只有执行到变量定义的语句的时候才分配空间。"></a>1、普通局部变量只有执行到变量定义的语句的时候才分配空间。</h4><h4 id="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"><a href="#2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。" class="headerlink" title="2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。"></a>2、static局部变量在编译阶段（函数还没有执行），变量的空间已经分配。</h4><h4 id="3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。"><a href="#3、普通局部变量离开作用域-，自动释放其空间，也就无法使用此变量。" class="headerlink" title="3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。"></a>3、普通局部变量离开作用域{}，自动释放其空间，也就无法使用此变量。</h4><h4 id="4、static局部变量只有在整个程序结束的时候才将其自动释放。"><a href="#4、static局部变量只有在整个程序结束的时候才将其自动释放。" class="headerlink" title="4、static局部变量只有在整个程序结束的时候才将其自动释放。"></a>4、static局部变量只有在整个程序结束的时候才将其自动释放。</h4><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><h4 id="1、普通局部变量不初始化，为随机值。"><a href="#1、普通局部变量不初始化，为随机值。" class="headerlink" title="1、普通局部变量不初始化，为随机值。"></a>1、普通局部变量不初始化，为随机值。</h4><h4 id="2、static局部变量不初始化，为0。"><a href="#2、static局部变量不初始化，为0。" class="headerlink" title="2、static局部变量不初始化，为0。"></a>2、static局部变量不初始化，为0。</h4><h4 id="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"><a href="#3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。" class="headerlink" title="3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。"></a>3、static局部变量初始化语句只有第一次执行时有效，但是可以赋值多次。</h4><h4 id="4、static局部变量只能用它常量初始化。"><a href="#4、static局部变量只能用它常量初始化。" class="headerlink" title="4、static局部变量只能用它常量初始化。"></a>4、static局部变量只能用它常量初始化。</h4><p><strong>成员变量和局部变量的区别<br>   (1)在类中的位置不同<br>     成员变量：类中方法外<br>     局部变量：方法定义中或者方法声明上<br>   (2)在内存中的位置不同<br>     成员变量：在堆中<br>     局部变量：在栈中<br>   (3)生命周期不同<br>     成员变量：随着对象的创建而存在，随着对象的消失而消失<br>     局部变量：随着方法的调用而存在，随着方法的调用完毕而消失<br>   (4)初始化值不同<br>     成员变量：有默认值<br>     局部变量：没有默认值，必须定义，赋值，然后才能使用</strong></p>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -1557,17 +1680,6 @@ CSS3实现属性选择器实现样式页面
       </categories>
       <tags>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分治法</title>
-    <url>/2021/05/14/%E5%88%86%E6%B2%BB%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h1><h3 id="3-3-寻找序列中第K小的0元素"><a href="#3-3-寻找序列中第K小的0元素" class="headerlink" title="3.3 寻找序列中第K小的0元素"></a>3.3 寻找序列中第K小的0元素</h3><h3 id="3-4-寻找两个等长有序序列中的中位数"><a href="#3-4-寻找两个等长有序序列中的中位数" class="headerlink" title="3.4 寻找两个等长有序序列中的中位数"></a>3.4 寻找两个等长有序序列中的中位数</h3>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -2368,27 +2480,6 @@ CSS3实现属性选择器实现样式页面
       </tags>
   </entry>
   <entry>
-    <title>过河卒</title>
-    <url>/2020/06/22/%E8%BF%87%E6%B2%B3%E5%8D%92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="洛谷-P１００２"><a href="#洛谷-P１００２" class="headerlink" title="洛谷-P１００２"></a>洛谷-P１００２</h1><p>棋盘上 A<em>A</em> 点有一个过河卒，需要走到目标 B<em>B</em> 点。卒行走的规则：可以向下、或者向右。同时在棋盘上 C<em>C</em>点有一个对方的马，该马所在的点和所有跳跃一步可达的点称为对方马的控制点。因此称之为“马拦过河卒”。</p>
-<p>棋盘用坐标表示，A<em>A</em> 点 (0, 0)(0,0)、B<em>B</em> 点 (n, m)(<em>n</em>,<em>m</em>)，同样马的位置坐标是需要给出的。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vg6k477j.png" alt="img"></p>
-<p>现在要求你计算出卒从 A<em>A</em> 点能够到达 B<em>B</em> 点的路径的条数，假设马的位置是固定不动的，并不是卒走一步马走一步。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> x,y,mx,my;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">30</span>][<span class="number">30</span>],map[<span class="number">30</span>][<span class="number">30</span>];<span class="comment">//地图位置</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bj</span><span class="params">(<span class="keyword">int</span> mmx,<span class="keyword">int</span> mmy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    map[mmx][mmy]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-1</span>][mmy<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-2</span>][mmy<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-2</span>][mmy+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx<span class="number">-1</span>][mmy+<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">1</span>][mmy<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">2</span>][mmy<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">2</span>][mmy+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    map[mmx+<span class="number">1</span>][mmy+<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">&#125;<span class="comment">//被控制点位</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    a[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    cin&gt;&gt;x&gt;&gt;y&gt;&gt;mx&gt;&gt;my;</span><br><span class="line">    <span class="built_in">bj</span>(mx,my);<span class="comment">//调用</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=x+<span class="number">1</span>;i++)<span class="comment">//x+1移动位置,避免负数,下同</span></span><br><span class="line">    &#123;    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=y+<span class="number">1</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">           a[i][j]=a[i<span class="number">-1</span>][j]+a[i][j<span class="number">-1</span>];<span class="comment">//加法原理</span></span><br><span class="line">			<span class="keyword">if</span>(map[i<span class="number">-1</span>][j<span class="number">-1</span>])a[i][j]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">    cout&lt;&lt;a[x+<span class="number">1</span>][y+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="解题思想"><a href="#解题思想" class="headerlink" title="解题思想"></a>解题思想</h2><h3 id="1-递推"><a href="#1-递推" class="headerlink" title="1.递推"></a>1.递推</h3><p>a[i][j]=a[i-1][j]+a[i][j-1]</p>
-<h3 id="2-加法原理"><a href="#2-加法原理" class="headerlink" title="2.加法原理"></a>2.加法原理</h3><p>加法原理是分类<a href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=68529775&ss_c=ssc.citiao.link">计数原理</a>，常用于排列组合中，具体是指：做一件事，完成它可以有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/10026/20171026064801-1372440496.jpg/0" alt="img"></a>类方法，在第一类方法中有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/22553/20171026064801-940139457.jpg/0" alt="img"></a>种不同方法，在第二类方法中有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/6598/20171026064801-334726554.jpg/0" alt="img"></a>种不同方法，……，在第<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/10026/20171026064801-1372440496.jpg/0" alt="img"></a>类方法中有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/10627/20171026064801-1296215814.jpg/0" alt="img"></a>种不同方法，那么完成这件事共有<a href="javascript:"><img src="https://pic.baike.soso.com/ugc/baikepic2/7294/20171026064801-809325235.jpg/0" alt="img"></a>种不同的方法。</p>
-<h3 id="3-动态分配"><a href="#3-动态分配" class="headerlink" title="3.动态分配"></a>3.动态分配</h3><h3 id="4-避免越界"><a href="#4-避免越界" class="headerlink" title="4.避免越界"></a>4.避免越界</h3>]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>DP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>运算符重载</title>
     <url>/2020/07/07/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><ol>
@@ -2485,18 +2576,6 @@ CSS3实现属性选择器实现样式页面
 ]]></content>
       <categories>
         <category>语法</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>递归算法设计</title>
-    <url>/2021/05/14/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="递归算法设计"><a href="#递归算法设计" class="headerlink" title="递归算法设计"></a>递归算法设计</h1><h1 id="递归定义"><a href="#递归定义" class="headerlink" title="递归定义"></a>递归定义</h1><p>递归：函数在定义中又调用函数自身的方法</p>
-]]></content>
-      <categories>
-        <category>算法</category>
       </categories>
       <tags>
         <tag>java</tag>
