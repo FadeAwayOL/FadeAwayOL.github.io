@@ -1,20 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>FastAdmin上手记录</title>
-    <url>/2023/06/01/FastAdmin%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="FastAdmin上手记录"><a href="#FastAdmin上手记录" class="headerlink" title="FastAdmin上手记录"></a>FastAdmin上手记录</h1><h4 id="1-dubug模式开启"><a href="#1-dubug模式开启" class="headerlink" title="1.dubug模式开启"></a>1.dubug模式开启</h4><p>配置项：   .env—-         <code>debug=true</code></p>
-<h4 id="2-一键CRUD"><a href="#2-一键CRUD" class="headerlink" title="2.一键CRUD"></a>2.一键CRUD</h4><p>通过在线命令—————-对应数据库字段————–一键生成控制器—————一键生成菜单栏</p>
-<p>根据官方文档对应特殊字段进行操作 <a href="https://doc.fastadmin.net/doc/database.html">数据库 - FastAdmin框架文档</a></p>
-<h4 id="3-控制器"><a href="#3-控制器" class="headerlink" title="3.控制器"></a>3.控制器</h4><h5 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h5><p>登录与鉴权</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    protected $noNeedLogin = [&#x27;mywork&#x27;];</span><br><span class="line">    protected $noNeedRight = [&#x27;mywork1&#x27;];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">        public function mywork()&#123;</span><br><span class="line">        return &#x27;无需登录和鉴权 work&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * mywork1</span><br><span class="line">     **/</span><br><span class="line">    public function mywork1()&#123;</span><br><span class="line">        return &#x27;无需鉴权但要登录 work1&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>PHP语法</title>
+    <url>/2021/03/13/PHP%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PHP语法"><a href="#PHP语法" class="headerlink" title="PHP语法"></a>PHP语法</h1><p>PHP是一种脚本语言，用于开发Web应用程序。下面是PHP的基本语法：</p>
+<ol>
+<li>PHP代码必须以<?php开始，以?>结束。</li>
+<li>PHP中的语句必须以分号（;）结尾。</li>
+<li>PHP不区分大小写，但是建议使用小写字母。</li>
+<li>PHP中的注释可以使用//或者#，也可以使用多行注释/* */。</li>
+<li>变量必须以$符号开始，后面跟着变量名。</li>
+<li>PHP中的变量不需要先声明，可以直接使用。</li>
+<li>字符串可以使用单引号或双引号括起来。</li>
+<li>PHP中可以使用if、else、for、foreach、while等控制结构。</li>
+</ol>
+<p>下面是一个简单的PHP代码示例：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 输出Hello World</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><strong>1.PHP echo 和 print 语句</strong></p>
+<p>echo 和 print 区别:</p>
+<ul>
+<li>echo - 可以输出一个或多个字符串</li>
+<li>print - 只允许输出一个字符串，返回值总为 1</li>
+</ul>
+<p><strong>提示：</strong>echo 输出的速度比 print 快， echo 没有返回值，print有返回值1。</p>
+<h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">   </span><br><span class="line">    <span class="variable">$name</span> =<span class="string">&#x27;小明&#x27;</span>;<span class="comment">//$定义变量</span></span><br><span class="line">    <span class="variable">$score</span> = <span class="number">78</span>;</span><br><span class="line">    <span class="keyword">if</span> (is_int(<span class="variable">$score</span>) ||is_float(<span class="variable">$score</span>)) &#123;<span class="comment">//判断成绩为数字</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$score</span>&gt;=<span class="number">90</span> &amp;&amp; <span class="variable">$score</span>&lt;=<span class="number">100</span>)&#123;</span><br><span class="line">      <span class="variable">$str</span> =<span class="string">&#x27;A级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">80</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">90</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;B级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">70</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">80</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;C级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">60</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">70</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;D级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">0</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">60</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;E级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable">$str</span> =<span class="string">&#x27;学生成绩必须在0-100之间&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable">$str</span> =<span class="string">&#x27;输入学生的成绩不是数值&#x27;</span>;</span><br><span class="line">    &#125;<span class="comment">//根据不同情况定义不同需要输出的信息字符串</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&quot;&lt;h2&gt;学生成绩等级&lt;/h2&gt;&lt;p&gt;学生姓名：&quot;</span>.<span class="variable">$name</span>.<span class="string">&quot;&lt;p&gt;学生分数：&quot;</span>.<span class="variable">$score</span>.<span class="string">&quot;分&lt;p&gt;成绩等级：&quot;</span>.<span class="variable">$str</span>;<span class="comment">//每个变量输出需要用符号隔开, .皆可</span></span><br><span class="line"> <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>PHP是一种脚本语言，用于开发Web应用程序。下面是PHP的基本语法：</p>
+<ol>
+<li>PHP代码必须以<?php开始，以?>结束。</li>
+<li>PHP中的语句必须以分号（;）结尾。</li>
+<li>PHP不区分大小写，但是建议使用小写字母。</li>
+<li>PHP中的注释可以使用//或者#，也可以使用多行注释/* */。</li>
+<li>变量必须以$符号开始，后面跟着变量名。</li>
+<li>PHP中的变量不需要先声明，可以直接使用。</li>
+<li>字符串可以使用单引号或双引号括起来。</li>
+<li>PHP中可以使用if、else、for、foreach、while等控制结构。</li>
+</ol>
+<p>下面是一个简单的PHP代码示例：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 输出Hello World</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>PHP</category>
+        <category>语法</category>
       </categories>
       <tags>
-        <tag>后台管理系统</tag>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>uni-app起步</title>
+    <url>/2023/05/12/uni-app%E8%B5%B7%E6%AD%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h1><p>Uniapp是一种流行的开源框架，允许开发人员使用单个代码库创建跨平台移动应用程序。它支持多个平台，包括iOS、Android和Web，并允许开发人员利用他们对HTML、CSS和JavaScript的现有知识构建高质量的应用程序。 Uniapp为开发人员提供了一个灵活且易于使用的环境，用于创建可以分发给各种用户的移动应用。它被全世界的开发人员广泛使用，并拥有一个庞大的贡献者社区，不断改进其功能和功能。</p>
+<h2 id="上手步骤"><a href="#上手步骤" class="headerlink" title="上手步骤"></a>上手步骤</h2><p>要开始使用Uniapp，您需要完成以下步骤：</p>
+<ol>
+<li><p>安装HBuilderX：HBuilderX是Uniapp的官方IDE，您需要安装它才能开始使用Uniapp。您可以从官方网站（<a href="https://www.dcloud.io/hbuilderx.html%EF%BC%89%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85HBuilderX%E3%80%82">https://www.dcloud.io/hbuilderx.html）下载和安装HBuilderX。</a></p>
+</li>
+<li><p>创建一个Uniapp项目：在HBuilderX中，选择“文件”&gt;“新建”&gt;“项目”&gt;“Uniapp”&gt;“创建新项目”。在创建项目时，您可以选择使用Vue.js或Nvue.js作为框架。</p>
+</li>
+<li><p>学习Uniapp文档和示例：Uniapp有详细的文档和示例，您可以从官方网站（<a href="https://uniapp.dcloud.io/%EF%BC%89%E8%8E%B7%E5%8F%96%E8%BF%99%E4%BA%9B%E8%B5%84%E6%BA%90%E3%80%82%E5%9C%A8%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3%E5%92%8C%E7%A4%BA%E4%BE%8B%E6%97%B6%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E4%BA%86%E8%A7%A3Uniapp%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E9%A1%B5%E9%9D%A2%E3%80%81%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E7%BB%84%E4%BB%B6%E7%AD%89%E3%80%82">https://uniapp.dcloud.io/）获取这些资源。在学习文档和示例时，您可以了解Uniapp的基本概念、如何构建页面、如何添加组件等。</a></p>
+</li>
+<li><p>实践和调试：您可以使用HBuilderX的模拟器或将应用程序部署到真实设备上进行调试。在实践和调试过程中，您可以了解Uniapp的工作原理，并学习如何解决常见问题。</p>
+</li>
+</ol>
+<p>学习Uniapp需要时间和耐心，掌握了它，将能够创建<strong>高质量的跨平台移动应用程序。</strong></p>
+]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>uni-app</tag>
       </tags>
   </entry>
   <entry>
@@ -36,12 +90,39 @@
 </li>
 </ol>
 <p>在Revit中，还可以使用注释、标签、文字等工具对图纸进行更加详细的标注和说明。</p>
-]]></content>
+<h2 id="3-项目取消revit就先搁置了吧"><a href="#3-项目取消revit就先搁置了吧" class="headerlink" title="3.项目取消revit就先搁置了吧"></a>3.项目取消revit就先搁置了吧</h2>]]></content>
       <categories>
         <category>3D建模</category>
       </categories>
       <tags>
         <tag>revit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FastAdmin上手记录</title>
+    <url>/2023/06/01/FastAdmin%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="FastAdmin上手记录"><a href="#FastAdmin上手记录" class="headerlink" title="FastAdmin上手记录"></a>FastAdmin上手记录</h1><h4 id="1-dubug模式开启"><a href="#1-dubug模式开启" class="headerlink" title="1.dubug模式开启"></a>1.dubug模式开启</h4><p>配置项：   .env—-         <code>debug=true</code></p>
+<h4 id="2-一键CRUD"><a href="#2-一键CRUD" class="headerlink" title="2.一键CRUD"></a>2.一键CRUD</h4><p>通过在线命令—————-对应数据库字段————–一键生成控制器—————一键生成菜单栏</p>
+<p>根据官方文档对应特殊字段进行操作 <a href="https://doc.fastadmin.net/doc/database.html">数据库 - FastAdmin框架文档</a></p>
+<h4 id="3-控制器"><a href="#3-控制器" class="headerlink" title="3.控制器"></a>3.控制器</h4><h5 id="3-1登录与鉴权"><a href="#3-1登录与鉴权" class="headerlink" title="3.1登录与鉴权"></a>3.1登录与鉴权</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    protected $noNeedLogin = [&#x27;mywork&#x27;];</span><br><span class="line">    protected $noNeedRight = [&#x27;mywork1&#x27;];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">        public function mywork()&#123;</span><br><span class="line">        return &#x27;无需登录和鉴权 work&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * mywork1</span><br><span class="line">     **/</span><br><span class="line">    public function mywork1()&#123;</span><br><span class="line">        return &#x27;无需鉴权但要登录 work1&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-2-数据校验"><a href="#3-2-数据校验" class="headerlink" title="3.2 数据校验"></a>3.2 数据校验</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">protected $modelValidate = true; //是否开启Validate验证，默认是false关闭状态</span><br><span class="line">protected $modelSceneValidate = true; //是否开启模型场景验证，默认是false关闭状态</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-API注册"><a href="#4-API注册" class="headerlink" title="4.API注册"></a>4.API注册</h4><p>controller控制器传参</p>
+<h4 id="5-JS"><a href="#5-JS" class="headerlink" title="5.JS"></a>5.JS</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"> $this-&gt;assignconfig(&#x27;userinfo&#x27;, [</span><br><span class="line">  &#x27;usertoken&#x27;=&gt;$this-&gt;auth-&gt;token,</span><br><span class="line">  &#x27;userid&#x27;=&gt;$this-&gt;auth-&gt;id,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-携带参数"><a href="#5-携带参数" class="headerlink" title="5.携带参数"></a>5.携带参数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$this-&gt;succesi(“成功&#x27;&#x27;, ur1 ( &quot;index/index/ceshi2 &#x27; , [ &#x27;abc &#x27;=&gt; &#x27;1234&#x27;]), [ &#x27;ceshi &#x27;=&gt;1 , &#x27; ceshi2&#x27;=&#x27;22222&#x27;]);</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-模拟登陆注册"><a href="#6-模拟登陆注册" class="headerlink" title="6.模拟登陆注册"></a>6.模拟登陆注册</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$openid=&quot;999&quot;;</span><br><span class="line">        $username=&quot;999&quot;;</span><br><span class="line"></span><br><span class="line">$search_res=Db::name(&quot;user&quot;)-&gt;whereOr(&quot;username&quot;,$username)-&gt;whereOr(&quot;openid&quot;,$openid)-&gt;find();</span><br><span class="line">        if($search_res)&#123;</span><br><span class="line">            $loginRes = $this-&gt;auth-&gt;direct($search_res[&quot;id&quot;]);</span><br><span class="line">            if($loginRes)&#123;</span><br><span class="line"></span><br><span class="line">                Cookie::set(&#x27;uid&#x27;, $this-&gt;auth-&gt;id );</span><br><span class="line">                Cookie::set(&#x27;token&#x27;, $this-&gt;auth-&gt;getToken());</span><br><span class="line">    </span><br><span class="line">                $this-&gt;success(&#x27;登录成功&#x27;,$loginRes);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                $this-&gt;success(&#x27;登录失败，未找到用户&#x27;,$loginRes);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            $registerRes = $this-&gt;auth-&gt;register($username,$username,&#x27;&#x27;,&#x27;&#x27;,[</span><br><span class="line">               &quot;openid&quot;=&gt;$openid </span><br><span class="line">            ]);</span><br><span class="line">            // Cookie::set(&#x27;uid&#x27;, $this-&gt;auth-&gt;id );</span><br><span class="line">            // Cookie::set(&#x27;token&#x27;, $this-&gt;auth-&gt;getToken());</span><br><span class="line"></span><br><span class="line">            $this-&gt;auth-&gt;logout();</span><br><span class="line">            Cookie::delete(&#x27;uid&#x27;);</span><br><span class="line">            Cookie::delete(&#x27;token&#x27;);</span><br><span class="line">            $this-&gt;success(&#x27;执行注册&#x27;,$registerRes);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>后台管理系统</tag>
       </tags>
   </entry>
   <entry>
@@ -390,17 +471,6 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>uni-app起步</title>
-    <url>/2023/05/12/uni-app%E8%B5%B7%E6%AD%A5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h1>]]></content>
-      <categories>
-        <category>小程序</category>
-      </categories>
-      <tags>
-        <tag>uni-app</tag>
       </tags>
   </entry>
   <entry>
@@ -907,7 +977,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
@@ -1297,26 +1367,6 @@ CSS3实现属性选择器实现样式页面
       </categories>
       <tags>
         <tag>java框架</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PHP语法</title>
-    <url>/2021/03/13/PHP%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PHP语法"><a href="#PHP语法" class="headerlink" title="PHP语法"></a>PHP语法</h1><p><strong>1.PHP echo 和 print 语句</strong></p>
-<p>echo 和 print 区别:</p>
-<ul>
-<li>echo - 可以输出一个或多个字符串</li>
-<li>print - 只允许输出一个字符串，返回值总为 1</li>
-</ul>
-<p><strong>提示：</strong>echo 输出的速度比 print 快， echo 没有返回值，print有返回值1。</p>
-<h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">   </span><br><span class="line">    <span class="variable">$name</span> =<span class="string">&#x27;小明&#x27;</span>;<span class="comment">//$定义变量</span></span><br><span class="line">    <span class="variable">$score</span> = <span class="number">78</span>;</span><br><span class="line">    <span class="keyword">if</span> (is_int(<span class="variable">$score</span>) ||is_float(<span class="variable">$score</span>)) &#123;<span class="comment">//判断成绩为数字</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$score</span>&gt;=<span class="number">90</span> &amp;&amp; <span class="variable">$score</span>&lt;=<span class="number">100</span>)&#123;</span><br><span class="line">      <span class="variable">$str</span> =<span class="string">&#x27;A级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">80</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">90</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;B级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">70</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">80</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;C级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">60</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">70</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;D级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">elseif</span>(<span class="variable">$score</span>&gt;=<span class="number">0</span> &amp;&amp; <span class="variable">$score</span>&lt;<span class="number">60</span>) &#123;</span><br><span class="line">      <span class="variable">$str</span>=<span class="string">&#x27;E级&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable">$str</span> =<span class="string">&#x27;学生成绩必须在0-100之间&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable">$str</span> =<span class="string">&#x27;输入学生的成绩不是数值&#x27;</span>;</span><br><span class="line">    &#125;<span class="comment">//根据不同情况定义不同需要输出的信息字符串</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&quot;&lt;h2&gt;学生成绩等级&lt;/h2&gt;&lt;p&gt;学生姓名：&quot;</span>.<span class="variable">$name</span>.<span class="string">&quot;&lt;p&gt;学生分数：&quot;</span>.<span class="variable">$score</span>.<span class="string">&quot;分&lt;p&gt;成绩等级：&quot;</span>.<span class="variable">$str</span>;<span class="comment">//每个变量输出需要用符号隔开, .皆可</span></span><br><span class="line"> <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>PHP</tag>
       </tags>
   </entry>
   <entry>
