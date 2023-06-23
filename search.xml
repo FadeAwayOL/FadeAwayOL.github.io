@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaWeb回顾</title>
+    <url>/2023/05/18/JavaWeb%E5%9B%9E%E9%A1%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaWeb回顾"><a href="#JavaWeb回顾" class="headerlink" title="JavaWeb回顾"></a>JavaWeb回顾</h1><h3 id="1-javascript-客户端的一个脚本语言"><a href="#1-javascript-客户端的一个脚本语言" class="headerlink" title="1.javascript:客户端的一个脚本语言"></a>1.javascript:客户端的一个脚本语言</h3><p>js是一门弱类型语言的语言，变量的数据类型由后面赋的值的类型决定</p>
+<p>java方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">hello</span> <span class="params">(String name)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>js方法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">num1,num2,num3</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num1&gt;num2)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		alert(<span class="string">&quot;HELLo&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//参数不限制，返回值不限制</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>example 1</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showBGColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//event 当前发生的事件</span></span><br><span class="line">    <span class="comment">//event.srcElement:事件源</span></span><br><span class="line">    <span class="comment">//alert(event.srcElement.tagName);</span></span><br><span class="line">    <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;navy&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;white&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearBgcolor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;transparent&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;threeddarkshadom&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>example 2   JS</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//当页面加载完成,我们需要绑定各种事件</span></span><br><span class="line">    <span class="comment">//根据id获取到表格</span></span><br><span class="line">	<span class="keyword">var</span> fruitTbl = <span class="built_in">document</span>.getElementById(<span class="string">&quot;tbl_fruit&quot;</span>);<span class="comment">//获取表格中的所有的行</span></span><br><span class="line">	<span class="keyword">var</span> rows = fruitTbl.rows ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i&lt;rows. length ; i++)&#123;</span><br><span class="line">		<span class="keyword">var</span> tr = rows[i];</span><br><span class="line">		<span class="comment">//1.绑定鼠标悬浮设置背景颜色事件</span></span><br><span class="line">    	tr. onmouseover=showBGColor;<span class="comment">//无小括号，绑定事件按，未执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .innerHTML=&quot; &quot;; 赋值</span></span><br></pre></td></tr></table></figure>
+
+<p>1)JS是客户端（浏览器端）运行的脚本语言，语法风格和java比较类似.</p>
+<p>2)JS是弱类型的语言var str = 99 ;</p>
+<h3 id="2-JavaWeb是指基于Java语言的Web开发技术"><a href="#2-JavaWeb是指基于Java语言的Web开发技术" class="headerlink" title="2.JavaWeb是指基于Java语言的Web开发技术"></a>2.JavaWeb是指基于Java语言的Web开发技术</h3><p>它是一种创建Web应用程序的技术框架。JavaWeb应用程序可以在多个平台上运行，并且可以处理来自Web浏览器的请求和响应。</p>
+<p><strong>JavaWeb应用程序一般包括三个主要组件：</strong><em><strong>Servlet、JSP和JavaBean。Servlet是JavaWeb应用程序中处理客户端请求的Java类，</strong></em>*它用于处理Web容器（如Tomcat）收到的HTTP请求。Servlet是JavaWeb应用程序中处理客户端请求的Java类。它们通常被用来处理HTTP请求和响应。Servlet可以接收来自客户端的请求并生成响应，这些响应可以是HTML页面、XML文档、JSON数据等等。Servlet是基于Java编写的，因此可以跨平台运行。Servlet可以在web服务器中部署并由web容器管理。Web容器负责加载Servlet、初始化Servlet、调用Servlet的服务方法等。Servlet可以通过编写Java代码来实现各种功能，例如用户管理、订单管理、商品管理等。Servlet还可以与JSP（JavaServer Pages）结合使用，JSP可以用来生成动态页面，而Servlet可以用来处理页面请求并生成响应。最后，Servlet还有一些重要的接口，例如ServletConfig、ServletContext、HttpServletRequest、HttpServletResponse等，它们提供了一些常用的方法和属性，可以帮助我们更好地编写Servlet应用程序。</p>
+<p><strong>JSP是一种动态生成HTML页面的技术</strong>，它可以将HTML标记和Java代码混合在一起使用，使页面具有交互性和动态性。JSP(JavaServer Pages)是一种动态生成HTML页面的技术。它是一种基于Java的服务器端技术，用于生成动态的、交互式的Web页面。与Servlet不同的是，JSP是一种模板引擎技术，它将Java代码嵌入到HTML中，通过在运行时动态生成HTML页面来响应客户端请求。</p>
+<p>JSP页面通常包含HTML标记和JSP标记（JSP标记以&lt;%和%&gt;包围）。JSP页面中的Java代码可以直接嵌入到HTML标记之间，也可以使用JSP标记来包含Java代码块和表达式。通过使用JSP标记，可以将Java代码分离出来，使得页面更加简洁和易于维护。 JSP还提供了一些内置对象，例如request、response、session和application等，这些对象可以用来访问请求和响应信息以及应用程序数据。此外，JSP还可以使用标签库(Tag Library)来扩展页面的功能。</p>
+<p>JSP技术的优点包括：</p>
+<p>1.易于学习和使用，因为它使用标准的HTML语法和Java语法。</p>
+<p>2.可重用性高，因为可以将一些常用的代码封装成标签库来实现代码复用。</p>
+<p>3.可维护性好，因为可以将Java代码和HTML代码分离处理，易于维护和修改。</p>
+<p>4.性能好，因为在页面请求量较大时，JSP页面只需要编译一次即可，后续请求可以直接使用编译后的结果，提高了页面响应速度。</p>
+<p>总之，JSP是一种强大的动态Web页面技术，它为Web开发人员提供了更加灵活和高效的开发方式。</p>
+<p><strong>JavaBean是一种Java类</strong>，用于封装应用程序的业务逻辑和数据。</p>
+<p>JavaBean是指遵循JavaBean规范的Java类，通常用于数据传输和业务处理。JavaBean具有以下几个特点：</p>
+<ol>
+<li><p>公共无参构造方法：JavaBean必须提供一个公共的无参构造方法，以便容器可以实例化JavaBean。</p>
+</li>
+<li><p>私有属性：JavaBean的属性必须是私有的，不能直接从外部访问。</p>
+</li>
+<li><p>Getter和Setter方法：JavaBean必须提供公共的Getter和Setter方法，以便访问和修改JavaBean的属性。</p>
+</li>
+<li><p>实现Serializable接口：JavaBean必须实现Serializable接口，以便它可以被序列化和反序列化。</p>
+</li>
+<li><p>继承自Object类：JavaBean必须继承自Object类。</p>
+</li>
+</ol>
+<p>JavaBean通常用于封装数据，例如用户信息、订单信息、商品信息等。它们被广泛应用于JavaWeb开发中，作为数据传输对象（DTO）来传递数据。JavaBean还可以用于业务处理，例如计算、验证等。通过封装属性和提供Getter和Setter方法，可以使JavaBean更加灵活和易于维护。</p>
+<p>在JavaBean中，通常使用IDE（如Eclipse、IntelliJ IDEA等）来生成Getter和Setter方法，以及toString、equals和hashCode方法等，以提高开发效率。此外，JavaBean还可以使用注解来简化代码，例如@JsonIgnore、@JsonInclude等，以控制JavaBean的序列化和反序列化行为。</p>
+<p>JavaWeb技术还包括一些基础设施组件，如JavaServer Pages标准标签库（JSTL）、Java Servlet API和JavaServer Faces（JSF）。这些组件为JavaWeb应用程序提供了许多基本功能，例如会话管理、安全性和数据持久性等。</p>
+<p>与其他Web开发技术相比，JavaWeb应用程序具有更好的可扩展性、可靠性和安全性。它还支持各种开发模式和编程语言，使得开发人员可以更加灵活地设计和构建Web应用程序。</p>
+<p><strong>Tomcat是一个开源的Web应用服务器，</strong>它是Java Servlet和JavaServer Pages（JSP）的一个实现。它支持Java平台上的多种Web开发技术，如Java Servlet、JavaServer Pages、Java Expression Language和Java WebSocket。Tomcat是使用Java语言编写的，可以在各种操作系统上运行，例如Windows、Linux和Mac OS等。它是一种轻量级的Web服务器，可作为独立的服务器或嵌入到其他应用程序中使用。</p>
+<p>Tomcat是一个Java Servlet<strong>容器</strong>。Java Servlet是一种基于Java语言的Web编程技术，它能够处理客户端的请求并返回响应，可以用于构建动态Web应用程序。Tomcat提供了一个环境，让我们可以在其中部署和运行Java Servlet和JavaServer Pages应用程序。它还提供了许多其他功能，如连接池、安全管理、负载均衡和集群等。</p>
+<p>在Java Web应用程序开发中，通常需要一个Web服务器来运行和测试应用程序。Tomcat就是这样一个服务器，我们可以将Web应用程序部署到Tomcat中进行测试和运行。Tomcat的安装和配置都比较简单，而且它的性能也比较高，因此成为了Java Web开发中最流行的Web服务器之一。</p>
+]]></content>
+      <categories>
+        <category>javaweb</category>
+      </categories>
+      <tags>
+        <tag>javaweb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分治法</title>
     <url>/2021/05/14/%E5%88%86%E6%B2%BB%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h1><p>分治法是一种解决问题的思想，它将一个大问题分解为若干个小问题，然后递归地解决每个小问题，最终将各个小问题的结果合并起来得到大问题的解。分治法通常包括以下三个步骤：</p>
@@ -423,24 +480,6 @@
       <tags>
         <tag>python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>JavaWeb回顾</title>
-    <url>/2023/05/18/JavaWeb%E5%9B%9E%E9%A1%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaWeb回顾"><a href="#JavaWeb回顾" class="headerlink" title="JavaWeb回顾"></a>JavaWeb回顾</h1><h3 id="1-javascript-客户端的一个脚本语言"><a href="#1-javascript-客户端的一个脚本语言" class="headerlink" title="1.javascript:客户端的一个脚本语言"></a>1.javascript:客户端的一个脚本语言</h3><p>js是一门弱类型语言的语言，变量的数据类型由后面赋的值的类型决定</p>
-<p>java方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">hello</span> <span class="params">(String name)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>js方法</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">num1,num2,num3</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num1&gt;num2)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		alert(<span class="string">&quot;HELLo&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//参数不限制，返回值不限制</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>example 1</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showBGColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//event 当前发生的事件</span></span><br><span class="line">    <span class="comment">//event.srcElement:事件源</span></span><br><span class="line">    <span class="comment">//alert(event.srcElement.tagName);</span></span><br><span class="line">    <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;navy&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;white&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearBgcolor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;transparent&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;threeddarkshadom&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>example 2   JS</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//当页面加载完成,我们需要绑定各种事件</span></span><br><span class="line">    <span class="comment">//根据id获取到表格</span></span><br><span class="line">	<span class="keyword">var</span> fruitTbl = <span class="built_in">document</span>.getElementById(<span class="string">&quot;tbl_fruit&quot;</span>);<span class="comment">//获取表格中的所有的行</span></span><br><span class="line">	<span class="keyword">var</span> rows = fruitTbl.rows ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i&lt;rows. length ; i++)&#123;</span><br><span class="line">		<span class="keyword">var</span> tr = rows[i];</span><br><span class="line">		<span class="comment">//1.绑定鼠标悬浮设置背景颜色事件</span></span><br><span class="line">    	tr. onmouseover=showBGColor;<span class="comment">//无小括号，绑定事件按，未执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .innerHTML=&quot; &quot;; 赋值</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>JAVA回顾与拓展</title>
@@ -1125,7 +1164,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
