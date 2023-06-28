@@ -1,6 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>VUE回顾与拓展</title>
+    <url>/2023/06/28/VUE%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%8B%93%E5%B1%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="VUE回顾"><a href="#VUE回顾" class="headerlink" title="VUE回顾"></a>VUE回顾</h2><p>Vue.js是一个流行的JavaScript框架，提供了双向绑定的能力。双向绑定意味着当数据发生变化时，视图会自动更新，并且当视图发生变化时，数据也会自动更新。</p>
+<p>在Vue.js中，你可以使用v-model指令来实现双向绑定。v-model指令可以与表单元素（如input、textarea、select等）一起使用，将表单元素的值与Vue实例的数据进行绑定。</p>
+<p>以下是一个简单的示例，展示了如何在<strong>Vue.js中实现双向绑定：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>输入的消息: &#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们使用v-model指令将input元素的值绑定到Vue实例的message属性上。当用户在输入框中输入文本时，message的值会自动更新。同时，我们使用双括号语法（）将message的值显示在p元素中，当message的值发生变化时，p元素也会自动更新。</p>
+<p>通过v-model指令，Vue.js实现了数据的双向绑定，使得开发者无需手动处理数据的更新和视图的更新，大大简化了开发流程。</p>
+<p><strong>双括号语法（）在Vue.js中被称为插值语法，</strong>它用于在HTML模板中插入变量的值。通过使用双括号语法，可以将Vue实例中的数据绑定到HTML中，实现数据和视图的自动更新。当Vue实例中的数据发生变化时，插值语法会自动更新对应的DOM元素，显示最新的数据值。这种机制被称为双向绑定。</p>
+<p>Vue.js还有以下几个<strong>特点</strong>：</p>
+<ol>
+<li>组件化开发：Vue.js采用组件化的开发方式，将页面拆分成多个独立的组件，每个组件负责自己的逻辑和视图。这样可以提高代码的可读性和复用性，同时也方便团队协作开发。</li>
+<li>轻量级框架：Vue.js的体积很小，压缩后只有约30KB左右，加载速度快，性能优秀。这使得它非常适合在移动端或低带宽环境下使用。</li>
+<li>渐进式框架：Vue.js是一个渐进式框架，它的核心库只关注视图层的渲染，可以与其他库或现有项目进行逐步集成。这样可以方便开发者根据项目的实际需求进行选择和使用。</li>
+<li>易学易用：Vue.js的语法简单明了，学习曲线较低。它提供了丰富的指令和组件，使得开发者可以更快速地构建复杂的交互界面。</li>
+<li>生态系统丰富：Vue.js拥有庞大的社区支持，有大量的第三方插件和库可供选择。这些插件和库可以提供更多的功能和扩展，帮助开发者更高效地开发应用。</li>
+</ol>
+<p>Vue.js有许多常用的<strong>指令</strong>，以下是其中几个常用的指令及其功能：</p>
+<ol>
+<li>v-bind：用于绑定数据到元素的属性上，可以动态地更新元素的属性值。例如，v-bind:href=”url” 可以将数据中的url绑定到元素的href属性上。</li>
+<li>v-model：用于在表单元素和Vue实例之间建立双向绑定。它可以自动监听用户输入的变化，并将其更新到Vue实例中的数据上。例如，v-model=”message” 可以将用户在输入框中输入的内容实时更新到Vue实例的message属性上。</li>
+<li>v-if / v-else / v-else-if：用于条件性地渲染元素。通过设置条件表达式，可以决定是否显示或隐藏元素。例如，v-if=”isShow” 可以根据isShow的值决定元素是否显示。</li>
+<li>v-for：用于循环渲染数组或对象中的数据，生成多个对应的元素。例如，v-for=”item in items” 可以循环遍历items数组，并为每个item生成一个对应的元素。</li>
+<li>v-on：用于绑定事件监听器，当指定的事件触发时，执行相应的方法。例如，v-on:click=”handleClick” 可以在点击事件触发时调用handleClick方法。</li>
+</ol>
+<p>在编辑模式方面，Vue.js提供两种主要的编辑模式：</p>
+<ol>
+<li>模板语法：使用类似HTML的模板语法来描述视图，通过Vue实例中的数据和指令来动态渲染页面。这种模式适合对于前端开发者来说更加直观和容易理解。</li>
+<li>单文件组件：这是一种将模板、样式和逻辑代码封装在一个文件中的方式。这种方式使得组件的开发更加模块化和可复用，适合复杂的应用程序开发。</li>
+</ol>
+<h2 id="vue与微信双向绑定的区别"><a href="#vue与微信双向绑定的区别" class="headerlink" title="vue与微信双向绑定的区别"></a>vue与微信双向绑定的区别</h2><p>在微信小程序开发中，可以通过使用表单组件的value属性和bindinput事件来实现双向绑定。</p>
+<p>例如，如果你有一个输入框和一个文本框，你可以将输入框的值绑定到一个数据变量上，并在输入框值改变时更新文本框的值。以下是一个示例代码：</p>
+<p>WXML部分：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123;inputValue&#125;&#125;&quot;</span> <span class="attr">bindinput</span>=<span class="string">&quot;handleInput&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;inputValue&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JS部分：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">inputValue</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">handleInput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.setData(&#123;</span><br><span class="line">      <span class="attr">inputValue</span>: e.detail.value</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们使用了input组件的value属性将输入框的值绑定到data对象中的inputValue变量上。然后，我们使用bindinput事件监听输入框的输入事件，并在事件处理函数中通过setData方法更新inputValue的值。这样，当输入框的值改变时，文本框的值也会自动更新。</p>
+<p>这种方式虽然不像Vue.js那样自动实现双向绑定，但通过监听输入事件和手动更新数据，我们可以实现类似的效果。</p>
+<h2 id="微信小程序常用API"><a href="#微信小程序常用API" class="headerlink" title="微信小程序常用API"></a>微信小程序常用API</h2><p>微信小程序提供了丰富的API，可以实现各种功能和交互效果。以下是一些常用的微信小程序API：</p>
+<ol>
+<li><p>界面交互相关API：</p>
+<ul>
+<li>wx.showToast：显示消息提示框，如成功、失败或加载中的提示。</li>
+<li>wx.showModal：显示模态对话框，可用于确认操作或显示提示信息。</li>
+<li>wx.showActionSheet：显示操作菜单，可供用户选择操作。</li>
+<li>wx.navigateTo / wx.redirectTo：跳转到其他页面，支持页面间的导航。</li>
+</ul>
+</li>
+<li><p>网络请求相关API：</p>
+<ul>
+<li>wx.request：发起网络请求，可获取远程数据。</li>
+<li>wx.uploadFile：上传文件。</li>
+<li>wx.downloadFile：下载文件。</li>
+</ul>
+</li>
+<li><p>数据缓存相关API：</p>
+<ul>
+<li>wx.setStorage / wx.getStorage：设置和获取本地缓存数据。</li>
+<li>wx.setStorageSync / wx.getStorageSync：同步设置和获取本地缓存数据。</li>
+</ul>
+</li>
+<li><p>用户授权相关API：</p>
+<ul>
+<li>wx.login：获取用户登录凭证（code）。</li>
+<li>wx.getUserInfo：获取用户信息，需用户授权。</li>
+</ul>
+</li>
+<li><p>位置服务相关API：</p>
+<ul>
+<li>wx.getLocation：获取用户当前的地理位置。</li>
+<li>wx.openLocation：打开地图选择位置或导航。</li>
+</ul>
+</li>
+<li><p>图片相关API：</p>
+<ul>
+<li>wx.chooseImage：从相册或相机选择图片。</li>
+<li>wx.previewImage：预览图片。</li>
+</ul>
+</li>
+<li><p>设备相关API：</p>
+<ul>
+<li>wx.getSystemInfo：获取设备信息，如屏幕宽高、操作系统版本等。</li>
+<li>wx.onAccelerometerChange：监听重力感应数据。</li>
+</ul>
+</li>
+<li><p>媒体相关API：</p>
+<ul>
+<li>wx.createAudioContext / wx.createVideoContext：创建音频或视频上下文，可用于控制音频和视频播放。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FastAdmin上手记录</title>
+    <url>/2023/06/01/FastAdmin%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="FastAdmin上手记录"><a href="#FastAdmin上手记录" class="headerlink" title="FastAdmin上手记录"></a>FastAdmin上手记录</h1><p><strong>FastAdmin是一个基于ThinkPHP框架开发的快速开发后台管理系统工具，</strong>具有以下特点：</p>
+<ol>
+<li><p>快速开发：FastAdmin提供了丰富的后台管理系统功能模块，包括用户管理、权限管理、菜单管理、日志管理等，使用FastAdmin可以快速搭建一个功能完善的后台管理系统。</p>
+</li>
+<li><p>灵活可扩展：FastAdmin基于ThinkPHP框架，使用了模块化的开发结构，可以方便地进行功能扩展和定制，满足不同项目的需求。</p>
+</li>
+<li><p>丰富的插件支持：FastAdmin支持插件扩展机制，可以通过安装插件来增加系统功能，如文件管理、消息推送等，提供了更多的灵活性和可定制性。</p>
+</li>
+<li><p>多主题支持：FastAdmin提供了多个主题样式可供选择，可以根据需求进行切换，使得后台管理系统更加美观和个性化。</p>
+</li>
+<li><p>安全性：FastAdmin内置了丰富的安全机制，包括权限控制、用户登录验证、防止SQL注入等，保障系统的安全性。</p>
+</li>
+</ol>
+<p>总体来说，FastAdmin是一个功能丰富、易于扩展和定制的快速开发后台管理系统工具，适用于各种中小型项目的快速开发和部署。</p>
+<h4 id="1-dubug模式开启"><a href="#1-dubug模式开启" class="headerlink" title="1.dubug模式开启"></a>1.dubug模式开启</h4><p>配置项：   .env—-         <code>debug=true</code></p>
+<h4 id="2-一键CRUD"><a href="#2-一键CRUD" class="headerlink" title="2.一键CRUD"></a>2.一键CRUD</h4><p>通过在线命令—————-对应数据库字段————–一键生成控制器—————一键生成菜单栏</p>
+<p>根据官方文档对应特殊字段进行操作 <a href="https://doc.fastadmin.net/doc/database.html">数据库 - FastAdmin框架文档</a></p>
+<h4 id="3-控制器"><a href="#3-控制器" class="headerlink" title="3.控制器"></a>3.控制器</h4><h5 id="3-1登录与鉴权"><a href="#3-1登录与鉴权" class="headerlink" title="3.1登录与鉴权"></a>3.1登录与鉴权</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    protected $noNeedLogin = [&#x27;mywork&#x27;];</span><br><span class="line">    protected $noNeedRight = [&#x27;mywork1&#x27;];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">        public function mywork()&#123;</span><br><span class="line">        return &#x27;无需登录和鉴权 work&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * mywork1</span><br><span class="line">     **/</span><br><span class="line">    public function mywork1()&#123;</span><br><span class="line">        return &#x27;无需鉴权但要登录 work1&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-2-数据校验"><a href="#3-2-数据校验" class="headerlink" title="3.2 数据校验"></a>3.2 数据校验</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">protected $modelValidate = true; //是否开启Validate验证，默认是false关闭状态</span><br><span class="line">protected $modelSceneValidate = true; //是否开启模型场景验证，默认是false关闭状态</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-API注册"><a href="#4-API注册" class="headerlink" title="4.API注册"></a>4.API注册</h4><p>controller控制器传参</p>
+<h4 id="5-JS"><a href="#5-JS" class="headerlink" title="5.JS"></a>5.JS</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"> $this-&gt;assignconfig(&#x27;userinfo&#x27;, [</span><br><span class="line">  &#x27;usertoken&#x27;=&gt;$this-&gt;auth-&gt;token,</span><br><span class="line">  &#x27;userid&#x27;=&gt;$this-&gt;auth-&gt;id,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-携带参数"><a href="#5-携带参数" class="headerlink" title="5.携带参数"></a>5.携带参数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$this-&gt;succesi(“成功&#x27;&#x27;, ur1 ( &quot;index/index/ceshi2 &#x27; , [ &#x27;abc &#x27;=&gt; &#x27;1234&#x27;]), [ &#x27;ceshi &#x27;=&gt;1 , &#x27; ceshi2&#x27;=&#x27;22222&#x27;]);</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-模拟登陆注册"><a href="#6-模拟登陆注册" class="headerlink" title="6.模拟登陆注册"></a>6.模拟登陆注册</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$openid=&quot;999&quot;;</span><br><span class="line">        $username=&quot;999&quot;;</span><br><span class="line"></span><br><span class="line">$search_res=Db::name(&quot;user&quot;)-&gt;whereOr(&quot;username&quot;,$username)-&gt;whereOr(&quot;openid&quot;,$openid)-&gt;find();</span><br><span class="line">        if($search_res)&#123;</span><br><span class="line">            $loginRes = $this-&gt;auth-&gt;direct($search_res[&quot;id&quot;]);</span><br><span class="line">            if($loginRes)&#123;</span><br><span class="line"></span><br><span class="line">                Cookie::set(&#x27;uid&#x27;, $this-&gt;auth-&gt;id );</span><br><span class="line">                Cookie::set(&#x27;token&#x27;, $this-&gt;auth-&gt;getToken());</span><br><span class="line">    </span><br><span class="line">                $this-&gt;success(&#x27;登录成功&#x27;,$loginRes);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                $this-&gt;success(&#x27;登录失败，未找到用户&#x27;,$loginRes);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            $registerRes = $this-&gt;auth-&gt;register($username,$username,&#x27;&#x27;,&#x27;&#x27;,[</span><br><span class="line">               &quot;openid&quot;=&gt;$openid </span><br><span class="line">            ]);</span><br><span class="line">            // Cookie::set(&#x27;uid&#x27;, $this-&gt;auth-&gt;id );</span><br><span class="line">            // Cookie::set(&#x27;token&#x27;, $this-&gt;auth-&gt;getToken());</span><br><span class="line"></span><br><span class="line">            $this-&gt;auth-&gt;logout();</span><br><span class="line">            Cookie::delete(&#x27;uid&#x27;);</span><br><span class="line">            Cookie::delete(&#x27;token&#x27;);</span><br><span class="line">            $this-&gt;success(&#x27;执行注册&#x27;,$registerRes);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>后台管理系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言易漏易混总结</title>
+    <url>/2023/06/27/C%E8%AF%AD%E8%A8%80%E6%98%93%E6%BC%8F%E6%98%93%E6%B7%B7%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="C语言是万码之本"><a href="#C语言是万码之本" class="headerlink" title="C语言是万码之本"></a>C语言是万码之本</h1><h5 id="1-struct-student-s-struct-student-malloc-sizeof-struct-student"><a href="#1-struct-student-s-struct-student-malloc-sizeof-struct-student" class="headerlink" title="1.struct student* s=( struct student* ) malloc(sizeof(struct student) ) ;"></a>1.struct student* s=( struct student* ) malloc(sizeof(struct student) ) ;</h5><p>这段代码是动态分配内存的语句，可以理解为：</p>
+<ol>
+<li><p><code>struct student* s</code>：定义一个名为 <code>s</code> 的指针变量，其指向类型为 <code>struct student</code> 的结构体。</p>
+</li>
+<li><p><code>malloc(sizeof(struct student))</code>：调用 <code>malloc</code> 函数，分配 <code>struct student</code> 类型的内存块，并返回指向该内存块的指针，<code>sizeof(struct student)</code> 表示结构体 <code>struct student</code> 的大小。</p>
+</li>
+<li><p><code>(struct student*)</code>：将 <code>malloc</code> 函数返回的指针强制转换为 <code>struct student*</code> 类型，与 <code>s</code> 指针变量类型相同。</p>
+</li>
+</ol>
+<p>所以，整句话的意思是：为类型为 <code>struct student</code> 的结构体动态分配内存，并将指向该内存块的指针赋值给 <code>s</code> 指针变量。</p>
+<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5>]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaWeb回顾</title>
     <url>/2023/05/18/JavaWeb%E5%9B%9E%E9%A1%BE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaWeb回顾"><a href="#JavaWeb回顾" class="headerlink" title="JavaWeb回顾"></a>JavaWeb回顾</h1><h3 id="1-javascript-客户端的一个脚本语言"><a href="#1-javascript-客户端的一个脚本语言" class="headerlink" title="1.javascript:客户端的一个脚本语言"></a>1.javascript:客户端的一个脚本语言</h3><p>js是一门弱类型语言的语言，变量的数据类型由后面赋的值的类型决定</p>
@@ -49,6 +216,10 @@
 <p><strong>Tomcat是一个开源的Web应用服务器，</strong>它是Java Servlet和JavaServer Pages（JSP）的一个实现。它支持Java平台上的多种Web开发技术，如Java Servlet、JavaServer Pages、Java Expression Language和Java WebSocket。Tomcat是使用Java语言编写的，可以在各种操作系统上运行，例如Windows、Linux和Mac OS等。它是一种轻量级的Web服务器，可作为独立的服务器或嵌入到其他应用程序中使用。</p>
 <p>Tomcat是一个Java Servlet<strong>容器</strong>。Java Servlet是一种基于Java语言的Web编程技术，它能够处理客户端的请求并返回响应，可以用于构建动态Web应用程序。Tomcat提供了一个环境，让我们可以在其中部署和运行Java Servlet和JavaServer Pages应用程序。它还提供了许多其他功能，如连接池、安全管理、负载均衡和集群等。</p>
 <p>在Java Web应用程序开发中，通常需要一个Web服务器来运行和测试应用程序。Tomcat就是这样一个服务器，我们可以将Web应用程序部署到Tomcat中进行测试和运行。Tomcat的安装和配置都比较简单，而且它的性能也比较高，因此成为了Java Web开发中最流行的Web服务器之一。</p>
+<p><strong>JavaSE和JavaEE都是Java编程语言的不同版本。</strong></p>
+<p>JavaSE（Java Standard Edition）是Java编程语言的标准版本，它包含了Java编程语言的基本功能，如Java语言核心库、Java虚拟机、Java开发工具包等，它可以用于开发桌面应用程序、嵌入式系统、游戏等。</p>
+<p>JavaEE（Java Enterprise Edition）是针对企业级应用开发的Java版本，它包含了JavaSE的所有功能，并增加了一些企业级应用开发所需的高级功能，如Web应用程序开发、分布式应用程序开发、企业级服务开发等。JavaEE还提供了一些标准的API和技术，如Java Servlet、JavaServer Pages（JSP）、Java Message Service（JMS）等，使得企业级应用程序的开发更加容易和高效。</p>
+<p>总的来说，JavaSE适用于开发基本的应用程序，而JavaEE适用于开发更加复杂和高级的企业级应用程序。</p>
 ]]></content>
       <categories>
         <category>javaweb</category>
@@ -312,33 +483,6 @@
       </categories>
       <tags>
         <tag>revit</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FastAdmin上手记录</title>
-    <url>/2023/06/01/FastAdmin%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="FastAdmin上手记录"><a href="#FastAdmin上手记录" class="headerlink" title="FastAdmin上手记录"></a>FastAdmin上手记录</h1><h4 id="1-dubug模式开启"><a href="#1-dubug模式开启" class="headerlink" title="1.dubug模式开启"></a>1.dubug模式开启</h4><p>配置项：   .env—-         <code>debug=true</code></p>
-<h4 id="2-一键CRUD"><a href="#2-一键CRUD" class="headerlink" title="2.一键CRUD"></a>2.一键CRUD</h4><p>通过在线命令—————-对应数据库字段————–一键生成控制器—————一键生成菜单栏</p>
-<p>根据官方文档对应特殊字段进行操作 <a href="https://doc.fastadmin.net/doc/database.html">数据库 - FastAdmin框架文档</a></p>
-<h4 id="3-控制器"><a href="#3-控制器" class="headerlink" title="3.控制器"></a>3.控制器</h4><h5 id="3-1登录与鉴权"><a href="#3-1登录与鉴权" class="headerlink" title="3.1登录与鉴权"></a>3.1登录与鉴权</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    protected $noNeedLogin = [&#x27;mywork&#x27;];</span><br><span class="line">    protected $noNeedRight = [&#x27;mywork1&#x27;];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">        public function mywork()&#123;</span><br><span class="line">        return &#x27;无需登录和鉴权 work&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * mywork1</span><br><span class="line">     **/</span><br><span class="line">    public function mywork1()&#123;</span><br><span class="line">        return &#x27;无需鉴权但要登录 work1&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="3-2-数据校验"><a href="#3-2-数据校验" class="headerlink" title="3.2 数据校验"></a>3.2 数据校验</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">protected $modelValidate = true; //是否开启Validate验证，默认是false关闭状态</span><br><span class="line">protected $modelSceneValidate = true; //是否开启模型场景验证，默认是false关闭状态</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-API注册"><a href="#4-API注册" class="headerlink" title="4.API注册"></a>4.API注册</h4><p>controller控制器传参</p>
-<h4 id="5-JS"><a href="#5-JS" class="headerlink" title="5.JS"></a>5.JS</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"> $this-&gt;assignconfig(&#x27;userinfo&#x27;, [</span><br><span class="line">  &#x27;usertoken&#x27;=&gt;$this-&gt;auth-&gt;token,</span><br><span class="line">  &#x27;userid&#x27;=&gt;$this-&gt;auth-&gt;id,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="5-携带参数"><a href="#5-携带参数" class="headerlink" title="5.携带参数"></a>5.携带参数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$this-&gt;succesi(“成功&#x27;&#x27;, ur1 ( &quot;index/index/ceshi2 &#x27; , [ &#x27;abc &#x27;=&gt; &#x27;1234&#x27;]), [ &#x27;ceshi &#x27;=&gt;1 , &#x27; ceshi2&#x27;=&#x27;22222&#x27;]);</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-模拟登陆注册"><a href="#6-模拟登陆注册" class="headerlink" title="6.模拟登陆注册"></a>6.模拟登陆注册</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$openid=&quot;999&quot;;</span><br><span class="line">        $username=&quot;999&quot;;</span><br><span class="line"></span><br><span class="line">$search_res=Db::name(&quot;user&quot;)-&gt;whereOr(&quot;username&quot;,$username)-&gt;whereOr(&quot;openid&quot;,$openid)-&gt;find();</span><br><span class="line">        if($search_res)&#123;</span><br><span class="line">            $loginRes = $this-&gt;auth-&gt;direct($search_res[&quot;id&quot;]);</span><br><span class="line">            if($loginRes)&#123;</span><br><span class="line"></span><br><span class="line">                Cookie::set(&#x27;uid&#x27;, $this-&gt;auth-&gt;id );</span><br><span class="line">                Cookie::set(&#x27;token&#x27;, $this-&gt;auth-&gt;getToken());</span><br><span class="line">    </span><br><span class="line">                $this-&gt;success(&#x27;登录成功&#x27;,$loginRes);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                $this-&gt;success(&#x27;登录失败，未找到用户&#x27;,$loginRes);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            $registerRes = $this-&gt;auth-&gt;register($username,$username,&#x27;&#x27;,&#x27;&#x27;,[</span><br><span class="line">               &quot;openid&quot;=&gt;$openid </span><br><span class="line">            ]);</span><br><span class="line">            // Cookie::set(&#x27;uid&#x27;, $this-&gt;auth-&gt;id );</span><br><span class="line">            // Cookie::set(&#x27;token&#x27;, $this-&gt;auth-&gt;getToken());</span><br><span class="line"></span><br><span class="line">            $this-&gt;auth-&gt;logout();</span><br><span class="line">            Cookie::delete(&#x27;uid&#x27;);</span><br><span class="line">            Cookie::delete(&#x27;token&#x27;);</span><br><span class="line">            $this-&gt;success(&#x27;执行注册&#x27;,$registerRes);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
-      <tags>
-        <tag>后台管理系统</tag>
       </tags>
   </entry>
   <entry>
@@ -1164,7 +1308,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
