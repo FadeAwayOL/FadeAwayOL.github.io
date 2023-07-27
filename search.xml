@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>约瑟夫环</title>
+    <url>/2023/07/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="约瑟夫环（Josephus-problem）"><a href="#约瑟夫环（Josephus-problem）" class="headerlink" title="约瑟夫环（Josephus problem）"></a>约瑟夫环（Josephus problem）</h3><p><strong>约瑟夫环（Josephus problem）</strong>是一个古老的、以传说人物约瑟夫斯（Josephus）命名的数学问题。根据传说，约瑟夫斯是一位犹太历史学家和数学家，他在公元1世纪生活在罗马帝国统治下的犹太地区。约瑟夫斯和他的朋友们被罗马军队围困在一个洞穴中，他们决定集体自杀，但是他制定了一种规则，以决定每次自杀的人。根据这个规则，从第一个人开始，每隔m个人就会自杀，直到只剩下最后一个人。</p>
+<p>约瑟夫环问题可以形式化描述为：有n个人（编号为1到n），围坐在一个圆桌周围。从第一个人开始，每次计数m个人，然后将该人移出圆桌。接下来，从被移出的人的下一个人开始，再次计数m个人，继续将该人移出圆桌。如此循环进行，直到圆桌上只剩下最后一个人。问题的目标是确定最后一个幸存者的编号。</p>
+<p>约瑟夫环问题的解决方案在历史上有许多进化。以下是一些主要的解决方案进展：</p>
+<ol>
+<li><p>暴力解法：最简单的方法是使用循环和条件判断来模拟报数和删除的过程，直到只剩下最后一个人。这种方法的时间复杂度为O(nm)，效率较低。</p>
+</li>
+<li><p>递推公式：通过递推公式可以直接计算出最后一个幸存者的编号。递推公式的推导依赖于问题的规模和报数的间隔，并涉及到数学归纳法。这种方法的时间复杂度为O(n)，效率较高。</p>
+</li>
+<li><p>约瑟夫环问题的数学公式：根据约瑟夫环问题的特点，可以得到一种数学公式来计算最后一个幸存者的编号。这种方法的时间复杂度为O(1)，是最高效的解决方案。</p>
+<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line">约瑟夫环问题有一种数学公式可以用来计算最后一个幸存者的编号。这个公式是：</span><br><span class="line"></span><br><span class="line"><span class="variable">f</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">,</span> <span class="variable">m</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="variable">f</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="variable">m</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="variable">m</span><span class="punctuation">)</span> <span class="operator">%</span> <span class="variable">n</span></span><br><span class="line"></span><br><span class="line">其中，<span class="variable">n</span>表示总人数，<span class="variable">m</span>表示每次删除的间隔。<span class="variable">f</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">,</span> <span class="variable">m</span><span class="punctuation">)</span>表示当总人数为<span class="variable">n</span>时，每次删除<span class="variable">m</span>个人，最后幸存者的编号。</span><br><span class="line"></span><br><span class="line">这个公式的递推关系是：当总人数为<span class="variable">n</span>时，如果我们知道总人数为<span class="variable">n</span><span class="operator">-</span><span class="number">1</span>时最后幸存者的编号是<span class="variable">f</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="variable">m</span><span class="punctuation">)</span>，那么总人数为<span class="variable">n</span>时最后幸存者的编号就是在<span class="variable">f</span><span class="punctuation">(</span><span class="variable">n</span><span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="variable">m</span><span class="punctuation">)</span>的基础上加上<span class="variable">m</span>，然后再对<span class="variable">n</span>取余。这样就可以得到最后幸存者的编号。</span><br><span class="line"></span><br><span class="line">通过这个公式，我们可以在<span class="built_in">O</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span>的时间复杂度内计算出最后一个幸存者的编号，而不需要模拟整个删除过程。这是一种高效的解决方案。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>代码示例</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">/*题目:有n个人围成一圈，顺序排号。从第一个人开始报数(从1到3报数)</span></span><br><span class="line"><span class="comment">凡报到3的人退出圈子，问最后留下的是原来第几号的那位。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">首先，我们创建一个整型数组num，用来存储参与游戏的人员编号。</span></span><br><span class="line"><span class="comment">然后使用一个循环，将1到MAX_NUM依次赋值给数组中的元素，即初始化了参与游戏的人员编号。</span></span><br><span class="line"><span class="comment">接下来，使用一个循环来模拟游戏的过程。循环的条件是i &gt; 1，</span></span><br><span class="line"><span class="comment">表示还剩下至少两个人。在每一轮循环中，我们先根据当前的count计算出应该被淘汰的人的索引，</span></span><br><span class="line"><span class="comment">然后打印出该人的编号。</span></span><br><span class="line"><span class="comment">接着，我们使用另一个循环，将被淘汰的人之后的人员依次向前移动一位，以实现删除该人的效果。</span></span><br><span class="line"><span class="comment">最后，循环结束后，输出最后剩下的人的编号。*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DELETE_NUM 3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[MAX_NUM];</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i, j, k;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; MAX_NUM; i++) &#123;</span><br><span class="line">		num[i] = i + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = MAX_NUM; i &gt; <span class="number">1</span>; i--) &#123;</span><br><span class="line">		count = (count + DELETE_NUM - <span class="number">1</span>) % i;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, num[count]);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (j = count; j &lt; i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">			num[j] = num[j + <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n最后剩下的人是：%d\n&quot;</span>, num[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>数据结构：使用数据结构来解决约瑟夫环问题，例如链表、循环链表、队列等。通过模拟删除过程，不断更新数据结构，直到只剩下最后一个人。这种方法的时间复杂度取决于具体的数据结构实现。</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义链表节点结构</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;           <span class="comment">// 节点的数据</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span>  <span class="comment">// 指向下一个节点的指针</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个新的链表节点</span></span><br><span class="line"><span class="function">struct Node* <span class="title">createNode</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">newNode</span> =</span> (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node));</span><br><span class="line">    newNode-&gt;data = data;</span><br><span class="line">    newNode-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> newNode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 构建约瑟夫环链表</span></span><br><span class="line"><span class="function">struct Node* <span class="title">buildCircularLinkedList</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">head</span> =</span> createNode(<span class="number">1</span>);</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">prev</span> =</span> head;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">newNode</span> =</span> createNode(i);</span><br><span class="line">        prev-&gt;next = newNode;</span><br><span class="line">        prev = newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    prev-&gt;next = head;  <span class="comment">// 将最后一个节点指向头节点，形成循环链表</span></span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟约瑟夫环过程，返回最后一个幸存者的编号</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">josephus</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">head</span> =</span> buildCircularLinkedList(n);</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">current</span> =</span> head;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">prev</span> =</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将当前节点移动到起始位置</span></span><br><span class="line">    <span class="keyword">while</span> (current-&gt;data != <span class="number">1</span>) &#123;</span><br><span class="line">        prev = current;</span><br><span class="line">        current = current-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 模拟删除过程，直到只剩下一个节点</span></span><br><span class="line">    <span class="keyword">while</span> (current-&gt;next != current) &#123;</span><br><span class="line">        <span class="comment">// 将当前节点移动到第m个节点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            prev = current;</span><br><span class="line">            current = current-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 删除当前节点</span></span><br><span class="line">        prev-&gt;next = current-&gt;next;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">temp</span> =</span> current;</span><br><span class="line">        current = current-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lastSurvivor = current-&gt;data;</span><br><span class="line">    <span class="built_in">free</span>(current);</span><br><span class="line">    <span class="keyword">return</span> lastSurvivor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">10</span>;  <span class="comment">// 总人数</span></span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">3</span>;   <span class="comment">// 报数到m的人出列</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lastSurvivor = josephus(n, m);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The last survivor&#x27;s number is: %d\n&quot;</span>, lastSurvivor);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这段代码会打印出最后一个幸存者的编号。您可以根据需要修改变量`n`和`m`的值来改变问题的规模和报数的间隔。请注意，此代码示例中使用了链表来模拟约瑟夫环的过程。</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>经典算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言易漏易混总结</title>
+    <url>/2023/06/27/C%E8%AF%AD%E8%A8%80%E6%98%93%E6%BC%8F%E6%98%93%E6%B7%B7%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="C语言是万码之本"><a href="#C语言是万码之本" class="headerlink" title="C语言是万码之本"></a>C语言是万码之本</h1><h5 id="1-struct-student-s-struct-student-malloc-sizeof-struct-student"><a href="#1-struct-student-s-struct-student-malloc-sizeof-struct-student" class="headerlink" title="1.struct student* s=( struct student* ) malloc(sizeof(struct student) ) ;"></a>1.struct student* s=( struct student* ) malloc(sizeof(struct student) ) ;</h5><p>这段代码是动态分配内存的语句，可以理解为：</p>
+<ol>
+<li><p><code>struct student* s</code>：定义一个名为 <code>s</code> 的指针变量，其指向类型为 <code>struct student</code> 的结构体。</p>
+</li>
+<li><p><code>malloc(sizeof(struct student))</code>：调用 <code>malloc</code> 函数，分配 <code>struct student</code> 类型的内存块，并返回指向该内存块的指针，<code>sizeof(struct student)</code> 表示结构体 <code>struct student</code> 的大小。</p>
+</li>
+<li><p><code>(struct student*)</code>：将 <code>malloc</code> 函数返回的指针强制转换为 <code>struct student*</code> 类型，与 <code>s</code> 指针变量类型相同。</p>
+</li>
+</ol>
+<p>所以，整句话的意思是：为类型为 <code>struct student</code> 的结构体动态分配内存，并将指向该内存块的指针赋值给 <code>s</code> 指针变量。</p>
+<h5 id="2-判断一个数是否为素数时，需要进行质因数分解。而质因数的范围一般是在2到该数的平方根之间。因此，如果一个数不是素数，那么它的质因数一定是小于或等于它的平方根的。"><a href="#2-判断一个数是否为素数时，需要进行质因数分解。而质因数的范围一般是在2到该数的平方根之间。因此，如果一个数不是素数，那么它的质因数一定是小于或等于它的平方根的。" class="headerlink" title="2.判断一个数是否为素数时，需要进行质因数分解。而质因数的范围一般是在2到该数的平方根之间。因此，如果一个数不是素数，那么它的质因数一定是小于或等于它的平方根的。"></a>2.判断一个数是否为素数时，需要进行质因数分解。而质因数的范围一般是在2到该数的平方根之间。因此，如果一个数不是素数，那么它的质因数一定是小于或等于它的平方根的。</h5><p>举个例子，如果要判断一个数n是否为素数，假设它有一个大于1且小于等于n的因数x，那么必然有另外一个因数y，使得x * y = n。如果x和y都大于平方根n，那么它们的乘积就会大于n，与假设矛盾。因此，判断素数时只需要从2到平方根n的范围内进行判断，如果没有找到任何一个因数，那么这个数就是素数。</p>
+<p>因此，开方操作可以帮助我们缩小搜索范围，提高判断素数的效率。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> k = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>((<span class="keyword">double</span>)m);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= k; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (m%i == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaWeb回顾</title>
+    <url>/2023/05/18/JavaWeb%E5%9B%9E%E9%A1%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaWeb回顾"><a href="#JavaWeb回顾" class="headerlink" title="JavaWeb回顾"></a>JavaWeb回顾</h1><h3 id="1-javascript-客户端的一个脚本语言"><a href="#1-javascript-客户端的一个脚本语言" class="headerlink" title="1.javascript:客户端的一个脚本语言"></a>1.javascript:客户端的一个脚本语言</h3><p>js是一门弱类型语言的语言，变量的数据类型由后面赋的值的类型决定</p>
+<p>java方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">hello</span> <span class="params">(String name)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>js方法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">num1,num2,num3</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num1&gt;num2)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		alert(<span class="string">&quot;HELLo&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//参数不限制，返回值不限制</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>example 1</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showBGColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//event 当前发生的事件</span></span><br><span class="line">    <span class="comment">//event.srcElement:事件源</span></span><br><span class="line">    <span class="comment">//alert(event.srcElement.tagName);</span></span><br><span class="line">    <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;navy&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;white&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearBgcolor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;transparent&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;threeddarkshadom&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>example 2   JS</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//当页面加载完成,我们需要绑定各种事件</span></span><br><span class="line">    <span class="comment">//根据id获取到表格</span></span><br><span class="line">	<span class="keyword">var</span> fruitTbl = <span class="built_in">document</span>.getElementById(<span class="string">&quot;tbl_fruit&quot;</span>);<span class="comment">//获取表格中的所有的行</span></span><br><span class="line">	<span class="keyword">var</span> rows = fruitTbl.rows ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i&lt;rows. length ; i++)&#123;</span><br><span class="line">		<span class="keyword">var</span> tr = rows[i];</span><br><span class="line">		<span class="comment">//1.绑定鼠标悬浮设置背景颜色事件</span></span><br><span class="line">    	tr. onmouseover=showBGColor;<span class="comment">//无小括号，绑定事件按，未执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .innerHTML=&quot; &quot;; 赋值</span></span><br></pre></td></tr></table></figure>
+
+<p>1)JS是客户端（浏览器端）运行的脚本语言，语法风格和java比较类似.</p>
+<p>2)JS是弱类型的语言var str = 99 ;</p>
+<h3 id="2-JavaWeb是指基于Java语言的Web开发技术"><a href="#2-JavaWeb是指基于Java语言的Web开发技术" class="headerlink" title="2.JavaWeb是指基于Java语言的Web开发技术"></a>2.JavaWeb是指基于Java语言的Web开发技术</h3><p>它是一种创建Web应用程序的技术框架。JavaWeb应用程序可以在多个平台上运行，并且可以处理来自Web浏览器的请求和响应。</p>
+<p><strong>JavaWeb应用程序一般包括三个主要组件：</strong><em><strong>Servlet、JSP和JavaBean。Servlet是JavaWeb应用程序中处理客户端请求的Java类，</strong></em>*它用于处理Web容器（如Tomcat）收到的HTTP请求。Servlet是JavaWeb应用程序中处理客户端请求的Java类。它们通常被用来处理HTTP请求和响应。Servlet可以接收来自客户端的请求并生成响应，这些响应可以是HTML页面、XML文档、JSON数据等等。Servlet是基于Java编写的，因此可以跨平台运行。Servlet可以在web服务器中部署并由web容器管理。Web容器负责加载Servlet、初始化Servlet、调用Servlet的服务方法等。Servlet可以通过编写Java代码来实现各种功能，例如用户管理、订单管理、商品管理等。Servlet还可以与JSP（JavaServer Pages）结合使用，JSP可以用来生成动态页面，而Servlet可以用来处理页面请求并生成响应。最后，Servlet还有一些重要的接口，例如ServletConfig、ServletContext、HttpServletRequest、HttpServletResponse等，它们提供了一些常用的方法和属性，可以帮助我们更好地编写Servlet应用程序。</p>
+<p><img src="https://s2.loli.net/2023/06/28/RVlEqLdAy5tgT8F.png"></p>
+<p><strong>JSP是一种动态生成HTML页面的技术</strong>，它可以将HTML标记和Java代码混合在一起使用，使页面具有交互性和动态性。JSP(JavaServer Pages)是一种动态生成HTML页面的技术。它是一种基于Java的服务器端技术，用于生成动态的、交互式的Web页面。与Servlet不同的是，JSP是一种模板引擎技术，它将Java代码嵌入到HTML中，通过在运行时动态生成HTML页面来响应客户端请求。</p>
+<p>JSP页面通常包含HTML标记和JSP标记（JSP标记以&lt;%和%&gt;包围）。JSP页面中的Java代码可以直接嵌入到HTML标记之间，也可以使用JSP标记来包含Java代码块和表达式。通过使用JSP标记，可以将Java代码分离出来，使得页面更加简洁和易于维护。 JSP还提供了一些内置对象，例如request、response、session和application等，这些对象可以用来访问请求和响应信息以及应用程序数据。此外，JSP还可以使用标签库(Tag Library)来扩展页面的功能。</p>
+<p>JSP技术的优点包括：</p>
+<p>1.易于学习和使用，因为它使用标准的HTML语法和Java语法。</p>
+<p>2.可重用性高，因为可以将一些常用的代码封装成标签库来实现代码复用。</p>
+<p>3.可维护性好，因为可以将Java代码和HTML代码分离处理，易于维护和修改。</p>
+<p>4.性能好，因为在页面请求量较大时，JSP页面只需要编译一次即可，后续请求可以直接使用编译后的结果，提高了页面响应速度。</p>
+<p>总之，JSP是一种强大的动态Web页面技术，它为Web开发人员提供了更加灵活和高效的开发方式。</p>
+<p><strong>JavaBean是一种Java类</strong>，用于封装应用程序的业务逻辑和数据。</p>
+<p>JavaBean是指遵循JavaBean规范的Java类，通常用于数据传输和业务处理。JavaBean具有以下几个特点：</p>
+<ol>
+<li><p>公共无参构造方法：JavaBean必须提供一个公共的无参构造方法，以便容器可以实例化JavaBean。</p>
+</li>
+<li><p>私有属性：JavaBean的属性必须是私有的，不能直接从外部访问。</p>
+</li>
+<li><p>Getter和Setter方法：JavaBean必须提供公共的Getter和Setter方法，以便访问和修改JavaBean的属性。</p>
+</li>
+<li><p>实现Serializable接口：JavaBean必须实现Serializable接口，以便它可以被序列化和反序列化。</p>
+</li>
+<li><p>继承自Object类：JavaBean必须继承自Object类。</p>
+</li>
+</ol>
+<p>JavaBean通常用于封装数据，例如用户信息、订单信息、商品信息等。它们被广泛应用于JavaWeb开发中，作为数据传输对象（DTO）来传递数据。JavaBean还可以用于业务处理，例如计算、验证等。通过封装属性和提供Getter和Setter方法，可以使JavaBean更加灵活和易于维护。</p>
+<p>在JavaBean中，通常使用IDE（如Eclipse、IntelliJ IDEA等）来生成Getter和Setter方法，以及toString、equals和hashCode方法等，以提高开发效率。此外，JavaBean还可以使用注解来简化代码，例如@JsonIgnore、@JsonInclude等，以控制JavaBean的序列化和反序列化行为。</p>
+<p>JavaWeb技术还包括一些基础设施组件，如JavaServer Pages标准标签库（JSTL）、Java Servlet API和JavaServer Faces（JSF）。这些组件为JavaWeb应用程序提供了许多基本功能，例如会话管理、安全性和数据持久性等。</p>
+<p>与其他Web开发技术相比，JavaWeb应用程序具有更好的可扩展性、可靠性和安全性。它还支持各种开发模式和编程语言，使得开发人员可以更加灵活地设计和构建Web应用程序。</p>
+<p><strong>Tomcat是一个开源的Web应用服务器，</strong>它是Java Servlet和JavaServer Pages（JSP）的一个实现。它支持Java平台上的多种Web开发技术，如Java Servlet、JavaServer Pages、Java Expression Language和Java WebSocket。Tomcat是使用Java语言编写的，可以在各种操作系统上运行，例如Windows、Linux和Mac OS等。它是一种轻量级的Web服务器，可作为独立的服务器或嵌入到其他应用程序中使用。</p>
+<p>Tomcat是一个Java Servlet<strong>容器</strong>。Java Servlet是一种基于Java语言的Web编程技术，它能够处理客户端的请求并返回响应，可以用于构建动态Web应用程序。Tomcat提供了一个环境，让我们可以在其中部署和运行Java Servlet和JavaServer Pages应用程序。它还提供了许多其他功能，如连接池、安全管理、负载均衡和集群等。</p>
+<p>在Java Web应用程序开发中，通常需要一个Web服务器来运行和测试应用程序。Tomcat就是这样一个服务器，我们可以将Web应用程序部署到Tomcat中进行测试和运行。Tomcat的安装和配置都比较简单，而且它的性能也比较高，因此成为了Java Web开发中最流行的Web服务器之一。</p>
+<p><strong>JavaSE和JavaEE都是Java编程语言的不同版本。</strong></p>
+<p>JavaSE（Java Standard Edition）是Java编程语言的标准版本，它包含了Java编程语言的基本功能，如Java语言核心库、Java虚拟机、Java开发工具包等，它可以用于开发桌面应用程序、嵌入式系统、游戏等。</p>
+<p>JavaEE（Java Enterprise Edition）是针对企业级应用开发的Java版本，它包含了JavaSE的所有功能，并增加了一些企业级应用开发所需的高级功能，如Web应用程序开发、分布式应用程序开发、企业级服务开发等。JavaEE还提供了一些标准的API和技术，如Java Servlet、JavaServer Pages（JSP）、Java Message Service（JMS）等，使得企业级应用程序的开发更加容易和高效。</p>
+<p>总的来说，JavaSE适用于开发基本的应用程序，而JavaEE适用于开发更加复杂和高级的企业级应用程序。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>javaweb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VUE回顾与拓展</title>
     <url>/2023/06/28/VUE%E5%9B%9E%E9%A1%BE%E4%B8%8E%E6%8B%93%E5%B1%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="VUE回顾"><a href="#VUE回顾" class="headerlink" title="VUE回顾"></a>VUE回顾</h2><p>Vue.js是一个流行的JavaScript框架，提供了双向绑定的能力。双向绑定意味着当数据发生变化时，视图会自动更新，并且当视图发生变化时，数据也会自动更新。</p>
@@ -144,88 +260,6 @@
       </categories>
       <tags>
         <tag>后台管理系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言易漏易混总结</title>
-    <url>/2023/06/27/C%E8%AF%AD%E8%A8%80%E6%98%93%E6%BC%8F%E6%98%93%E6%B7%B7%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="C语言是万码之本"><a href="#C语言是万码之本" class="headerlink" title="C语言是万码之本"></a>C语言是万码之本</h1><h5 id="1-struct-student-s-struct-student-malloc-sizeof-struct-student"><a href="#1-struct-student-s-struct-student-malloc-sizeof-struct-student" class="headerlink" title="1.struct student* s=( struct student* ) malloc(sizeof(struct student) ) ;"></a>1.struct student* s=( struct student* ) malloc(sizeof(struct student) ) ;</h5><p>这段代码是动态分配内存的语句，可以理解为：</p>
-<ol>
-<li><p><code>struct student* s</code>：定义一个名为 <code>s</code> 的指针变量，其指向类型为 <code>struct student</code> 的结构体。</p>
-</li>
-<li><p><code>malloc(sizeof(struct student))</code>：调用 <code>malloc</code> 函数，分配 <code>struct student</code> 类型的内存块，并返回指向该内存块的指针，<code>sizeof(struct student)</code> 表示结构体 <code>struct student</code> 的大小。</p>
-</li>
-<li><p><code>(struct student*)</code>：将 <code>malloc</code> 函数返回的指针强制转换为 <code>struct student*</code> 类型，与 <code>s</code> 指针变量类型相同。</p>
-</li>
-</ol>
-<p>所以，整句话的意思是：为类型为 <code>struct student</code> 的结构体动态分配内存，并将指向该内存块的指针赋值给 <code>s</code> 指针变量。</p>
-<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5>]]></content>
-      <categories>
-        <category>C</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaWeb回顾</title>
-    <url>/2023/05/18/JavaWeb%E5%9B%9E%E9%A1%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaWeb回顾"><a href="#JavaWeb回顾" class="headerlink" title="JavaWeb回顾"></a>JavaWeb回顾</h1><h3 id="1-javascript-客户端的一个脚本语言"><a href="#1-javascript-客户端的一个脚本语言" class="headerlink" title="1.javascript:客户端的一个脚本语言"></a>1.javascript:客户端的一个脚本语言</h3><p>js是一门弱类型语言的语言，变量的数据类型由后面赋的值的类型决定</p>
-<p>java方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">hello</span> <span class="params">(String name)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>js方法</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">num1,num2,num3</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num1&gt;num2)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;hello to&quot;</span>+name;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		alert(<span class="string">&quot;HELLo&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//参数不限制，返回值不限制</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>example 1</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showBGColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//event 当前发生的事件</span></span><br><span class="line">    <span class="comment">//event.srcElement:事件源</span></span><br><span class="line">    <span class="comment">//alert(event.srcElement.tagName);</span></span><br><span class="line">    <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;navy&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;white&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearBgcolor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(event&amp;&amp;event.srcElement&amp;&amp;event.srcElement.tagName==<span class="string">&quot;TD&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> td=event.srcElement;</span><br><span class="line">        <span class="keyword">var</span> tr=td.parentElement;</span><br><span class="line">        tr.style.backgroundColor=<span class="string">&quot;transparent&quot;</span>;</span><br><span class="line">        <span class="comment">//tr.cells表示获取这个tr中所有的单元格</span></span><br><span class="line"> 		<span class="keyword">var</span> tds=tr.cells;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span>;i&lt;tds.length;i++)&#123;</span><br><span class="line">            tds[i].style.color=<span class="string">&quot;threeddarkshadom&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>example 2   JS</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//当页面加载完成,我们需要绑定各种事件</span></span><br><span class="line">    <span class="comment">//根据id获取到表格</span></span><br><span class="line">	<span class="keyword">var</span> fruitTbl = <span class="built_in">document</span>.getElementById(<span class="string">&quot;tbl_fruit&quot;</span>);<span class="comment">//获取表格中的所有的行</span></span><br><span class="line">	<span class="keyword">var</span> rows = fruitTbl.rows ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i&lt;rows. length ; i++)&#123;</span><br><span class="line">		<span class="keyword">var</span> tr = rows[i];</span><br><span class="line">		<span class="comment">//1.绑定鼠标悬浮设置背景颜色事件</span></span><br><span class="line">    	tr. onmouseover=showBGColor;<span class="comment">//无小括号，绑定事件按，未执行</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .innerHTML=&quot; &quot;; 赋值</span></span><br></pre></td></tr></table></figure>
-
-<p>1)JS是客户端（浏览器端）运行的脚本语言，语法风格和java比较类似.</p>
-<p>2)JS是弱类型的语言var str = 99 ;</p>
-<h3 id="2-JavaWeb是指基于Java语言的Web开发技术"><a href="#2-JavaWeb是指基于Java语言的Web开发技术" class="headerlink" title="2.JavaWeb是指基于Java语言的Web开发技术"></a>2.JavaWeb是指基于Java语言的Web开发技术</h3><p>它是一种创建Web应用程序的技术框架。JavaWeb应用程序可以在多个平台上运行，并且可以处理来自Web浏览器的请求和响应。</p>
-<p><strong>JavaWeb应用程序一般包括三个主要组件：</strong><em><strong>Servlet、JSP和JavaBean。Servlet是JavaWeb应用程序中处理客户端请求的Java类，</strong></em>*它用于处理Web容器（如Tomcat）收到的HTTP请求。Servlet是JavaWeb应用程序中处理客户端请求的Java类。它们通常被用来处理HTTP请求和响应。Servlet可以接收来自客户端的请求并生成响应，这些响应可以是HTML页面、XML文档、JSON数据等等。Servlet是基于Java编写的，因此可以跨平台运行。Servlet可以在web服务器中部署并由web容器管理。Web容器负责加载Servlet、初始化Servlet、调用Servlet的服务方法等。Servlet可以通过编写Java代码来实现各种功能，例如用户管理、订单管理、商品管理等。Servlet还可以与JSP（JavaServer Pages）结合使用，JSP可以用来生成动态页面，而Servlet可以用来处理页面请求并生成响应。最后，Servlet还有一些重要的接口，例如ServletConfig、ServletContext、HttpServletRequest、HttpServletResponse等，它们提供了一些常用的方法和属性，可以帮助我们更好地编写Servlet应用程序。</p>
-<p><strong>JSP是一种动态生成HTML页面的技术</strong>，它可以将HTML标记和Java代码混合在一起使用，使页面具有交互性和动态性。JSP(JavaServer Pages)是一种动态生成HTML页面的技术。它是一种基于Java的服务器端技术，用于生成动态的、交互式的Web页面。与Servlet不同的是，JSP是一种模板引擎技术，它将Java代码嵌入到HTML中，通过在运行时动态生成HTML页面来响应客户端请求。</p>
-<p>JSP页面通常包含HTML标记和JSP标记（JSP标记以&lt;%和%&gt;包围）。JSP页面中的Java代码可以直接嵌入到HTML标记之间，也可以使用JSP标记来包含Java代码块和表达式。通过使用JSP标记，可以将Java代码分离出来，使得页面更加简洁和易于维护。 JSP还提供了一些内置对象，例如request、response、session和application等，这些对象可以用来访问请求和响应信息以及应用程序数据。此外，JSP还可以使用标签库(Tag Library)来扩展页面的功能。</p>
-<p>JSP技术的优点包括：</p>
-<p>1.易于学习和使用，因为它使用标准的HTML语法和Java语法。</p>
-<p>2.可重用性高，因为可以将一些常用的代码封装成标签库来实现代码复用。</p>
-<p>3.可维护性好，因为可以将Java代码和HTML代码分离处理，易于维护和修改。</p>
-<p>4.性能好，因为在页面请求量较大时，JSP页面只需要编译一次即可，后续请求可以直接使用编译后的结果，提高了页面响应速度。</p>
-<p>总之，JSP是一种强大的动态Web页面技术，它为Web开发人员提供了更加灵活和高效的开发方式。</p>
-<p><strong>JavaBean是一种Java类</strong>，用于封装应用程序的业务逻辑和数据。</p>
-<p>JavaBean是指遵循JavaBean规范的Java类，通常用于数据传输和业务处理。JavaBean具有以下几个特点：</p>
-<ol>
-<li><p>公共无参构造方法：JavaBean必须提供一个公共的无参构造方法，以便容器可以实例化JavaBean。</p>
-</li>
-<li><p>私有属性：JavaBean的属性必须是私有的，不能直接从外部访问。</p>
-</li>
-<li><p>Getter和Setter方法：JavaBean必须提供公共的Getter和Setter方法，以便访问和修改JavaBean的属性。</p>
-</li>
-<li><p>实现Serializable接口：JavaBean必须实现Serializable接口，以便它可以被序列化和反序列化。</p>
-</li>
-<li><p>继承自Object类：JavaBean必须继承自Object类。</p>
-</li>
-</ol>
-<p>JavaBean通常用于封装数据，例如用户信息、订单信息、商品信息等。它们被广泛应用于JavaWeb开发中，作为数据传输对象（DTO）来传递数据。JavaBean还可以用于业务处理，例如计算、验证等。通过封装属性和提供Getter和Setter方法，可以使JavaBean更加灵活和易于维护。</p>
-<p>在JavaBean中，通常使用IDE（如Eclipse、IntelliJ IDEA等）来生成Getter和Setter方法，以及toString、equals和hashCode方法等，以提高开发效率。此外，JavaBean还可以使用注解来简化代码，例如@JsonIgnore、@JsonInclude等，以控制JavaBean的序列化和反序列化行为。</p>
-<p>JavaWeb技术还包括一些基础设施组件，如JavaServer Pages标准标签库（JSTL）、Java Servlet API和JavaServer Faces（JSF）。这些组件为JavaWeb应用程序提供了许多基本功能，例如会话管理、安全性和数据持久性等。</p>
-<p>与其他Web开发技术相比，JavaWeb应用程序具有更好的可扩展性、可靠性和安全性。它还支持各种开发模式和编程语言，使得开发人员可以更加灵活地设计和构建Web应用程序。</p>
-<p><strong>Tomcat是一个开源的Web应用服务器，</strong>它是Java Servlet和JavaServer Pages（JSP）的一个实现。它支持Java平台上的多种Web开发技术，如Java Servlet、JavaServer Pages、Java Expression Language和Java WebSocket。Tomcat是使用Java语言编写的，可以在各种操作系统上运行，例如Windows、Linux和Mac OS等。它是一种轻量级的Web服务器，可作为独立的服务器或嵌入到其他应用程序中使用。</p>
-<p>Tomcat是一个Java Servlet<strong>容器</strong>。Java Servlet是一种基于Java语言的Web编程技术，它能够处理客户端的请求并返回响应，可以用于构建动态Web应用程序。Tomcat提供了一个环境，让我们可以在其中部署和运行Java Servlet和JavaServer Pages应用程序。它还提供了许多其他功能，如连接池、安全管理、负载均衡和集群等。</p>
-<p>在Java Web应用程序开发中，通常需要一个Web服务器来运行和测试应用程序。Tomcat就是这样一个服务器，我们可以将Web应用程序部署到Tomcat中进行测试和运行。Tomcat的安装和配置都比较简单，而且它的性能也比较高，因此成为了Java Web开发中最流行的Web服务器之一。</p>
-<p><strong>JavaSE和JavaEE都是Java编程语言的不同版本。</strong></p>
-<p>JavaSE（Java Standard Edition）是Java编程语言的标准版本，它包含了Java编程语言的基本功能，如Java语言核心库、Java虚拟机、Java开发工具包等，它可以用于开发桌面应用程序、嵌入式系统、游戏等。</p>
-<p>JavaEE（Java Enterprise Edition）是针对企业级应用开发的Java版本，它包含了JavaSE的所有功能，并增加了一些企业级应用开发所需的高级功能，如Web应用程序开发、分布式应用程序开发、企业级服务开发等。JavaEE还提供了一些标准的API和技术，如Java Servlet、JavaServer Pages（JSP）、Java Message Service（JMS）等，使得企业级应用程序的开发更加容易和高效。</p>
-<p>总的来说，JavaSE适用于开发基本的应用程序，而JavaEE适用于开发更加复杂和高级的企业级应用程序。</p>
-]]></content>
-      <categories>
-        <category>javaweb</category>
-      </categories>
-      <tags>
-        <tag>javaweb</tag>
       </tags>
   </entry>
   <entry>
@@ -1308,7 +1342,7 @@ echo $NoAlike;
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
