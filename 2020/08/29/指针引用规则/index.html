@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>指针*与引用&amp; | FadeAway Space</title><meta name="keywords" content="c++"><meta name="author" content="FadeAway"><meta name="copyright" content="FadeAway"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="醉后不知天子在水，满船清梦压星河">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针*与引用&amp;">
+<meta property="og:url" content="https://github.com/FadeAwayOL/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/index.html">
+<meta property="og:site_name" content="FadeAway Space">
+<meta property="og:description" content="醉后不知天子在水，满船清梦压星河">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/BVIzvgja5UFY3Q6.png">
+<meta property="article:published_time" content="2020-08-29T03:11:53.000Z">
+<meta property="article:modified_time" content="2021-12-27T14:09:30.000Z">
+<meta property="article:author" content="FadeAway">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/08/29/BVIzvgja5UFY3Q6.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://github.com/FadeAwayOL/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: FadeAway","link":"链接: ","source":"来源: FadeAway Space","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '指针*与引用&',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-27 22:09:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> 图库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.200.251"><i class="fa-fw fas fa-video"></i><span> 个人影视网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/08/29/BVIzvgja5UFY3Q6.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">FadeAway Space</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> 图库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.200.251"><i class="fa-fw fas fa-video"></i><span> 个人影视网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">指针*与引用&amp;</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-29T03:11:53.000Z" title="发表于 2020-08-29 11:11:53">2020-08-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-27T14:09:30.000Z" title="更新于 2021-12-27 22:09:30">2021-12-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%AD%E6%B3%95/">语法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="指针*与引用&amp;"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="指针-与引用-amp"><a href="#指针-与引用-amp" class="headerlink" title="指针*与引用&amp;"></a>指针*与引用&amp;</h1><p>1.指针和引用的定义和性质区别：</p>
+<p>（1）指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；而引用跟原来</p>
+<p>的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：</p>
+<p>int a=1;int *p=&a;</p>
+<p>int a=1;int &amp;b=a;</p>
+<p>上面定义了一个整形变量和一个指针变量p，该指针变量指向a的存储单元，即p的值是a存储单元的地址。</p>
+<p>而下面2句定义了一个整形变量a和这个整形a的引用b，事实上a和b是同一个东西，在内存占有同一个存储单</p>
+<p>元。</p>
+<p>(2)引用不可以为空，当被创建的时候，必须初始化，而指针可以是空值(NULL)，可以在任何时候被初始化。</p>
+<p>(3)可以有const指针，但是没有const引用；</p>
+<p>(4)指针可以有多级，但是引用只能是一级（int **p；合法 而 int &amp;&amp;a是不合法的）</p>
+<p>(5)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候<strong>必须初始化；</strong></p>
+<p>(6)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就<strong>不会再改变</strong>了。</p>
+<p>(7)”sizeof引用”得到的是所指向的<strong>变量(对象)的大小</strong>，而”sizeof指针”得到的是<strong>指针本身的大小</strong>；</p>
+<p>(8)指针和引用的自增(++)运算意义不一样；</p>
+<p>(9)如果返回<strong>动态内存分配的对象或者内存，必须使用指针</strong>，引用可能引起内存泄漏；</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>如下示例，要求在 func( p)中，m_value值和 参数 p 指代的实际内容值相同；<br>且之后 m_value值的改变，会影响 p 的实际内容；</p>
+<h2 id="仅一级指针实现"><a href="#仅一级指针实现" class="headerlink" title="仅一级指针实现"></a>仅一级指针实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一级指针参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> * p,  <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	*p = m_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(pn, <span class="number">77</span>);</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line"></span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121314151617181920212223</span></span><br></pre></td></tr></table></figure>
+
+<p>程序输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">77</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>发现 后面改变了 <code>m_value</code> 值 ，并不影响 <code>*pn</code>。 这不合要求</p>
+<h2 id="二级指针实现"><a href="#二级指针实现" class="headerlink" title="二级指针实现"></a>二级指针实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二级指针参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> ** p, <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	*p = &amp;m_value; <span class="comment">//*p 表示一级指针 ，指向 m_value 内容的地址</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(&amp;pn, <span class="number">77</span>); <span class="comment">//pn 是指针变量， &amp;pn 就是二级指针</span></span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line">	</span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">123456789101112131415161718192021222324</span></span><br></pre></td></tr></table></figure>
+
+<p>输出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">88</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>满足要求。</p>
+<h2 id="指针引用实现"><a href="#指针引用实现" class="headerlink" title="指针引用实现"></a>指针引用实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m_value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//指针引用参数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> *&amp; p, <span class="keyword">int</span> dest)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	m_value = dest;</span><br><span class="line">	p = &amp;m_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> *pn = &amp;n;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt; endl; <span class="comment">//初始值</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">func</span>(pn, <span class="number">77</span>); <span class="comment">//传递一级指针就以</span></span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//经过 func 函数后</span></span><br><span class="line">	</span><br><span class="line">	m_value = <span class="number">88</span>;</span><br><span class="line">	cout &lt;&lt; *pn &lt;&lt;endl; <span class="comment">//改变 m_value 后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">123456789101112131415161718192021222324</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">77</span><br><span class="line">88</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>满足要求。</p>
+<h2 id="In-addtion"><a href="#In-addtion" class="headerlink" title="In addtion"></a>In addtion</h2><h3 id="关于int-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a"><a href="#关于int-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a" class="headerlink" title="关于int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a"></a>关于<code>int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a</code></h3><p>上述的四条语句，前面两个很好理解，而后面两个，大部分C＋＋初学者都会比较困惑，今天我也是查阅了一些资料以后才恍然大悟。下面具体来说明一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int i;</span><br><span class="line"></span><br><span class="line">int *a = &amp;i;//这里a是一个指针，它指向变量i</span><br><span class="line"></span><br><span class="line">int &amp;b = i;//这里b是一个引用，它是变量i的引用，引用是什么？它的本质是什么？下面会具体讲述</span><br><span class="line"></span><br><span class="line">int * &amp;c = a;//这里c是一个引用，它是指针a的引用</span><br><span class="line"></span><br><span class="line">int &amp; *d;//这里d是一个指针，它指向引用，但引用不是实体，所以这是错误的</span><br><span class="line">123456789</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>(int*) &amp;a</code>为取a的地址，然后进行强制类型转换，转为int类型的指针。</p>
+</blockquote>
+<h4 id="int-amp-a和int-amp-a"><a href="#int-amp-a和int-amp-a" class="headerlink" title="int * &amp;a和int &amp; *a"></a><code>int * &amp;a</code>和<code>int &amp; *a</code></h4><p>我在写这两句语句时，在<code>int</code> 和<code>*(&amp;)</code>间空了一格，而后面的<code>&amp;(*)</code>紧跟<code>a</code>。原因是：分析此类语句时，最简单的办法就是从<strong>右往左读，离变量名最近的符号对其类型有最直接的影</strong>响，即先看<code>a</code>前紧跟的是什么，它决定了<code>a</code>的类型。例如，对于<code>int &amp; *a</code>，此处是<code>*</code>，表示其首先是个指针，指针的类型是一个int型引用。而<code>int</code>后的一个空格是为了防止<code>int *a, b;//a是指针，而b不是</code>。</p>
+<p>假设有一个 int 类型的变量 <code>a</code>，<code>pa</code>是指向它的指针，那么<code>*&amp;a</code>和<code>&amp;*pa</code>分别是什么意思呢？</p>
+<p><code>*&amp;a</code>可以理解为<code>*(&amp;a)</code>，<code>&amp;a</code>表示取变量 <code>a</code> 的地址（等价于 <code>pa</code>），<code>*(&amp;a)</code>表示取这个地址上的数据（等价于 <code>*pa</code>），绕来绕去，又回到了原点，<code>*&amp;a</code>仍然等价于 a。</p>
+<p><code>&amp;*pa</code>可以理解为<code>&amp;(*pa)</code>，<code>*pa</code>表示取得 <code>pa</code> 指向的数据（等价于 <code>a</code>），<code>&amp;(*pa)</code>表示数据的地址（等价于 <code>&amp;a</code>），所以<code>&amp;*pa</code>等价于 <code>pa</code>。</p>
+<h4 id="int-a"><a href="#int-a" class="headerlink" title="int **a;"></a><code>int **a;</code></h4><p>它的功能和<code>int *&amp;a</code>一样，两者生成的二进制代码一样。这再一次说明了引用就是指针。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">FadeAway</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://github.com/FadeAwayOL/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/">https://github.com/FadeAwayOL/2020/08/29/%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E8%A7%84%E5%88%99/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/FadeAwayOL" target="_blank">FadeAway Space</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c++</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/08/29/BVIzvgja5UFY3Q6.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" target="_blank"><img class="post-qr-code-img" src="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/08/29/try%20catch%E7%94%A8%E6%B3%95/"><img class="prev-cover" src="https://i.loli.net/2020/08/29/EIDToBwaZMXqRrk.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">try catch用法</div></div></a></div><div class="next-post pull-right"><a href="/2020/08/28/%E5%A4%9A%E6%80%81/"><img class="next-cover" src="https://i.loli.net/2020/08/29/tv5CbG1aDneJKRS.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">多态</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/08/29/static%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" title="static局部变量辨析"><img class="cover" src="https://i.loli.net/2020/08/29/5QqOdLvEYVlriDz.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-29</div><div class="title">static局部变量辨析</div></div></a></div><div><a href="/2020/07/07/%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3/" title="友元函数深度理解"><img class="cover" src="https://i.loli.net/2020/07/07/ce3wvfE6qLOIN1u.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-07</div><div class="title">友元函数深度理解</div></div></a></div><div><a href="/2020/07/07/%E5%9F%9F%E8%BF%90%E7%AE%97%E7%AC%A6/" title="作用域运算符"><img class="cover" src="https://i.loli.net/2020/07/07/p5zCxXQwRaTD6Hl.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-07</div><div class="title">作用域运算符</div></div></a></div><div><a href="/2020/08/28/%E5%A4%9A%E6%80%81/" title="多态"><img class="cover" src="https://i.loli.net/2020/08/29/tv5CbG1aDneJKRS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-28</div><div class="title">多态</div></div></a></div><div><a href="/2020/06/30/%E6%8B%B7%E8%B4%9D%EF%BC%88%E5%A4%8D%E5%88%B6%EF%BC%89%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" title="复制构造函数（拷贝函数）"><img class="cover" src="https://i.loli.net/2020/06/30/35VGS4kFNPt6gq8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-30</div><div class="title">复制构造函数（拷贝函数）</div></div></a></div><div><a href="/2020/06/30/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%EF%BC%88%E9%87%8D%E8%BD%BD%EF%BC%89/" title="构造函数与析构函数（重载）"><img class="cover" src="https://i.loli.net/2020/06/30/1RSnuEiQlCBAbym.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-30</div><div class="title">构造函数与析构函数（重载）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E4%B8%8E%E5%BC%95%E7%94%A8-amp"><span class="toc-number">1.</span> <span class="toc-text">指针*与引用&amp;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%85%E4%B8%80%E7%BA%A7%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.1.</span> <span class="toc-text">仅一级指针实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.2.</span> <span class="toc-text">二级指针实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.3.</span> <span class="toc-text">指针引用实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#In-addtion"><span class="toc-number">2.4.</span> <span class="toc-text">In addtion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Eint-a-int-amp-a-int-amp-a-int-amp-a-int-amp-a"><span class="toc-number">2.4.1.</span> <span class="toc-text">关于int *a; int &amp;a; int &amp; *a; int * &amp;a; (int*) &amp;a</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#int-amp-a%E5%92%8Cint-amp-a"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">int * &amp;a和int &amp; *a</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#int-a"><span class="toc-number">2.4.1.2.</span> <span class="toc-text">int **a;</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/08/29/BVIzvgja5UFY3Q6.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By FadeAway</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">别想着一帆风顺，总有时光默默无闻</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7AwEz6VhpVAfjnEpmbOH8bFM-gzGzoHsz',
+      appKey: 'IR3o4kvmw9GDbNp2A0b0W2pi',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: 'emoji CDN',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
