@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Nginx服务器</title>
+    <url>/2023/10/16/Nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h1><h2 id="1-Nginx简介"><a href="#1-Nginx简介" class="headerlink" title="1.Nginx简介"></a>1.Nginx简介</h2><p><strong>Nginx</strong>（发音为“engine-x”）是一个高性能的开源反向代理服务器（也可以用作负载均衡器）、Web服务器和邮件代理服务器。它被广泛用于构建高性能、可靠的Web应用程序和服务。</p>
+<p>作为反向代理服务器，Nginx可以接收客户端请求并将其转发到后端的多个服务器上，实现<strong>负载均衡</strong>。它可以根据不同的策略将请求分发到不同的服务器，以实现最佳的性能和可用性。此外，Nginx还可以进行<strong>动态内容缓存</strong>，减轻后端服务器的负载。</p>
+<p>Nginx还提供了一些高级功能，如<strong>URL重写、反向代理缓存、SSL/TLS加密、基于IP地址的访问控制</strong>等。它还支持<strong>动态模块化</strong>，可以通过加载不同的模块来扩展其功能。</p>
+<p>在微服务架构中，Nginx可以用作微服务网关。它可以作为整个微服务架构的入口点，接收所有的客户端请求，并根据路由规则将请求转发到相应的微服务实例。通过 Nginx 的负载均衡功能，可以将请求分发到多个微服务实例上，以实现高可用性和可伸缩性。</p>
+<p>优点：</p>
+<p><strong>高并发连接</strong>: 官方称单节点支持5万并发连接数，实际生产环境能够承受2-3万并发。<br><strong>内存消耗少</strong>:  在3万并发连接下，开启10个nginx进程仅消耗150M内存 (15M×10=150M)<br><strong>配置简单</strong>：</p>
+<h2 id="2-基本架构"><a href="#2-基本架构" class="headerlink" title="2.基本架构"></a>2.基本架构</h2><p><img src="https://s2.loli.net/2023/10/16/28jrd5mZYxPuefa.png"></p>
+<h4 id="Master-Worker模式"><a href="#Master-Worker模式" class="headerlink" title="Master-Worker模式"></a>Master-Worker模式</h4><p>Master-Worker模式是一种并行计算模式，它将任务的执行分为两个部分：Master（主节点）和Worker（工作节点）。</p>
+<p>在Master-Worker模式中，Master负责任务的分配和调度，它将任务分解成较小的子任务，并将这些子任务分发给多个Worker节点进行并行处理。Master节点将收集和整合Worker节点的处理结果，并最终生成最终的结果。</p>
+<p>Worker节点是执行实际任务的计算单元，它接收到Master节点分发的任务后，进行计算或处理，并将结果返回给Master节点。Worker节点可以是多个，并行地执行任务，从而提高整个系统的处理能力和性能。</p>
+<p>Master-Worker模式适用于那些可以被分解成多个独立子任务的问题，而且这些子任务之间没有依赖关系，可以并行处理。该模式可以提高计算效率和系统的可扩展性，尤其在大规模计算或处理任务的场景下具有很好的应用前景。</p>
+<p>需要注意的是，Master-Worker模式仅提供了任务的分配和调度机制，并不涉及具体的任务执行逻辑。具体的任务执行逻辑需要在Worker节点中实现。</p>
+<h3 id="2-1-角色功能"><a href="#2-1-角色功能" class="headerlink" title="2.1 角色功能"></a>2.1 角色功能</h3><p>Master进程的主要职责包括：</p>
+<ol>
+<li>启动和停止Worker进程：Master进程负责启动和停止Worker进程，以便处理来自客户端的请求。</li>
+<li>接收和分发请求：Master进程接收来自客户端的请求，并将其分发给Worker进程进行处理。</li>
+<li>管理Worker进程的状态：Master进程负责监控Worker进程的运行状态，如果有Worker进程出现异常或崩溃，Master进程会自动重启它们，以确保服务器的稳定运行。</li>
+<li>处理信号：Master进程可以接收和处理来自操作系统的信号，例如重启服务器、重新加载配置文件等。</li>
+</ol>
+<p>Worker进程的主要职责包括：</p>
+<ol>
+<li>处理请求：Worker进程负责实际的请求处理和响应返回。它们接收Master进程分发的请求，并根据配置进行相应的处理，例如代理请求、处理静态文件、执行动态脚本等。</li>
+<li>并发处理：Worker进程具有独立的执行环境，可以同时处理多个请求，从而实现并发处理能力。</li>
+<li>缓存管理：Worker进程可以缓存一些静态资源，以提高访问效率和减轻服务器的负载。</li>
+</ol>
+<p><strong>Nginx支持热部署</strong>，可以在不停止服务器的情况下更新配置文件和应用程序。通过发送特定信号给Nginx进程，可以实现重新加载配置文件或者重新启动Worker进程。热部署功能使得更新变得方便和高效。</p>
+]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>初识分布式</title>
     <url>/2023/10/09/%E5%88%9D%E8%AF%86%E5%88%86%E5%B8%83%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="初识分布式"><a href="#初识分布式" class="headerlink" title="初识分布式"></a>初识分布式</h1><h2 id="1-区分集群与分布式"><a href="#1-区分集群与分布式" class="headerlink" title="1.区分集群与分布式"></a>1.区分集群与分布式</h2><p>分布式：一个业务分拆多个子业务，部署在不同的服务器上</p>
@@ -18,7 +55,7 @@
 <p>分布式系统面临一些<strong>挑战</strong>，例如节点之间的<strong>通信延迟、数据的一致性和可靠性、故障处理</strong>等。为了解决这些问题，分布式系统通常采用一致性协议，如Raft、Paxos等，来保证数据的一致性和可靠性。同时，分布式系统也需要考虑负载均衡、故障恢复、容错性等方面的设计。</p>
 <p>常见的分布式系统应用包括分布式数据库、分布式文件系统、分布式计算等。例如，Google的分布式文件系统（GFS）和分布式计算框架MapReduce，以及Facebook的分布式数据库Apache Cassandra等。</p>
 <h2 id="3-分布式理论"><a href="#3-分布式理论" class="headerlink" title="3.分布式理论"></a>3.分布式理论</h2><h3 id="3-1-CAP"><a href="#3-1-CAP" class="headerlink" title="3.1 CAP"></a>3.1 CAP</h3><p>  CAP 理论可以表述为一个分布式系统最多只能同时满足一致性（Consistency）、可用性（Availability）和分区容忍性（Partition Tolerance）这三项中的两项。</p>
-<h3 id="3-2-Ba-se"><a href="#3-2-Ba-se" class="headerlink" title="3.2 Ba se"></a>3.2 Ba se</h3><p>  Base 是三个短语的简写，即基本可用（Basically Available）、软状态（Soft State）和最终一致性（Eventually Consistent）。Base 理论的核心思想是最终一致性，即使无法做到强一致性（Strong Consistency），但每个应用都可以根据自身的业务特点，采用适当的方式来使系统达到最终一致性（Eventual Consistency）。</p>
+<h3 id="3-2-Base"><a href="#3-2-Base" class="headerlink" title="3.2 Base"></a>3.2 Base</h3><p>  Base 是三个短语的简写，即基本可用（Basically Available）、软状态（Soft State）和最终一致性（Eventually Consistent）。Base 理论的核心思想是最终一致性，即使无法做到强一致性（Strong Consistency），但每个应用都可以根据自身的业务特点，采用适当的方式来使系统达到最终一致性（Eventual Consistency）。</p>
 <h2 id="4-分布式一致性算法"><a href="#4-分布式一致性算法" class="headerlink" title="4.分布式一致性算法"></a>4.分布式一致性算法</h2><h3 id="4-1-一致性Hash算法"><a href="#4-1-一致性Hash算法" class="headerlink" title="4.1 一致性Hash算法"></a>4.1 一致性Hash算法</h3><p>一致性哈希算法（Consistent Hashing）是一种用于分布式计算的算法。它的主要目标是在动态增加或删除节点时，最小化数据的重新分布。一致性哈希算法通过使用一个哈希函数将数据和节点映射到一个相同的哈希环上，并根据节点在环上的位置来确定数据应该被分配给哪个节点。</p>
 <p>具体来说，一致性哈希算法将哈希环分成固定数量的小区间，每个节点负责其中一个或多个小区间。当有新节点加入时，它会通过哈希函数计算出一个位置，并在环上插入一个新的节点。当有数据需要存储时，也会通过哈希函数计算出一个位置，并顺时针寻找第一个节点，将数据存储在该节点上。当有节点离开时，它负责的小区间会被重新分配给其他节点，但是其他节点和数据的映射关系保持不变。</p>
 <p>一致性哈希算法的一个主要优势是在节点的增加或删除时，只需要重新映射受影响的数据，而不需要重新映射整个数据集。这样可以减少数据的重新分布，提高系统的稳定性和性能。</p>
@@ -40,6 +77,30 @@
 <p>在<strong>消息广播</strong>阶段，Leader将客户端请求转化为一个序列化的消息并广播给其他节点。其他节点收到消息后，会将其应用到自己的状态机上。这样，整个集群中的节点就达到了一致的状态。</p>
 <p>ZAB算法还具有一些优化措施，例如快速选主和递增的事务ID。快速选主是为了减少选举时间，当Leader宕机时，集群能快速选出新的Leader。递增的事务ID用于保证消息的严格顺序性，这对于一些需要严格顺序处理的应用场景非常重要。</p>
 <p>ZAB算法通过崩溃恢复和消息广播两个阶段，实现了分布式系统的一致性和可用性。它在ZooKeeper等分布式协调服务中发挥着重要的作用。</p>
+<h2 id="5-微服务网关"><a href="#5-微服务网关" class="headerlink" title="5. 微服务网关"></a>5. 微服务网关</h2><h3 id="5-1-工作原理"><a href="#5-1-工作原理" class="headerlink" title="5.1 工作原理"></a>5.1 工作原理</h3><p>微服务网关的工作原理通常包括以下几个步骤：</p>
+<ol>
+<li>接收请求：微服务网关接收来自客户端的请求。</li>
+<li>路由和负载均衡：微服务网关根据请求的URL路径和其他条件，将请求路由到相应的微服务实例。它可以使用负载均衡算法将请求分发到多个实例。</li>
+<li>认证和授权：微服务网关对请求进行身份验证，并根据访问权限决定是否允许请求进入微服务。它可以使用认证和授权服务来完成这个过程。</li>
+<li>安全防护：微服务网关可以对请求进行一些安全措施，如防止恶意请求的攻击、防止DDoS攻击等。</li>
+<li>缓存和请求聚合：微服务网关可以缓存一些静态资源，减少对后端服务的请求。同时，它还可以聚合多个后端服务的请求，将多个请求合并为一个请求发送给后端服务，减少网络带宽和请求延迟。</li>
+<li>返回响应：微服务网关将后端服务返回的响应返回给客户端</li>
+</ol>
+<h3 id="5-2-常见网关"><a href="#5-2-常见网关" class="headerlink" title="5.2 常见网关"></a>5.2 常见网关</h3><p>常见的网关系统包括：</p>
+<ol>
+<li><p><strong>Nginx：Nginx是一个高性能的开源Web服务器和反向代理服务器，可以用作网关系统来进行请求路由和负载均衡。</strong></p>
+</li>
+<li><p>Apache HTTP Server：Apache是一个广泛使用的开源Web服务器，也可以作为网关系统来进行请求的转发和代理。</p>
+</li>
+<li><p>Kong：Kong是一个基于Nginx的开源API网关和微服务管理平台，提供了丰富的插件和可扩展性。</p>
+</li>
+<li><p>Tyk：Tyk是一个开源的API网关和管理平台，支持高性能和可扩展的API代理和认证授权功能。</p>
+</li>
+<li><p>Spring Cloud Gateway：Spring Cloud Gateway是Spring Cloud生态系统中的一个组件，提供了基于Java的网关解决方案，支持动态路由和过滤器等功能。</p>
+</li>
+<li><p>Istio：Istio是一个开源的服务网格框架，可以提供流量管理、安全性、可观测性等功能，也可以作为网关系统来处理请求。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>分布式</category>
@@ -1507,28 +1568,6 @@ echo $NoAlike;
       </tags>
   </entry>
   <entry>
-    <title>c语言商品进销存管理系统（1）</title>
-    <url>/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%881%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="商场进销存管理系统"><a href="#商场进销存管理系统" class="headerlink" title="商场进销存管理系统"></a>商场进销存管理系统</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>​         商场进销存管理系统是典型的信息管理系统，其开发要求具备数据一致性和完整性强，应用程序功能完备，易使用等特点。该软件使用C语言编程实现，本系统主要完成对商场进销存的管理，<strong>包括商品信息录入，显示商品信息，显示商品信息，输入进货信息，输入销售信息，修改商品信息，增加删除商品信息，查询商品信息，保存商品信息到硬盘文件，从硬盘文获得商品信息，商品信息排序等功能。</strong>系统可以完成对各类信息的浏览、查询、添加、删除、修改等功能。此报告主要介绍本课题所完成的功能和开发的过程，重点的说明了系统设计的思想以及主要功能</p>
-<h2 id="信息描述"><a href="#信息描述" class="headerlink" title="信息描述"></a>信息描述</h2><p>系统中，关于信息描述的格式采用C语言的<strong>结构体</strong>进行描述</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">product</span> </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">char</span> name[N];</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> quantity;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">float</span> price;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>所有商品信息，采用数组进行存储。</p>
-<h2 id="商品信息录入"><a href="#商品信息录入" class="headerlink" title="商品信息录入"></a>商品信息录入</h2><p>商品信息录入包括通过键盘录入商品种类、商品编号、名称、数量、单价等基本信息的功能。根据实际情况，可增加其他录入信息。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input_goods</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入商品种类数:&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n[%d]\t商品编号：&quot;</span>,i+<span class="number">1</span>);<span class="comment">//格式要求</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].num );</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)<span class="comment">//商品种类数控制输入</span></span><br><span class="line">        &#123;	<span class="keyword">if</span>(a[i].num==a[j].num)</span><br><span class="line">            &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\t\t不能重复，请重新输入！\n\n..................................................\n&quot;</span>);</span><br><span class="line"><span class="comment">//格式要求	     </span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;\t[%d]\t商品编号：&quot;</span>,i+<span class="number">1</span>);</span><br><span class="line">				<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].num );	</span><br><span class="line">				j=<span class="number">-1</span>;<span class="comment">//执行for循环j++，使j=0,重新判断二次输入的标号是否重复</span></span><br><span class="line">			&#125;<span class="comment">//商品编号未重复，退出循环，继续录入余下信息</span></span><br><span class="line">        &#125;	</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\t商品名称：&quot;</span>); </span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a[i].name);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\t商品数量：&quot;</span>);</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].quantity);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\t商品单价：&quot;</span>);</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;a[i].price);					<span class="built_in">printf</span>(<span class="string">&quot;\n\n.......................................\n&quot;</span>);  				</span><br><span class="line">	&#125;</span><br><span class="line">	input=<span class="number">1</span>;<span class="comment">//标记，用于后序操作判断商品是否录入</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="商品信息显示"><a href="#商品信息显示" class="headerlink" title="商品信息显示"></a>商品信息显示</h2><p>商品信息显示能将商品种类、商品编号、名称、数量、单价等基本信息显示的一大功能。</p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output_goods</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(input==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    	&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%.2f\t\t\n&quot;</span>,a[i].num,a[i].name,a[i].quantity,a[i].price);</span><br><span class="line">            <span class="comment">//注意数字字符格式</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>  	<span class="built_in">printf</span>(<span class="string">&quot;--------------------------------------------------------------------\n\t\t无可浏览的商品信息\n&quot;</span>); </span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>答辩材料</category>
-      </categories>
-      <tags>
-        <tag>c</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c语言商品进销存管理系统（2）</title>
     <url>/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%882%EF%BC%89/</url>
     <content><![CDATA[<h1 id="输入进货信息"><a href="#输入进货信息" class="headerlink" title="输入进货信息"></a>输入进货信息</h1><p>​        输入进货信息包括通过键盘录入商品数量的功能。根据实际情况，可增加已有商品数量。输入进货信息的界面如图3-3所示</p>
@@ -1548,6 +1587,28 @@ echo $NoAlike;
 
 <p>那么这个方法被调用之后就会返回一个值为abc的字符串，string result = functionTest();</p>
 <p>第二种用法是，代码执行到此处终止。<br>比如当代码执行到某个地方会出现几种结果，然后其中一种结果就不能执行后续代码，这时候在那里加上一个return就可以终止后面的代码执行。</p>
+]]></content>
+      <categories>
+        <category>答辩材料</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c语言商品进销存管理系统（1）</title>
+    <url>/2020/07/22/c%E8%AF%AD%E8%A8%80%E5%95%86%E5%93%81%E8%BF%9B%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%881%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="商场进销存管理系统"><a href="#商场进销存管理系统" class="headerlink" title="商场进销存管理系统"></a>商场进销存管理系统</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>​         商场进销存管理系统是典型的信息管理系统，其开发要求具备数据一致性和完整性强，应用程序功能完备，易使用等特点。该软件使用C语言编程实现，本系统主要完成对商场进销存的管理，<strong>包括商品信息录入，显示商品信息，显示商品信息，输入进货信息，输入销售信息，修改商品信息，增加删除商品信息，查询商品信息，保存商品信息到硬盘文件，从硬盘文获得商品信息，商品信息排序等功能。</strong>系统可以完成对各类信息的浏览、查询、添加、删除、修改等功能。此报告主要介绍本课题所完成的功能和开发的过程，重点的说明了系统设计的思想以及主要功能</p>
+<h2 id="信息描述"><a href="#信息描述" class="headerlink" title="信息描述"></a>信息描述</h2><p>系统中，关于信息描述的格式采用C语言的<strong>结构体</strong>进行描述</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">product</span> </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">char</span> name[N];</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> quantity;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">float</span> price;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>所有商品信息，采用数组进行存储。</p>
+<h2 id="商品信息录入"><a href="#商品信息录入" class="headerlink" title="商品信息录入"></a>商品信息录入</h2><p>商品信息录入包括通过键盘录入商品种类、商品编号、名称、数量、单价等基本信息的功能。根据实际情况，可增加其他录入信息。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input_goods</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入商品种类数:&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n[%d]\t商品编号：&quot;</span>,i+<span class="number">1</span>);<span class="comment">//格式要求</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].num );</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)<span class="comment">//商品种类数控制输入</span></span><br><span class="line">        &#123;	<span class="keyword">if</span>(a[i].num==a[j].num)</span><br><span class="line">            &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\t\t不能重复，请重新输入！\n\n..................................................\n&quot;</span>);</span><br><span class="line"><span class="comment">//格式要求	     </span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;\t[%d]\t商品编号：&quot;</span>,i+<span class="number">1</span>);</span><br><span class="line">				<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].num );	</span><br><span class="line">				j=<span class="number">-1</span>;<span class="comment">//执行for循环j++，使j=0,重新判断二次输入的标号是否重复</span></span><br><span class="line">			&#125;<span class="comment">//商品编号未重复，退出循环，继续录入余下信息</span></span><br><span class="line">        &#125;	</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\t商品名称：&quot;</span>); </span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a[i].name);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\t商品数量：&quot;</span>);</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i].quantity);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\t商品单价：&quot;</span>);</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;a[i].price);					<span class="built_in">printf</span>(<span class="string">&quot;\n\n.......................................\n&quot;</span>);  				</span><br><span class="line">	&#125;</span><br><span class="line">	input=<span class="number">1</span>;<span class="comment">//标记，用于后序操作判断商品是否录入</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="商品信息显示"><a href="#商品信息显示" class="headerlink" title="商品信息显示"></a>商品信息显示</h2><p>商品信息显示能将商品种类、商品编号、名称、数量、单价等基本信息显示的一大功能。</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output_goods</span><span class="params">(struct product a[N])</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(input==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n商品编号\t商品名称\t商品数量\t商品单价\n&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    	&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d\t\t%s\t\t%d\t\t%.2f\t\t\n&quot;</span>,a[i].num,a[i].name,a[i].quantity,a[i].price);</span><br><span class="line">            <span class="comment">//注意数字字符格式</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>  	<span class="built_in">printf</span>(<span class="string">&quot;--------------------------------------------------------------------\n\t\t无可浏览的商品信息\n&quot;</span>); </span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>答辩材料</category>
@@ -1800,7 +1861,7 @@ CSS3实现属性选择器实现样式页面
 <p><img src="https://pic2.zhimg.com/80/v2-d1e47103ec1aa8675f68688c5d63bd27_720w.jpg" alt="img"></p>
 <p>打开<a href="https://link.zhihu.com/?target=https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
 <p><img src="https://pic1.zhimg.com/80/v2-72a3f22c080e99343c3cc4aabce10e3c_720w.jpg" alt="img"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a> ：</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a> ：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-da481ffa686410becd4186c656b4ebd6_720w.jpg" alt="img"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h1 id="hexoc初始化"><a href="#hexoc初始化" class="headerlink" title="hexoc初始化"></a>hexoc初始化</h1><ul>
@@ -2131,6 +2192,27 @@ CSS3实现属性选择器实现样式页面
       </tags>
   </entry>
   <entry>
+    <title>入门测试</title>
+    <url>/2021/05/13/%E5%85%A5%E9%97%A8%E6%B5%8B%E8%AF%95%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="Excel文件（xls）解析JAVA"><a href="#Excel文件（xls）解析JAVA" class="headerlink" title="Excel文件（xls）解析JAVA"></a>Excel文件（xls）解析JAVA</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>提取表格中”岗位职责“一列的所有数据，以文本格式保存</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>①JAVA   ②jxl.jar包（一个java对excel文件编辑的基础工具包）</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jxl.Cell;</span><br><span class="line"><span class="keyword">import</span> jxl.Sheet;</span><br><span class="line"><span class="keyword">import</span> jxl.Workbook;</span><br><span class="line"><span class="keyword">import</span> jxl.read.biff.BiffException;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">select_excel</span><span class="params">(File file)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        FileWriter fWriter = <span class="keyword">null</span>;</span><br><span class="line">        PrintWriter out = <span class="keyword">null</span>;</span><br><span class="line">        String fliename = file.getName().replace(<span class="string">&quot;.xls&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        fWriter = <span class="keyword">new</span> FileWriter(file.getParent() + <span class="string">&quot;/&quot;</span> + fliename + <span class="string">&quot;.txt&quot;</span>);</span><br><span class="line">        out = <span class="keyword">new</span> PrintWriter(fWriter);</span><br><span class="line">        InputStream is = <span class="keyword">new</span> FileInputStream(file.getAbsoluteFile());</span><br><span class="line">        Workbook wb = <span class="keyword">null</span>;</span><br><span class="line">        wb = Workbook.getWorkbook(is);</span><br><span class="line">        <span class="keyword">int</span> sheet_size = wb.getNumberOfSheets();</span><br><span class="line">        Sheet sheet = wb.getSheet(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; sheet.getRows(); j++) &#123;</span><br><span class="line">            String cellinfo = sheet.getCell(<span class="number">9</span>, j).getContents();<span class="comment">//岗位需求应该是在第10行，第二行是专业</span></span><br><span class="line">            out.println(cellinfo);</span><br><span class="line">        &#125;</span><br><span class="line">        out.close();</span><br><span class="line">        fWriter.close();</span><br><span class="line">        out.flush();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            select_excel(<span class="keyword">new</span> File(<span class="string">&quot;E:\\original_info_copy1.xls&quot;</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/05/13/6XqJg9LHWRiZQjG.png" alt="QQ截图20210513202254.png"></p>
+<p><img src="https://i.loli.net/2021/05/13/73ZkUa21DhmoEBF.png" alt="QQ截图20210513200913.png"></p>
+<p><img src="https://i.loli.net/2021/05/13/RNj9Tdv13wUqFJ7.png" alt="QQ截图20210513201108.png">)</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​        通过JAVA的jxl实现对excel的操作</p>
+<p>​        I/O流进行读取和选择输出</p>
+<p>参考文献：<a href="https://blog.csdn.net/cpcpcp123/article/details/82763937?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=xls%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96java&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-.first_rank_v2_pc_rank_v29&amp;spm=1018.2226.3001.4187">https://blog.csdn.net/cpcpcp123/article/details/82763937?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=xls%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96java&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-.first_rank_v2_pc_rank_v29&amp;spm=1018.2226.3001.4187</a></p>
+]]></content>
+      <categories>
+        <category>实践</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>位示图计算</title>
     <url>/2021/06/01/%E4%BD%8D%E7%A4%BA%E5%9B%BE%E8%AE%A1%E7%AE%97/</url>
     <content><![CDATA[<h1 id="位示图计算"><a href="#位示图计算" class="headerlink" title="位示图计算"></a>位示图计算</h1><p>1.题目：某文件管理系统在磁盘上建立了位示图(bitmap) ，记录磁盘的使用情况。若计算机系统的字长为 32 位，磁盘的容量为 300GB ，物理块的大小为4MB ，那么位示图的大小需要（ ）个字。<br>磁盘容量为300GB，物理块大小4MB，则磁盘共300<em>1024/4=75</em>1024个物理块</p>
@@ -2163,27 +2245,6 @@ CSS3实现属性选择器实现样式页面
       </categories>
       <tags>
         <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>入门测试</title>
-    <url>/2021/05/13/%E5%85%A5%E9%97%A8%E6%B5%8B%E8%AF%95%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<h1 id="Excel文件（xls）解析JAVA"><a href="#Excel文件（xls）解析JAVA" class="headerlink" title="Excel文件（xls）解析JAVA"></a>Excel文件（xls）解析JAVA</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>提取表格中”岗位职责“一列的所有数据，以文本格式保存</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>①JAVA   ②jxl.jar包（一个java对excel文件编辑的基础工具包）</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jxl.Cell;</span><br><span class="line"><span class="keyword">import</span> jxl.Sheet;</span><br><span class="line"><span class="keyword">import</span> jxl.Workbook;</span><br><span class="line"><span class="keyword">import</span> jxl.read.biff.BiffException;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">select_excel</span><span class="params">(File file)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        FileWriter fWriter = <span class="keyword">null</span>;</span><br><span class="line">        PrintWriter out = <span class="keyword">null</span>;</span><br><span class="line">        String fliename = file.getName().replace(<span class="string">&quot;.xls&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        fWriter = <span class="keyword">new</span> FileWriter(file.getParent() + <span class="string">&quot;/&quot;</span> + fliename + <span class="string">&quot;.txt&quot;</span>);</span><br><span class="line">        out = <span class="keyword">new</span> PrintWriter(fWriter);</span><br><span class="line">        InputStream is = <span class="keyword">new</span> FileInputStream(file.getAbsoluteFile());</span><br><span class="line">        Workbook wb = <span class="keyword">null</span>;</span><br><span class="line">        wb = Workbook.getWorkbook(is);</span><br><span class="line">        <span class="keyword">int</span> sheet_size = wb.getNumberOfSheets();</span><br><span class="line">        Sheet sheet = wb.getSheet(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; sheet.getRows(); j++) &#123;</span><br><span class="line">            String cellinfo = sheet.getCell(<span class="number">9</span>, j).getContents();<span class="comment">//岗位需求应该是在第10行，第二行是专业</span></span><br><span class="line">            out.println(cellinfo);</span><br><span class="line">        &#125;</span><br><span class="line">        out.close();</span><br><span class="line">        fWriter.close();</span><br><span class="line">        out.flush();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            select_excel(<span class="keyword">new</span> File(<span class="string">&quot;E:\\original_info_copy1.xls&quot;</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2021/05/13/6XqJg9LHWRiZQjG.png" alt="QQ截图20210513202254.png"></p>
-<p><img src="https://i.loli.net/2021/05/13/73ZkUa21DhmoEBF.png" alt="QQ截图20210513200913.png"></p>
-<p><img src="https://i.loli.net/2021/05/13/RNj9Tdv13wUqFJ7.png" alt="QQ截图20210513201108.png">)</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​        通过JAVA的jxl实现对excel的操作</p>
-<p>​        I/O流进行读取和选择输出</p>
-<p>参考文献：<a href="https://blog.csdn.net/cpcpcp123/article/details/82763937?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=xls%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96java&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-.first_rank_v2_pc_rank_v29&amp;spm=1018.2226.3001.4187">https://blog.csdn.net/cpcpcp123/article/details/82763937?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=xls%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96java&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-.first_rank_v2_pc_rank_v29&amp;spm=1018.2226.3001.4187</a></p>
-]]></content>
-      <categories>
-        <category>实践</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -2269,6 +2330,24 @@ CSS3实现属性选择器实现样式页面
       </tags>
   </entry>
   <entry>
+    <title>双栈封装成队列</title>
+    <url>/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/</url>
+    <content><![CDATA[<h1 id="双栈封装成队列"><a href="#双栈封装成队列" class="headerlink" title="双栈封装成队列"></a>双栈封装成队列</h1><p><em><strong><u>面试常考该思路</u></strong></em></p>
+<p>因此总结一下，以免忘记！</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h3 id="1-多文件调用"><a href="#1-多文件调用" class="headerlink" title="1.多文件调用"></a>1.多文件调用</h3><h3 id="2-金蝉脱壳（同名同功能不同实现办法）"><a href="#2-金蝉脱壳（同名同功能不同实现办法）" class="headerlink" title="2.金蝉脱壳（同名同功能不同实现办法）"></a>2.金蝉脱壳（同名同功能不同实现办法）</h3><h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">//&lt;&gt;从当前软件安装目录去检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//“”从当前源文件所在的目录去检索，如果无法找到再去当前软件安装目录检索 </span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">stackNode</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stackNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; Linkstack;</span><br><span class="line"><span class="function">Linkstack* <span class="title">Create</span><span class="params">(Linkstack *s)</span> </span>&#123; <span class="comment">//建空栈</span></span><br><span class="line">	s=(Linkstack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Linkstack));</span><br><span class="line">	s-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(Linkstack *s,<span class="keyword">int</span> e)</span> </span>&#123; <span class="comment">//进栈</span></span><br><span class="line">	Linkstack *p=<span class="literal">NULL</span>;</span><br><span class="line">	p=(Linkstack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Linkstack));</span><br><span class="line">	p-&gt;data=e;</span><br><span class="line">	p-&gt;next=s-&gt;next;</span><br><span class="line">	s-&gt;next=p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(Linkstack *s,<span class="keyword">int</span> *e)</span> </span>&#123; <span class="comment">//出栈,把栈顶元素出栈并赋值给e</span></span><br><span class="line">	Linkstack *p=s-&gt;next;</span><br><span class="line">	<span class="keyword">if</span>(s-&gt;next==<span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;栈为空&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	*e=p-&gt;data; </span><br><span class="line">	s-&gt;next=p-&gt;next;</span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Stackempty</span><span class="params">(Linkstack *s)</span> </span>&#123; <span class="comment">//判断栈空</span></span><br><span class="line">	<span class="keyword">if</span>(s-&gt;next==<span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//栈空 </span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//栈不空 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链栈基本操作</span></span><br><span class="line"><span class="comment">//该文件为第二段代码第3排的“链栈.c”</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">//&lt;&gt;从当前软件安装目录去检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//“”从当前源文件所在的目录去检索，如果无法找到再去当前软件安装目录检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&quot;链栈.c&quot;</span><span class="comment">//调用头文件，文件需要在同一文件夹方便检索</span></span></span><br><span class="line">Linkstack *S1;<span class="comment">//创建s1栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(Linkstack *s,<span class="keyword">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	push(s,e);<span class="comment">//直接压入s即可</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(Linkstack *s,<span class="keyword">int</span> *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="keyword">if</span>(!Stackempty(S1))<span class="comment">//如果s1不为空，把S1中栈顶元素直接弹出</span></span><br><span class="line">	&#123;</span><br><span class="line">		pop(S1,&amp;m);</span><br><span class="line">		*e=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span><span class="comment">//如果s1为空，把S中“所有”元素依次弹出并压入s1中，此处所有用while循环实现</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(!Stackempty(s))</span><br><span class="line">		&#123;</span><br><span class="line">			pop(s,&amp;m);</span><br><span class="line">			push(S1,m);</span><br><span class="line">		&#125;</span><br><span class="line">			pop(S1,&amp;m);<span class="comment">//再弹出s1的栈顶元素</span></span><br><span class="line">			*e=m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Linkstack*S;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	S=Create(S);</span><br><span class="line">	S1=Create(S1);<span class="comment">//2空栈的创建</span></span><br><span class="line">	enQueue(S,<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;1进队列\n&quot;</span>);</span><br><span class="line">	enQueue(S,<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;2进队列\n&quot;</span>);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n\n&quot;</span>,x);</span><br><span class="line">	enQueue(S,<span class="number">3</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;3进队列\n&quot;</span>);</span><br><span class="line">	enQueue(S,<span class="number">4</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;4进队列\n&quot;</span>);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);<span class="comment">//注意出栈入栈都是单独进行while循环只是为了达到反转一次效果</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自身问题发现"><a href="#自身问题发现" class="headerlink" title="自身问题发现"></a>自身问题发现</h2><p>指针与引用理解依旧欠缺</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>封装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>回溯法</title>
     <url>/2021/06/04/%E5%9B%9E%E6%BA%AF%E6%B3%95/</url>
     <content><![CDATA[<h1 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h1><p>回溯（backtracking）法是一种选优搜索法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。</p>
@@ -2285,21 +2364,27 @@ CSS3实现属性选择器实现样式页面
       </tags>
   </entry>
   <entry>
-    <title>双栈封装成队列</title>
-    <url>/2020/09/17/%E5%8F%8C%E6%A0%88%E5%B0%81%E8%A3%85%E6%88%90%E9%98%9F%E5%88%97/</url>
-    <content><![CDATA[<h1 id="双栈封装成队列"><a href="#双栈封装成队列" class="headerlink" title="双栈封装成队列"></a>双栈封装成队列</h1><p><em><strong><u>面试常考该思路</u></strong></em></p>
-<p>因此总结一下，以免忘记！</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h3 id="1-多文件调用"><a href="#1-多文件调用" class="headerlink" title="1.多文件调用"></a>1.多文件调用</h3><h3 id="2-金蝉脱壳（同名同功能不同实现办法）"><a href="#2-金蝉脱壳（同名同功能不同实现办法）" class="headerlink" title="2.金蝉脱壳（同名同功能不同实现办法）"></a>2.金蝉脱壳（同名同功能不同实现办法）</h3><h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">//&lt;&gt;从当前软件安装目录去检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//“”从当前源文件所在的目录去检索，如果无法找到再去当前软件安装目录检索 </span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">stackNode</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stackNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; Linkstack;</span><br><span class="line"><span class="function">Linkstack* <span class="title">Create</span><span class="params">(Linkstack *s)</span> </span>&#123; <span class="comment">//建空栈</span></span><br><span class="line">	s=(Linkstack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Linkstack));</span><br><span class="line">	s-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(Linkstack *s,<span class="keyword">int</span> e)</span> </span>&#123; <span class="comment">//进栈</span></span><br><span class="line">	Linkstack *p=<span class="literal">NULL</span>;</span><br><span class="line">	p=(Linkstack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Linkstack));</span><br><span class="line">	p-&gt;data=e;</span><br><span class="line">	p-&gt;next=s-&gt;next;</span><br><span class="line">	s-&gt;next=p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(Linkstack *s,<span class="keyword">int</span> *e)</span> </span>&#123; <span class="comment">//出栈,把栈顶元素出栈并赋值给e</span></span><br><span class="line">	Linkstack *p=s-&gt;next;</span><br><span class="line">	<span class="keyword">if</span>(s-&gt;next==<span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;栈为空&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	*e=p-&gt;data; </span><br><span class="line">	s-&gt;next=p-&gt;next;</span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Stackempty</span><span class="params">(Linkstack *s)</span> </span>&#123; <span class="comment">//判断栈空</span></span><br><span class="line">	<span class="keyword">if</span>(s-&gt;next==<span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//栈空 </span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//栈不空 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链栈基本操作</span></span><br><span class="line"><span class="comment">//该文件为第二段代码第3排的“链栈.c”</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span><span class="comment">//&lt;&gt;从当前软件安装目录去检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//“”从当前源文件所在的目录去检索，如果无法找到再去当前软件安装目录检索 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&quot;链栈.c&quot;</span><span class="comment">//调用头文件，文件需要在同一文件夹方便检索</span></span></span><br><span class="line">Linkstack *S1;<span class="comment">//创建s1栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(Linkstack *s,<span class="keyword">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	push(s,e);<span class="comment">//直接压入s即可</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(Linkstack *s,<span class="keyword">int</span> *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="keyword">if</span>(!Stackempty(S1))<span class="comment">//如果s1不为空，把S1中栈顶元素直接弹出</span></span><br><span class="line">	&#123;</span><br><span class="line">		pop(S1,&amp;m);</span><br><span class="line">		*e=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span><span class="comment">//如果s1为空，把S中“所有”元素依次弹出并压入s1中，此处所有用while循环实现</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(!Stackempty(s))</span><br><span class="line">		&#123;</span><br><span class="line">			pop(s,&amp;m);</span><br><span class="line">			push(S1,m);</span><br><span class="line">		&#125;</span><br><span class="line">			pop(S1,&amp;m);<span class="comment">//再弹出s1的栈顶元素</span></span><br><span class="line">			*e=m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Linkstack*S;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	S=Create(S);</span><br><span class="line">	S1=Create(S1);<span class="comment">//2空栈的创建</span></span><br><span class="line">	enQueue(S,<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;1进队列\n&quot;</span>);</span><br><span class="line">	enQueue(S,<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;2进队列\n&quot;</span>);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n\n&quot;</span>,x);</span><br><span class="line">	enQueue(S,<span class="number">3</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;3进队列\n&quot;</span>);</span><br><span class="line">	enQueue(S,<span class="number">4</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;4进队列\n&quot;</span>);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);</span><br><span class="line">	deQueue(S,&amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n%d出队列\n&quot;</span>,x);<span class="comment">//注意出栈入栈都是单独进行while循环只是为了达到反转一次效果</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="自身问题发现"><a href="#自身问题发现" class="headerlink" title="自身问题发现"></a>自身问题发现</h2><p>指针与引用理解依旧欠缺</p>
+    <title>作用域运算符</title>
+    <url>/2020/07/07/%E5%9F%9F%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <content><![CDATA[<h1 id="作用域运算符"><a href="#作用域运算符" class="headerlink" title="作用域运算符"></a>作用域运算符</h1><h2 id="一、：："><a href="#一、：：" class="headerlink" title="一、：："></a>一、：：</h2><ol>
+<li><p>代码块的作用域。在函数内如果有一个与全局变量重名的变量，可以用 ::a 的形式访问（a是全局变量名）。例如：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;::a;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>​    的结果是 21 。</p>
+<ol start="2">
+<li><p>类的静态成员访问。访问类的静态成员时，要采用 class_name::static_member_name 的方式访问。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">用于表示类的成员函数</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> age_;</span><br><span class="line">	string name_;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::setAge</span><span class="params">(<span class="keyword">int</span> age)</span> <span class="comment">//域运算符</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	age_ = age;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Student::getAge</span><span class="params">()</span> <span class="comment">//域运算符</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;age_&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> age_;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>命名空间成员访问。访问命名空间中的成员时，要用 namespace_name::member_name 的方式访问。当然，也可以用 using 关键字省去命名空间名和作用域运算符。</p>
+</li>
+<li><p>枚举类型关键字访问。如果有一个枚举类型叫做 Enum ，其中有一个 one 关键字，可以用 Enum::one 来访问。但是，直接写 one 也是有效的，所以一般不用加上 Enum:: 。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>数据结构</category>
+        <category>语法</category>
       </categories>
       <tags>
-        <tag>封装</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -2349,30 +2434,6 @@ CSS3实现属性选择器实现样式页面
       </categories>
       <tags>
         <tag>排序算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>作用域运算符</title>
-    <url>/2020/07/07/%E5%9F%9F%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
-    <content><![CDATA[<h1 id="作用域运算符"><a href="#作用域运算符" class="headerlink" title="作用域运算符"></a>作用域运算符</h1><h2 id="一、：："><a href="#一、：：" class="headerlink" title="一、：："></a>一、：：</h2><ol>
-<li><p>代码块的作用域。在函数内如果有一个与全局变量重名的变量，可以用 ::a 的形式访问（a是全局变量名）。例如：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;::a;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>​    的结果是 21 。</p>
-<ol start="2">
-<li><p>类的静态成员访问。访问类的静态成员时，要采用 class_name::static_member_name 的方式访问。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">用于表示类的成员函数</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> age_;</span><br><span class="line">	string name_;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::setAge</span><span class="params">(<span class="keyword">int</span> age)</span> <span class="comment">//域运算符</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	age_ = age;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Student::getAge</span><span class="params">()</span> <span class="comment">//域运算符</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;age_&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> age_;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>命名空间成员访问。访问命名空间中的成员时，要用 namespace_name::member_name 的方式访问。当然，也可以用 using 关键字省去命名空间名和作用域运算符。</p>
-</li>
-<li><p>枚举类型关键字访问。如果有一个枚举类型叫做 Enum ，其中有一个 one 关键字，可以用 Enum::one 来访问。但是，直接写 one 也是有效的，所以一般不用加上 Enum:: 。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -3007,6 +3068,54 @@ CSS3实现属性选择器实现样式页面
       </tags>
   </entry>
   <entry>
+    <title>运算符重载</title>
+    <url>/2020/07/07/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</url>
+    <content><![CDATA[<h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><ol>
+<li>C++运算符重载的概念和原理<ol start="2">
+<li>C++重载=（C++重载赋值运算符）<ol start="3">
+<li>C++深拷贝和浅拷贝（C++深复制和浅复制）<ol start="4">
+<li>C++运算符重载为友元函数<ol start="5">
+<li>C++实现可变长度的动态数组<ol start="6">
+<li>C++重载&lt;&lt;和&gt;&gt;（C++重载输出运算符和输入运算符）<ol start="7">
+<li>C++重载()（强制类型转换运算符）<ol start="8">
+<li>C++重载++和–（自增和自减运算符）<ol start="9">
+<li>C++运算符重载注意事项以及汇总</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="C-运算符重载的概念和原理"><a href="#C-运算符重载的概念和原理" class="headerlink" title="C++运算符重载的概念和原理"></a>C++运算符重载的概念和原理</h2><p>希望对象之间也能用这些运算符进行运算，以达到使程序更简洁、易懂的目的。例如，复数是可以进行四则运算的</p>
+<p>利用 C++ 提供的“运算符重载”机制，赋予运算符新的功能，就能解决用<code>+</code>将两个复数对象相加这样的问题。</p>
+<p>运算符重载，就是<strong>对已有的运算符赋予多重含义，使同一运算符作用于不同类型的数据时产生不同的行为。</strong>运算符重载的目的是使得 C++ 中的运算符也能够用来操作对象。</p>
+<p>运算符重载的实质是编写以运算符作为名称的<strong>函数</strong>。</p>
+<p>包含被重载的运算符的表达式会被编译成对运算符函数的调用，运算符的操作数成为函数调用时的实参，运算的结果就是函数的返回值。运算符可以被多次重载。</p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">返回值类型  <span class="keyword">operator</span>  运算符(形参表)</span><br><span class="line">&#123;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运算符可以被重载为全局函数，也可以被重载为成员函数。一般来说，倾向于将运算符重载为成员函数，这样能够较好地体现运算符和类的关系。</p>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">double</span> real, imag;</span><br><span class="line">    <span class="built_in">Complex</span>(<span class="keyword">double</span> r = <span class="number">0.0</span>, <span class="keyword">double</span> i = <span class="number">0.0</span>) : <span class="built_in">real</span>(r), <span class="built_in">imag</span>(i) &#123; &#125;</span><br><span class="line">    Complex <span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp; c);</span><br><span class="line">&#125;;</span><br><span class="line">Complex <span class="keyword">operator</span> + (<span class="keyword">const</span> Complex &amp; a, <span class="keyword">const</span> Complex &amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Complex</span>(a.real + b.real, a.imag + b.imag); <span class="comment">//返回一个临时对象</span></span><br><span class="line">&#125;</span><br><span class="line">Complex Complex::<span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp; c)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Complex</span>(real - c.real, imag - c.imag); <span class="comment">//返回一个临时对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Complex <span class="title">a</span><span class="params">(<span class="number">4</span>, <span class="number">4</span>)</span>, <span class="title">b</span><span class="params">(<span class="number">1</span>, <span class="number">1</span>)</span>, c</span>;</span><br><span class="line">    c = a + b; <span class="comment">//等价于 c = operator + (a,b);</span></span><br><span class="line">    cout &lt;&lt; c.real &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; c.imag &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; (a - b).real &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; (a - b).imag &lt;&lt; endl; <span class="comment">//a-b等价于a.operator - (b)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//程序将+重载为一个全局函数（只是为了演示这种做法，否则重载为成员函数更好），将-重载为一个成员函数。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>迭代器</title>
     <url>/2020/11/09/%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
     <content><![CDATA[<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><h3 id="迭代器-1"><a href="#迭代器-1" class="headerlink" title="迭代器"></a>迭代器</h3><p><strong>1.概述：</strong></p>
@@ -3058,54 +3167,6 @@ CSS3实现属性选择器实现样式页面
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运算符重载</title>
-    <url>/2020/07/07/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</url>
-    <content><![CDATA[<h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><ol>
-<li>C++运算符重载的概念和原理<ol start="2">
-<li>C++重载=（C++重载赋值运算符）<ol start="3">
-<li>C++深拷贝和浅拷贝（C++深复制和浅复制）<ol start="4">
-<li>C++运算符重载为友元函数<ol start="5">
-<li>C++实现可变长度的动态数组<ol start="6">
-<li>C++重载&lt;&lt;和&gt;&gt;（C++重载输出运算符和输入运算符）<ol start="7">
-<li>C++重载()（强制类型转换运算符）<ol start="8">
-<li>C++重载++和–（自增和自减运算符）<ol start="9">
-<li>C++运算符重载注意事项以及汇总</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="C-运算符重载的概念和原理"><a href="#C-运算符重载的概念和原理" class="headerlink" title="C++运算符重载的概念和原理"></a>C++运算符重载的概念和原理</h2><p>希望对象之间也能用这些运算符进行运算，以达到使程序更简洁、易懂的目的。例如，复数是可以进行四则运算的</p>
-<p>利用 C++ 提供的“运算符重载”机制，赋予运算符新的功能，就能解决用<code>+</code>将两个复数对象相加这样的问题。</p>
-<p>运算符重载，就是<strong>对已有的运算符赋予多重含义，使同一运算符作用于不同类型的数据时产生不同的行为。</strong>运算符重载的目的是使得 C++ 中的运算符也能够用来操作对象。</p>
-<p>运算符重载的实质是编写以运算符作为名称的<strong>函数</strong>。</p>
-<p>包含被重载的运算符的表达式会被编译成对运算符函数的调用，运算符的操作数成为函数调用时的实参，运算的结果就是函数的返回值。运算符可以被多次重载。</p>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">返回值类型  <span class="keyword">operator</span>  运算符(形参表)</span><br><span class="line">&#123;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运算符可以被重载为全局函数，也可以被重载为成员函数。一般来说，倾向于将运算符重载为成员函数，这样能够较好地体现运算符和类的关系。</p>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">double</span> real, imag;</span><br><span class="line">    <span class="built_in">Complex</span>(<span class="keyword">double</span> r = <span class="number">0.0</span>, <span class="keyword">double</span> i = <span class="number">0.0</span>) : <span class="built_in">real</span>(r), <span class="built_in">imag</span>(i) &#123; &#125;</span><br><span class="line">    Complex <span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp; c);</span><br><span class="line">&#125;;</span><br><span class="line">Complex <span class="keyword">operator</span> + (<span class="keyword">const</span> Complex &amp; a, <span class="keyword">const</span> Complex &amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Complex</span>(a.real + b.real, a.imag + b.imag); <span class="comment">//返回一个临时对象</span></span><br><span class="line">&#125;</span><br><span class="line">Complex Complex::<span class="keyword">operator</span> - (<span class="keyword">const</span> Complex &amp; c)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Complex</span>(real - c.real, imag - c.imag); <span class="comment">//返回一个临时对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Complex <span class="title">a</span><span class="params">(<span class="number">4</span>, <span class="number">4</span>)</span>, <span class="title">b</span><span class="params">(<span class="number">1</span>, <span class="number">1</span>)</span>, c</span>;</span><br><span class="line">    c = a + b; <span class="comment">//等价于 c = operator + (a,b);</span></span><br><span class="line">    cout &lt;&lt; c.real &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; c.imag &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; (a - b).real &lt;&lt; <span class="string">&quot;,&quot;</span> &lt;&lt; (a - b).imag &lt;&lt; endl; <span class="comment">//a-b等价于a.operator - (b)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//程序将+重载为一个全局函数（只是为了演示这种做法，否则重载为成员函数更好），将-重载为一个成员函数。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
       </tags>
   </entry>
 </search>
