@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>echarts-dataV使用 | FadeAway Space</title><meta name="keywords" content="UI"><meta name="author" content="FadeAway"><meta name="copyright" content="FadeAway"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我们都会上岸，阳光万里，去哪里都是鲜花开放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="echarts-dataV使用">
+<meta property="og:url" content="https://github.com/FadeAwayOL/2023/09/20/echarts-dataV%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="FadeAway Space">
+<meta property="og:description" content="我们都会上岸，阳光万里，去哪里都是鲜花开放">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2023/09/27/Y5avKbNCqwcTgW3.png">
+<meta property="article:published_time" content="2023-09-20T06:56:50.000Z">
+<meta property="article:modified_time" content="2023-09-27T02:34:24.000Z">
+<meta property="article:author" content="FadeAway">
+<meta property="article:tag" content="UI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/09/27/Y5avKbNCqwcTgW3.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://github.com/FadeAwayOL/2023/09/20/echarts-dataV%E4%BD%BF%E7%94%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: FadeAway","link":"链接: ","source":"来源: FadeAway Space","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'echarts-dataV使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-27 10:34:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">32</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> 图库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.200.251"><i class="fa-fw fas fa-video"></i><span> 个人影视网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2023/09/27/Y5avKbNCqwcTgW3.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">FadeAway Space</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> 图库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.200.251"><i class="fa-fw fas fa-video"></i><span> 个人影视网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">echarts-dataV使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-20T06:56:50.000Z" title="发表于 2023-09-20 14:56:50">2023-09-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-27T02:34:24.000Z" title="更新于 2023-09-27 10:34:24">2023-09-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="echarts-dataV使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-echarts"><a href="#1-echarts" class="headerlink" title="1.echarts"></a>1.echarts</h1><p>1.安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i mpvue-echarts</span><br></pre></td></tr></table></figure>
+
+<p>2.使用</p>
+<ol>
+<li>引入 ECharts 库：在 HTML 文件中引入 ECharts 的 JavaScript 文件。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建一个容器：在 HTML 文件中创建一个用于显示图表的容器。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;chartContainer&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 600px; height: 400px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>初始化图表实例：在 JavaScript 文件中初始化一个 ECharts 实例，并将其绑定到容器上。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chart = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;chartContainer&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>配置图表选项：通过设置图表的配置项来定义图表的样式、数据和交互行为。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">    <span class="attr">title</span>: &#123;</span><br><span class="line">        <span class="attr">text</span>: <span class="string">&#x27;示例图表&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">xAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;category&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: [<span class="string">&#x27;数据1&#x27;</span>, <span class="string">&#x27;数据2&#x27;</span>, <span class="string">&#x27;数据3&#x27;</span>, <span class="string">&#x27;数据4&#x27;</span>, <span class="string">&#x27;数据5&#x27;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">yAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;value&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">series</span>: [&#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;bar&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">chart.<span class="title function_">setOption</span>(option);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>渲染图表：通过调用 <code>setOption</code> 方法将配置项应用到图表实例上，从而渲染出图表。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chart.<span class="title function_">setOption</span>(option);</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-DataV"><a href="#2-DataV" class="headerlink" title="2.DataV"></a>2.DataV</h1><p>Datav是一种数据可视化工具，它基于ECharts开发而成。ECharts是一个开源的JavaScript图表库，可以用来制作各种类型的交互式图表和数据可视化。Datav通过提供可视化编辑器和丰富的图表模板，使用户能够轻松地创建各种复杂的数据可视化效果。</p>
+<p>使用Datav可以按照以下步骤进行：</p>
+<ol>
+<li>下载和安装Datav：你可以从Datav的官方网站（<a target="_blank" rel="noopener" href="https://www.datav.ai/%EF%BC%89%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%EF%BC%8C%E5%B9%B6%E6%8C%89%E7%85%A7%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82">https://www.datav.ai/）下载最新的软件包，并按照安装说明进行安装。</a></li>
+<li>打开Datav编辑器：安装完成后，打开Datav编辑器。在编辑器中，你可以创建新的可视化项目，并添加不同类型的图表。</li>
+<li>选择图表模板：Datav提供了许多预定义的图表模板，你可以根据自己的需求选择适合的模板。</li>
+<li>编辑和配置图表：在选择了模板后，你可以通过编辑器对图表进行进一步的编辑和配置。可以设置数据源、样式、动画效果等，以及其他一些高级的配置选项。</li>
+<li>预览和发布：完成编辑和配置后，你可以通过预览功能查看图表的效果。如果满意，可以将图表保存并发布到网站或其他平台上。</li>
+</ol>
+<p>以下是一个简单的示例代码，用于创建一个柱状图：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Chart</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@antv/datav&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = [</span><br><span class="line">  &#123; <span class="attr">year</span>: <span class="string">&#x27;2010&#x27;</span>, <span class="attr">sales</span>: <span class="number">100</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">year</span>: <span class="string">&#x27;2011&#x27;</span>, <span class="attr">sales</span>: <span class="number">200</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">year</span>: <span class="string">&#x27;2012&#x27;</span>, <span class="attr">sales</span>: <span class="number">300</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">year</span>: <span class="string">&#x27;2013&#x27;</span>, <span class="attr">sales</span>: <span class="number">400</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">year</span>: <span class="string">&#x27;2014&#x27;</span>, <span class="attr">sales</span>: <span class="number">500</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">year</span>: <span class="string">&#x27;2015&#x27;</span>, <span class="attr">sales</span>: <span class="number">600</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> chart = <span class="keyword">new</span> <span class="title class_">Chart</span>(&#123;</span><br><span class="line">  <span class="attr">container</span>: <span class="string">&#x27;chart-container&#x27;</span>,</span><br><span class="line">  <span class="attr">width</span>: <span class="number">400</span>,</span><br><span class="line">  <span class="attr">height</span>: <span class="number">300</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">chart.<span class="title function_">data</span>(data)</span><br><span class="line"></span><br><span class="line">chart.<span class="title function_">interval</span>().<span class="title function_">position</span>(<span class="string">&#x27;year*sales&#x27;</span>)</span><br><span class="line"></span><br><span class="line">chart.<span class="title function_">render</span>()</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-UCharts和ECharts"><a href="#3-UCharts和ECharts" class="headerlink" title="3.UCharts和ECharts"></a>3.UCharts和ECharts</h1><p>UCharts和ECharts都是流行的数据可视化库，它们各有优点和缺点。</p>
+<p>UCharts是一款基于原生Canvas绘制的跨平台数据可视化库，适用于小程序、H5、React Native等多个平台。其主要优点包括：</p>
+<ol>
+<li>轻量级：UCharts体积小、加载速度快，适合在移动端或网络条件较差的环境下使用。</li>
+<li>跨平台：UCharts支持多个平台，可以在小程序、H5、React Native等不同的开发环境中使用。</li>
+<li>灵活性：UCharts提供了丰富的图表类型和配置选项，可以满足各种不同的数据可视化需求。</li>
+</ol>
+<p>然而，UCharts也存在一些缺点：</p>
+<ol>
+<li>功能相对有限：相比于ECharts，UCharts的功能相对较少，可能无法满足一些复杂的数据可视化需求。</li>
+<li>生态系统相对较小：UCharts相对较新，其社区和生态系统相对较小，可能会导致在使用过程中难以找到一些需要的资源和支持。</li>
+</ol>
+<p>相比之下，ECharts是一个功能强大且成熟的JavaScript图表库，具有以下优点：</p>
+<ol>
+<li>多样化的图表类型：ECharts支持多种类型的图表，包括折线图、柱状图、饼图、雷达图等，可以满足各种不同的数据可视化需求。</li>
+<li>强大的可定制性：ECharts提供了丰富的配置选项和API，可以对图表进行高度定制，包括样式、数据处理、交互等方面。</li>
+<li>大型社区和生态系统：ECharts拥有庞大的用户社区和丰富的资源，可以轻松找到各种教程、示例代码和插件。</li>
+</ol>
+<p>然而，ECharts也有一些缺点：</p>
+<ol>
+<li>相对较大的体积：由于功能强大和丰富的特性，ECharts的体积相对较大，可能需要更多的加载时间和带宽。</li>
+<li>学习曲线较陡：相比于UCharts，ECharts的学习曲线较陡，需要花费一些时间来学习其复杂的配置和使用方法。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">FadeAway</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://github.com/FadeAwayOL/2023/09/20/echarts-dataV%E4%BD%BF%E7%94%A8/">https://github.com/FadeAwayOL/2023/09/20/echarts-dataV%E4%BD%BF%E7%94%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/FadeAwayOL" target="_blank">FadeAway Space</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/UI/">UI</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/09/27/Y5avKbNCqwcTgW3.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" target="_blank"><img class="post-qr-code-img" src="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/09/%E5%88%9D%E8%AF%86%E5%88%86%E5%B8%83%E5%BC%8F/"><img class="prev-cover" src="https://s2.loli.net/2023/10/09/Vv5hRMSWyaoTulg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">初识分布式</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/07/FastAdmin%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89JS/"><img class="next-cover" src="https://s2.loli.net/2023/09/27/YlorFGxTNXiy6zj.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">FastAdmin引入自定义JS</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-echarts"><span class="toc-number">1.</span> <span class="toc-text">1.echarts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-DataV"><span class="toc-number">2.</span> <span class="toc-text">2.DataV</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-UCharts%E5%92%8CECharts"><span class="toc-number">3.</span> <span class="toc-text">3.UCharts和ECharts</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2023/09/27/Y5avKbNCqwcTgW3.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By FadeAway</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">别想着一帆风顺，总有时光默默无闻</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7AwEz6VhpVAfjnEpmbOH8bFM-gzGzoHsz',
+      appKey: 'IR3o4kvmw9GDbNp2A0b0W2pi',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: 'emoji CDN',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

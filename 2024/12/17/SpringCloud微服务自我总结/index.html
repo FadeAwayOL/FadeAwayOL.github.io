@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SpringCloud微服务总结 | FadeAway Space</title><meta name="keywords" content="SpringCloud"><meta name="author" content="FadeAway"><meta name="copyright" content="FadeAway"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="眼前的一切不就是答案吗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud微服务总结">
+<meta property="og:url" content="https://github.com/FadeAwayOL/2024/12/17/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%87%AA%E6%88%91%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="FadeAway Space">
+<meta property="og:description" content="眼前的一切不就是答案吗">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/12/25/kCGsW1FBLEJYqhu.png">
+<meta property="article:published_time" content="2024-12-17T06:13:33.000Z">
+<meta property="article:modified_time" content="2024-12-25T06:10:19.365Z">
+<meta property="article:author" content="FadeAway">
+<meta property="article:tag" content="SpringCloud">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/12/25/kCGsW1FBLEJYqhu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://github.com/FadeAwayOL/2024/12/17/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%87%AA%E6%88%91%E6%80%BB%E7%BB%93/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: FadeAway","link":"链接: ","source":"来源: FadeAway Space","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringCloud微服务总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-25 14:10:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2021/12/28/ILSMpQayWXANVtZ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">80</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">32</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> 图库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.200.251"><i class="fa-fw fas fa-video"></i><span> 个人影视网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2024/12/25/kCGsW1FBLEJYqhu.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">FadeAway Space</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-music"></i><span> 图库</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.200.251"><i class="fa-fw fas fa-video"></i><span> 个人影视网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SpringCloud微服务总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-17T06:13:33.000Z" title="发表于 2024-12-17 14:13:33">2024-12-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-25T06:10:19.365Z" title="更新于 2024-12-25 14:10:19">2024-12-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SpringCloud微服务总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="SpringCloud微服务"><a href="#SpringCloud微服务" class="headerlink" title="SpringCloud微服务"></a>SpringCloud微服务</h1><p>1.1 EureKa 注册中心</p>
+<p> @EnableEurekaClient 提供者–消费者 建立连接后     EureKa崩溃仍可访问</p>
+<p>高可用  运行多个注册中心 轮巡解决 可避免   崩溃</p>
+<p>设置密码 保证安全 提供者 消费者 需要携带用户名密码</p>
+<p>1.2 Ribbon 框架自带的负载均衡 </p>
+<p> 轮巡解决 大访问量</p>
+<p>1.3 Feign</p>
+<p>一种声明式、<a target="_blank" rel="noopener" href="https://marketing.csdn.net/p/3127db09a98e0723b83b2914d9256174?pId=2782&utm_source=glcblog&spm=1001.2101.3001.7020">模板</a>化的HTTP客户端，可用于调用HTTP API实现微服务之间的<strong>远程服务调用</strong>。它的特点是使用少量的配置定义服务客户端接口，可以实现简单和可重用的RPC调用</p>
+<p>简化HTTP 请求 避免拼接冗长字符串</p>
+<p>自带负载均衡</p>
+<p>1.3.1 Hystrix</p>
+<p>断路器  快速失败防止浪费CPU 可通过仪表盘查看服务信息</p>
+<p>1.4 Zuul</p>
+<p>网关  配置路由 配置过滤器 优先级配置 请求拦截</p>
+<p>1.5 配置中心</p>
+<p>​    git配置</p>
+<p>1.6 Sleuth</p>
+<p>​    服务链路追踪 日志 微服务监控</p>
+<p>1.7 Sidecar</p>
+<p>​    跨平台服务调用</p>
+<h2 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h2><p>Spring Cloud 是一组框架和工具，旨在帮助开发者使用 Spring 构建分布式系统。它是构建微服务架构的一个强大平台，提供了许多常用的基础设施支持，特别是在云环境中。Spring Cloud 与 Spring Boot 配合使用，能够简化微服务的开发过程，并且为服务发现、负载均衡、断路器、分布式配置等提供了开箱即用的解决方案。</p>
+<p>以下是 Spring Cloud 的一些关键特性和组件：</p>
+<h3 id="1-服务发现-Eureka"><a href="#1-服务发现-Eureka" class="headerlink" title="1. 服务发现 (Eureka)"></a>1. <strong>服务发现 (Eureka)</strong></h3><ul>
+<li><strong>Eureka</strong> 是 Spring Cloud 提供的服务发现和注册中心。它允许服务自动注册到 Eureka 服务器中，并使其他服务能够发现并与它们进行通信。Eureka 采用客户端注册方式，服务会定期向 Eureka Server 注册其信息，并在失效时注销。</li>
+<li><strong>Eureka Client</strong>: 服务端需要通过 <code>@EnableEurekaClient</code> 注解来启用 Eureka 客户端功能。</li>
+<li><strong>Eureka Server</strong>: 作为服务的注册中心，Eureka Server 负责管理所有服务的注册信息。</li>
+</ul>
+<h3 id="2-负载均衡-Ribbon"><a href="#2-负载均衡-Ribbon" class="headerlink" title="2. 负载均衡 (Ribbon)"></a>2. <strong>负载均衡 (Ribbon)</strong></h3><ul>
+<li><strong>Ribbon</strong> 是客户端负载均衡器，能够通过集成在客户端的算法进行请求的负载均衡。它与 Eureka 紧密集成，在服务发现时可以选择合适的服务实例来进行请求转发。</li>
+<li><strong>自动负载均衡</strong>: 通过使用 <code>@LoadBalanced</code> 注解，Spring Cloud 可以让你的 RestTemplate 客户端自动进行负载均衡。</li>
+</ul>
+<h3 id="3-断路器-Hystrix"><a href="#3-断路器-Hystrix" class="headerlink" title="3. 断路器 (Hystrix)"></a>3. <strong>断路器 (Hystrix)</strong></h3><ul>
+<li><strong>Hystrix</strong> 是一个用于处理分布式系统中服务间通信故障的工具。它提供了一种方式来隔离服务，防止级联失败，并在服务不可用时提供回退机制。</li>
+<li><strong>Hystrix Dashboard</strong>: 监控 Hystrix 的运行状态和健康度。</li>
+<li><strong>Hystrix Command</strong>: 通过注解和编程方式实现服务调用时的容错控制。</li>
+</ul>
+<h3 id="4-API-网关-Zuul-Spring-Cloud-Gateway"><a href="#4-API-网关-Zuul-Spring-Cloud-Gateway" class="headerlink" title="4. API 网关 (Zuul / Spring Cloud Gateway)"></a>4. <strong>API 网关 (Zuul / Spring Cloud Gateway)</strong></h3><ul>
+<li><strong>Zuul</strong> 是一个路由网关服务器，它提供动态路由、监控、过滤等功能，可以作为微服务的入口。所有外部请求都会通过 Zuul 路由到合适的微服务。</li>
+<li><strong>Spring Cloud Gateway</strong>: 作为 Zuul 的替代品，提供更高效的路由功能，并且可以支持更多的现代特性，如 WebFlux 支持、更简洁的配置和更强的过滤功能。</li>
+</ul>
+<h3 id="5-配置中心-Spring-Cloud-Config"><a href="#5-配置中心-Spring-Cloud-Config" class="headerlink" title="5. 配置中心 (Spring Cloud Config)"></a>5. <strong>配置中心 (Spring Cloud Config)</strong></h3><ul>
+<li><strong>Spring Cloud Config</strong> 提供了一个集中的配置服务器，允许微服务从配置服务器获取配置，并支持动态刷新配置。配置可以保存在 Git 或 SVN 中。</li>
+<li><strong>Config Server</strong>: 用于读取存储在远程 Git 仓库或本地文件系统的配置，并提供给客户端应用。</li>
+</ul>
+<h3 id="6-消息总线-Spring-Cloud-Bus"><a href="#6-消息总线-Spring-Cloud-Bus" class="headerlink" title="6. 消息总线 (Spring Cloud Bus)"></a>6. <strong>消息总线 (Spring Cloud Bus)</strong></h3><ul>
+<li><strong>Spring Cloud Bus</strong> 用于在多个服务之间传播配置变更或事件。通过消息总线，配置变更可以实时通知到所有服务，避免重新启动服务来刷新配置。</li>
+</ul>
+<h3 id="7-分布式跟踪-Sleuth-Zipkin"><a href="#7-分布式跟踪-Sleuth-Zipkin" class="headerlink" title="7. 分布式跟踪 (Sleuth / Zipkin)"></a>7. <strong>分布式跟踪 (Sleuth / Zipkin)</strong></h3><ul>
+<li><strong>Spring Cloud Sleuth</strong> 为 Spring 应用提供分布式跟踪功能，能够跟踪请求在多个服务中的传递过程。它通过生成全局唯一的跟踪 ID 来帮助开发者追踪请求。</li>
+<li><strong>Zipkin</strong> 是一个分布式追踪系统，用于收集和分析服务调用链的数据，以帮助开发者识别性能瓶颈和问题。</li>
+</ul>
+<h3 id="8-集成监控-Spring-Boot-Actuator-Prometheus-Micrometer"><a href="#8-集成监控-Spring-Boot-Actuator-Prometheus-Micrometer" class="headerlink" title="8. 集成监控 (Spring Boot Actuator + Prometheus / Micrometer)"></a>8. <strong>集成监控 (Spring Boot Actuator + Prometheus / Micrometer)</strong></h3><ul>
+<li><strong>Spring Boot Actuator</strong> 提供了对微服务运行时状态的监控，包括应用健康检查、度量、环境信息等。</li>
+<li><strong>Micrometer</strong> 是 Spring 的度量库，能够与多个监控系统（如 Prometheus、Graphite、Datadog）集成。</li>
+</ul>
+<h3 id="9-容错管理-Resilience4j"><a href="#9-容错管理-Resilience4j" class="headerlink" title="9. 容错管理 (Resilience4j)"></a>9. <strong>容错管理 (Resilience4j)</strong></h3><ul>
+<li><strong>Resilience4j</strong> 是一个轻量级的容错库，能够帮助开发者实现断路器、重试、限流等容错策略，作为 Hystrix 的替代品。</li>
+</ul>
+<h3 id="10-Spring-Cloud-Kubernetes"><a href="#10-Spring-Cloud-Kubernetes" class="headerlink" title="10. Spring Cloud Kubernetes"></a>10. <strong>Spring Cloud Kubernetes</strong></h3><ul>
+<li><strong>Spring Cloud Kubernetes</strong> 提供了与 Kubernetes 的集成支持，允许 Spring Cloud 应用与 Kubernetes 的服务发现、配置管理等功能结合使用。</li>
+</ul>
+<h3 id="Spring-Cloud-生态系统简要图"><a href="#Spring-Cloud-生态系统简要图" class="headerlink" title="Spring Cloud 生态系统简要图"></a>Spring Cloud 生态系统简要图</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+------------------+     +-----------------+</span><br><span class="line">|   Spring Cloud   |&lt;---&gt;|   Service A     |</span><br><span class="line">|    Eureka        |     +-----------------+</span><br><span class="line">|    Config        |     +-----------------+</span><br><span class="line">+------------------+     |   Service B     |</span><br><span class="line">                         +-----------------+</span><br><span class="line">                         +-----------------+</span><br><span class="line">                         |   Service C     |</span><br><span class="line">                         +-----------------+</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例：Spring-Cloud-微服务配置"><a href="#示例：Spring-Cloud-微服务配置" class="headerlink" title="示例：Spring Cloud 微服务配置"></a>示例：Spring Cloud 微服务配置</h3><p>假设你正在开发一个基于 Spring Cloud 的应用，下面是一些常见配置示例。</p>
+<h4 id="1-Eureka-Server-配置"><a href="#1-Eureka-Server-配置" class="headerlink" title="1. Eureka Server 配置"></a>1. <strong>Eureka Server 配置</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableEurekaServer</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class EurekaServerApplication &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(EurekaServerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-Eureka-Client-配置"><a href="#2-Eureka-Client-配置" class="headerlink" title="2. Eureka Client 配置"></a>2. <strong>Eureka Client 配置</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableEurekaClient</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class ServiceApplication &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Zuul-网关配置"><a href="#3-Zuul-网关配置" class="headerlink" title="3. Zuul 网关配置"></a>3. <strong>Zuul 网关配置</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableZuulProxy</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class ZuulGatewayApplication &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ZuulGatewayApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Spring-Cloud-Config-配置"><a href="#4-Spring-Cloud-Config-配置" class="headerlink" title="4. Spring Cloud Config 配置"></a>4. <strong>Spring Cloud Config 配置</strong></h4><ul>
+<li><strong>配置文件（application.yml）</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      uri: http://localhost:8888</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-Hystrix-配置"><a href="#5-Hystrix-配置" class="headerlink" title="5. Hystrix 配置"></a>5. <strong>Hystrix 配置</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableCircuitBreaker</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class HystrixExampleApplication &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(HystrixExampleApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Spring-Cloud-使用场景"><a href="#Spring-Cloud-使用场景" class="headerlink" title="Spring Cloud 使用场景"></a>Spring Cloud 使用场景</h3><p>Spring Cloud 适合构建微服务架构，特别是在以下场景下表现尤为出色：</p>
+<ol>
+<li><strong>分布式系统</strong>：多个服务之间需要高效地通信，Spring Cloud 提供的工具能够帮助你实现服务发现、负载均衡、断路器等。</li>
+<li><strong>多租户应用</strong>：配置中心、消息总线等可以帮助实现多租户环境中的配置共享与管理。</li>
+<li><strong>微服务治理</strong>：通过断路器、负载均衡、服务注册和发现来确保微服务的可靠性。</li>
+<li><strong>容错和监控</strong>：通过 Hystrix、Sleuth 和 Actuator 提供的监控和容错功能，提升系统的稳定性和可维护性。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Spring Cloud 为开发者提供了一个全面的微服务开发工具集，涵盖了从服务注册、服务发现、负载均衡、配置管理到容错机制等多个方面的功能。它与 Spring Boot 深度集成，极大地简化了分布式系统的开发、部署和运维。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">FadeAway</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://github.com/FadeAwayOL/2024/12/17/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%87%AA%E6%88%91%E6%80%BB%E7%BB%93/">https://github.com/FadeAwayOL/2024/12/17/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%87%AA%E6%88%91%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/FadeAwayOL" target="_blank">FadeAway Space</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SpringCloud/">SpringCloud</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2024/12/25/kCGsW1FBLEJYqhu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" target="_blank"><img class="post-qr-code-img" src="https://s2.loli.net/2021/12/29/Q4lAm9DSpwMhPnU.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/12/24/Springboot%E7%89%B9%E6%80%A7%E7%A4%BA%E4%BE%8B/"><img class="prev-cover" src="https://s2.loli.net/2024/12/25/9uJkwoZlDGU67bE.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Springboot特性示例</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/31/%E6%AF%95%E4%B8%9A%E4%B8%80%E5%B9%B4%E6%88%90%E9%95%BF%E5%9B%9E%E5%BF%86%E5%BD%95/"><img class="next-cover" src="https://s2.loli.net/2024/07/31/YeSuc43K8FvD7Ef.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">毕业一年成长回忆录</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">SpringCloud微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%87%E6%80%BB"><span class="toc-number">1.1.</span> <span class="toc-text">汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0-Eureka"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 服务发现 (Eureka)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1-Ribbon"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 负载均衡 (Ribbon)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%96%AD%E8%B7%AF%E5%99%A8-Hystrix"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 断路器 (Hystrix)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-API-%E7%BD%91%E5%85%B3-Zuul-Spring-Cloud-Gateway"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. API 网关 (Zuul &#x2F; Spring Cloud Gateway)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83-Spring-Cloud-Config"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 配置中心 (Spring Cloud Config)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%B6%88%E6%81%AF%E6%80%BB%E7%BA%BF-Spring-Cloud-Bus"><span class="toc-number">1.1.6.</span> <span class="toc-text">6. 消息总线 (Spring Cloud Bus)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%88%86%E5%B8%83%E5%BC%8F%E8%B7%9F%E8%B8%AA-Sleuth-Zipkin"><span class="toc-number">1.1.7.</span> <span class="toc-text">7. 分布式跟踪 (Sleuth &#x2F; Zipkin)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E9%9B%86%E6%88%90%E7%9B%91%E6%8E%A7-Spring-Boot-Actuator-Prometheus-Micrometer"><span class="toc-number">1.1.8.</span> <span class="toc-text">8. 集成监控 (Spring Boot Actuator + Prometheus &#x2F; Micrometer)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%AE%B9%E9%94%99%E7%AE%A1%E7%90%86-Resilience4j"><span class="toc-number">1.1.9.</span> <span class="toc-text">9. 容错管理 (Resilience4j)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Spring-Cloud-Kubernetes"><span class="toc-number">1.1.10.</span> <span class="toc-text">10. Spring Cloud Kubernetes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E7%AE%80%E8%A6%81%E5%9B%BE"><span class="toc-number">1.1.11.</span> <span class="toc-text">Spring Cloud 生态系统简要图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9ASpring-Cloud-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.12.</span> <span class="toc-text">示例：Spring Cloud 微服务配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Eureka-Server-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.12.1.</span> <span class="toc-text">1. Eureka Server 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Eureka-Client-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.12.2.</span> <span class="toc-text">2. Eureka Client 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Zuul-%E7%BD%91%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.12.3.</span> <span class="toc-text">3. Zuul 网关配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Spring-Cloud-Config-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.12.4.</span> <span class="toc-text">4. Spring Cloud Config 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Hystrix-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.12.5.</span> <span class="toc-text">5. Hystrix 配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.1.13.</span> <span class="toc-text">Spring Cloud 使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.14.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2024/12/25/kCGsW1FBLEJYqhu.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By FadeAway</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">别想着一帆风顺，总有时光默默无闻</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7AwEz6VhpVAfjnEpmbOH8bFM-gzGzoHsz',
+      appKey: 'IR3o4kvmw9GDbNp2A0b0W2pi',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: 'emoji CDN',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
